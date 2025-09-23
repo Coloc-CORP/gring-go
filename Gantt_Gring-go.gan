@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt Gring-Go" company="" webLink="http://" view-date="2025-09-23" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt Gring-Go" company="" webLink="http://" view-date="2025-09-08" view-index="0" gantt-divider-location="351" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd15" name="Notes" width="20" order="-1"/>
         <field id="tpd3" name="Nom" width="200" order="0"/>
         <field id="tpd4" name="Date de début" width="75" order="1"/>
         <field id="tpd5" name="Date de fin" width="75" order="2"/>
+        <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
         <option id="filter.overdueTasks" value="false"/>
@@ -38,11 +38,18 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
+        <task id="0" uid="fd02711ba24f44d883c0bda28e8d6c18" name="Découverte / Choix du projet" meeting="false" start="2025-09-09" duration="1" complete="0" expand="true"/>
+        <task id="1" uid="fe5ce06ca678427c8959bd46cec0ae6b" name="Organisation / Répartition des tâches" meeting="false" start="2025-09-16" duration="1" complete="0" expand="true"/>
+        <task id="2" uid="526490d6f7c44647ba20ed7355e83793" name="Rédaction cahier des charges / Gantt" meeting="false" start="2025-09-23" duration="1" complete="0" expand="true"/>
     </tasks>
-    <resources/>
+    <resources>
+        <resource id="0" name="Mathys" function="Default:0" contacts="" phone=""/>
+        <resource id="1" name="David" function="Default:0" contacts="" phone=""/>
+        <resource id="2" name="Marius" function="Default:0" contacts="" phone=""/>
+        <resource id="3" name="Pierrick" function="Default:0" contacts="" phone=""/>
+    </resources>
     <allocations/>
     <vacations/>
     <previous/>
     <roles roleset-name="Default"/>
-    <roles roleset-name="SoftwareDevelopment"/>
 </project>
