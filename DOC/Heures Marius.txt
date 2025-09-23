@@ -1,0 +1,14 @@
+Heures Marius
+
+Marius- Alternant ingénieur - Rwaytech- ESISAR
+	
+Développement hardware
+⇥ Rédaction gantt et cahier des charges : 4h
+	⇥ Suivie documentaire du projet : 12h
+
+Développement hardware ( alimentation et boitier) 
+	⇥ Etude du mode d’alimentation: 16h
+	⇥ Choix des composants : 8h
+	⇥ PCB / Bobinage / Conception 3D : 20h
+	⇥ Tests / validation / amélioration  : 20h
+TOTAL : 80 h
