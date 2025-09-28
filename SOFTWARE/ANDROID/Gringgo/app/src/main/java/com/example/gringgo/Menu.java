@@ -15,12 +15,18 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
+import android.Manifest;
 
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -41,11 +47,35 @@ public class Menu extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private ActivityResultLauncher<String[]> requestPermissionLauncher;
+    private static final String[] BLUETOOTH_PERMISSIONS = new String[]{
+            Manifest.permission.BLUETOOTH_SCAN,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_ADVERTISE,
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+            Manifest.permission.ACCESS_FINE_LOCATION
+    };
 
     public Menu() {
         // Required empty public constructor
     }
+
+    // Lanceur pour demander les permissions
+    private final ActivityResultLauncher<String[]> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(),
+                    result -> {
+                        // Ici on récupère les résultats permission par permission
+                        for (Map.Entry<String, Boolean> entry : result.entrySet()) {
+                            String permission = entry.getKey();
+                            Boolean isGranted = entry.getValue();
+                            if (isGranted) {
+                                Log.d("Permissions", permission + " accordée ");
+                            } else {
+                                Log.w("Permissions", permission + " refusée ");
+                            }
+                        }
+                    });
+
+
 
     /**
      * Use this factory method to create a new instance of
@@ -74,6 +104,8 @@ public class Menu extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -85,7 +117,19 @@ public class Menu extends Fragment {
     public void onResume() {
         super.onResume();
 
+        checkAndRequestPermissions();
 
+        // Stop execution si les permissions ne sont pas accordées
+        if ((ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_CONNECT)
+                != PackageManager.PERMISSION_GRANTED) ||
+                (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_SCAN)
+                        != PackageManager.PERMISSION_GRANTED) ||
+                (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_ADMIN)
+                        != PackageManager.PERMISSION_GRANTED)
+                ) {
+            Log.d("Permissions", "Manque 1 ou plusieurs permissions");
+            return;
+        }
 
         // Création des objets bluetooth nécessaires (Manager et Adaptater)
         BluetoothManager bluetoothManager = (BluetoothManager) requireContext().getSystemService(Context.BLUETOOTH_SERVICE);
@@ -119,6 +163,23 @@ public class Menu extends Fragment {
                 String deviceName = device.getName();
                 String deviceHardwareAddress = device.getAddress(); // MAC address
             }
+        }
+    }
+
+    private void checkAndRequestPermissions() {
+        List<String> permissionsToRequest = new ArrayList<>();
+
+        for (String permission : BLUETOOTH_PERMISSIONS) {
+            if (ContextCompat.checkSelfPermission(requireContext(), permission)
+                    != PackageManager.PERMISSION_GRANTED) {
+                permissionsToRequest.add(permission);
+            }
+        }
+
+        if (!permissionsToRequest.isEmpty()) {
+            requestPermissionLauncher.launch(permissionsToRequest.toArray(new String[0]));
+        } else {
+            Log.d("Permissions", "Toutes les permissions déjà accordées");
         }
     }
 }
