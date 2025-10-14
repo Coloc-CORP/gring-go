@@ -1,6 +1,5 @@
 package com.example.gringgo;
 
-import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -35,7 +34,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,7 +66,7 @@ public class Menu extends Fragment {
             Manifest.permission.ACCESS_FINE_LOCATION
     };
 
-    // Classe anonyme du lanceur de permission
+    // Anonym class of the launcher of the permission
     private final ActivityResultLauncher<String[]> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(),
                     result -> {
@@ -89,6 +87,7 @@ public class Menu extends Fragment {
 
     // Bluetooth members
     private ArrayAdapter<String> devicesAdapter;
+    BluetoothAdapter bluetoothAdapter;
     private final List<BluetoothDevice> devicesList = new ArrayList<>();
 
     // Déclaration + instanciation + implémentation du receiver (classe anonyme)
@@ -160,6 +159,10 @@ public class Menu extends Fragment {
                     // disable Bluetooth-dependent features).
                 }
             });
+
+    // Bluetooth device selected
+    private BluetoothDevice selectedDevice;
+
 
 
 
@@ -296,7 +299,7 @@ public class Menu extends Fragment {
         // Set bluetooth adapter
         BluetoothManager bluetoothManager = requireContext().getSystemService(BluetoothManager.class);
         assert bluetoothManager != null;
-        BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
+        bluetoothAdapter = bluetoothManager.getAdapter();
         if (bluetoothAdapter == null) {
             // Device doesn't support Bluetooth
         }
@@ -342,7 +345,7 @@ public class Menu extends Fragment {
         builder.setTitle("Appareils Bluetooth");
         builder.setAdapter(devicesAdapter, (dialog, which) -> {
             // Quand on clique sur un appareil
-            BluetoothDevice selectedDevice = devicesList.get(which);
+            this.selectedDevice = devicesList.get(which);
             if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
@@ -354,7 +357,7 @@ public class Menu extends Fragment {
                 return;
             }
             Toast.makeText(requireContext(),
-                    "Sélectionné : " + selectedDevice.getName(),
+                    "Sélectionné : " + this.selectedDevice.getName(),
                     Toast.LENGTH_SHORT).show();
 
             // Ici tu peux lancer la connexion avec selectedDevice
@@ -364,6 +367,11 @@ public class Menu extends Fragment {
             dialog.dismiss();
         });
         builder.show();
+    }
+
+    //Start bluetooth socket
+    public void startBluetoothSocket() {
+        ConnectThread connectThread = new ConnectThread(this.selectedDevice,requireContext(),bluetoothAdapter);
     }
 
 
