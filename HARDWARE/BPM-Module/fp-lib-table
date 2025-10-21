@@ -1,0 +1,7 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "MAX30101EFD")(type "KiCad")(uri "C:/Users/mathy/Documents/PERSO/CODE/gring-go/HARDWARE/LIB/ul_MAX30101EFD-/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "MAX32664GWEA-T")(type "KiCad")(uri "C:/Users/mathy/Documents/PERSO/CODE/gring-go/HARDWARE/LIB/ul_MAX32664GWEA-T-func/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "PAM2401YPADJ")(type "KiCad")(uri "C:/Users/mathy/Documents/PERSO/CODE/gring-go/HARDWARE/LIB/ul_PAM2401YPADJ/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "PTPS7A2018PDBVR")(type "KiCad")(uri "C:/Users/mathy/Documents/PERSO/CODE/gring-go/HARDWARE/LIB/ul_PTPS7A2018PDBVR/KiCADv6/footprints.pretty")(options "")(descr ""))
+)
