@@ -158,7 +158,7 @@
 		(at 158 71.5 90)
 		(tags "PTPS7A2018PDBVR ")
 		(property "Reference" "U4"
-			(at 0 0 90)
+			(at 0.08 2.77 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "8a34f7a3-770c-46b5-bf38-41b498df7d70")
@@ -359,7 +359,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor")
 		(property "Reference" "C7"
-			(at 0 -1.43 0)
+			(at 0 1.48 0)
 			(layer "F.SilkS")
 			(uuid "45b4b1f3-f843-4470-be15-b73539fd2143")
 			(effects
@@ -557,7 +557,7 @@
 		(at 148 71.5 90)
 		(tags "PAM2401YPADJ ")
 		(property "Reference" "U3"
-			(at 0 0 90)
+			(at 0 -2.89 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "67a8514a-8c5c-4a2e-a8f6-91efd7210b8f")
@@ -1755,7 +1755,7 @@
 		(at 166.849999 71.805999 -90)
 		(tags "MAX30101EFD+ ")
 		(property "Reference" "U1"
-			(at 0 0 270)
+			(at 0 4.049999 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "cee17034-6578-4b8d-8ee9-c809b13744d2")
@@ -2166,7 +2166,7 @@
 		(at 167.475 65.475)
 		(tags "MAX32664GWEA+T ")
 		(property "Reference" "U2"
-			(at 0 0 0)
+			(at -2.415 -0.005 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "b00bbf99-de57-4311-93cd-c5e1123fe97c")
@@ -2322,98 +2322,50 @@
 			(uuid "6d92211d-9dbd-4093-807c-a3704ec62ef8")
 		)
 		(fp_text user "A"
-			(at -1.4351 -0.525 0)
+			(at -1.255 -0.525 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "196d9d72-3869-4eb1-a3f1-cf16e35db12a")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.2 0.2)
+					(thickness 0.05)
 				)
 			)
 		)
 		(fp_text user "1"
-			(at -0.525 -1.4224 90)
+			(at -0.525 -1.275 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "660fe7b5-93ea-4eef-ad8a-2d084094bd0e")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.2 0.2)
+					(thickness 0.05)
 				)
 			)
 		)
 		(fp_text user "4"
-			(at 0.525 -1.4224 90)
+			(at 0.535 -1.275 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "8eee6b94-8a06-4e9b-895e-4f95109324d1")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.2 0.2)
+					(thickness 0.05)
 				)
 			)
 		)
 		(fp_text user "D"
-			(at -1.4351 0.525 0)
+			(at -1.285 0.535 0)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "ae4d1ab6-1907-44df-8348-a51257a9f83d")
 			(effects
 				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(fp_text user "1"
-			(at -0.525 -1.4224 90)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "1d23f8d4-9976-496c-a2c6-1e851450b19a")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(fp_text user "4"
-			(at 0.525 -1.4224 90)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "6ac833ba-085f-4463-b29d-9007f18f4b57")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(fp_text user "A"
-			(at -1.4351 -0.525 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "8ae0f674-c512-41db-b0e9-adab01bd7635")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
-				)
-			)
-		)
-		(fp_text user "D"
-			(at -1.4351 0.525 0)
-			(unlocked yes)
-			(layer "B.SilkS")
-			(uuid "a860563d-2965-42f0-bfa6-0914adac84ae")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
+					(size 0.2 0.2)
+					(thickness 0.05)
 				)
 			)
 		)
@@ -2829,7 +2781,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R3"
-			(at 0 -1.43 0)
+			(at 2.2 0 90)
 			(layer "F.SilkS")
 			(uuid "0a8dc2ba-1574-489a-8819-611d0c2916b6")
 			(effects
