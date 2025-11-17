@@ -1,4 +1,6 @@
 (sym_lib_table
   (version 7)
-  (lib (name "importSnap")(type "KiCad")(uri "/home/bolobos/Documents/DEV/ring project/gring-go/HARDWARE/TableTestFootprints/ImportSNAP/BQ500212ARGZT/BQ500212ARGZT.kicad_sym")(options "")(descr ""))
+  (lib (name "BQ500212ARGZT")(type "KiCad")(uri "/home/bolobos/Documents/DEV/ring project/gring-go/HARDWARE/TableTestFootprints/ImportSNAP/BQ500212ARGZT/BQ500212ARGZT.kicad_sym")(options "")(descr ""))
+  (lib (name "BQ51003YFPT")(type "KiCad")(uri "/home/bolobos/Documents/DEV/ring project/gring-go/HARDWARE/TableTestFootprints/ImportSNAP/BQ51003YFPT/BQ51003YFPT.kicad_sym")(options "")(descr ""))
+  (lib (name "BQ25120AYFPT")(type "KiCad")(uri "/home/bolobos/Documents/DEV/ring project/gring-go/HARDWARE/TableTestFootprints/ImportSNAP/BQ25120AYFPT/BQ25120AYFPT.kicad_sym")(options "")(descr ""))
 )
