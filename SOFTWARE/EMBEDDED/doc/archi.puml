@@ -1,0 +1,106 @@
+@startuml FW_Architecture_GringGo
+
+' Configuration du style
+skinparam component {
+  BorderColor #7B0099
+  BackgroundColor #F0E0FF
+  FontSize 12
+  ArrowColor #4A0080
+  ArrowSize 1.5
+}
+
+skinparam package {
+  BorderColor #006000
+  BackgroundColor #DFF0D8
+  Padding 10
+}
+
+skinparam cloud {
+  BackgroundColor #FFF5E0
+  BorderColor #FF9900
+}
+
+title Architecture Logicielle du Gring-Go (Smart BLE Ring)
+
+' ====================================================================
+' DÉFINITION DES BLOCS
+' ====================================================================
+
+package "1. Accès Hardware (Le Bas)" as DRIVERS {
+  [BHI260AP_driver.c] as BHI_DRV
+  [MAX32664_driver.c] as MAX_DRV
+  [STTS22H_driver.c] as TEMP_DRV
+  [stwlc38_driver.c] as CHARGE_DRV
+}
+
+package "Zephyr SDK (Pile Système)" as Z_SDK {
+  [BLE Host Stack] as BLE_HOST
+}
+
+package "2. Algorithmes de Traitement" as ALGO {
+  [sleep_monitor.c] as SLEEP_MONITOR
+  [motion_tracker.c] as MOTION_TRACKER
+  [power_monitor.c] as POWER_MONITOR
+
+  SLEEP_MONITOR -[hidden]right-> POWER_MONITOR
+}
+
+package "3. Services GATT (Interface BLE)" as GATT {
+  [ring_health_service.c] as RHS_C
+  [battery_service.c] as BAS_C
+}
+
+package "4. Orchestration & Système" as CORE {
+  [main.c] as MAIN
+  [ring_health_service.h] as RHS_H
+
+  MAIN -[hidden]up-> RHS_H
+}
+
+
+cloud "Cœur Réseau (hci_ipc)" as CPUNET
+cloud "Application Mobile" as MOBILE_APP
+
+' -------------------------------------------
+' A. FLUX DE LECTURE & TRAITEMENT (Bottom-Up)
+' -------------------------------------------
+' Données des Capteurs vers Algorithmes
+MAX_DRV -up-> SLEEP_MONITOR : BPM/HRV
+BHI_DRV -up-> MOTION_TRACKER : Événements (IMU)
+MOTION_TRACKER -right-> SLEEP_MONITOR : Statut Sommeil
+CHARGE_DRV -up-> POWER_MONITOR : Charge/Niveau (I2C)
+
+' Moniteur d'Énergie vers Battery Service
+POWER_MONITOR -up-> BAS_C : NOTIFY (Batterie)
+
+' Algorithmes/Drivers vers GATT (Notifications allégées)
+SLEEP_MONITOR -up-> RHS_C : NOTIFY (Sommeil)
+TEMP_DRV -up-> RHS_C : NOTIFY (Température)
+MAX_DRV -up-> RHS_C : NOTIFY (BPM/SpO2)
+MOTION_TRACKER -up-> RHS_C : NOTIFY (Activité)
+
+' -------------------------------------------
+' B. FLUX D'INITIALISATION (Vertical Down)
+' -------------------------------------------
+MAIN -down-> DRIVERS : Init Hardware
+MAIN -right-> RHS_C : Enregistrement GATT
+MAIN -up-> BLE_HOST : Init & Publicité
+
+' -------------------------------------------
+' C. PILE PROTOCOLAIRE & COMMANDE
+' -------------------------------------------
+RHS_C -up-> BLE_HOST : Enregistrement Service
+BAS_C -up-> BLE_HOST : Enregistrement Service
+
+BLE_HOST -up-> CPUNET : HCI
+CPUNET -up-> MOBILE_APP : TX BLE
+
+' Flux de commande
+MOBILE_APP -down-> CPUNET : BLE GATT Write
+CPUNET -down-> BLE_HOST : CMD Décodée
+BLE_HOST -down-> RHS_C : Callback GATT Write
+RHS_C -down-> ALGO : Configuration
+
+MAIN -down-> ALGO : Start Thread
+
+@enduml
