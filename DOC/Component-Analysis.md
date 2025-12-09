@@ -26,8 +26,8 @@
 
 | Model            | Dimensions (mm)    | Mass | Consumption (Active / Sleep) | Supply Voltage | Interface | Axes | Accuracy | VIL / VIH        | Price (€) | Notes |
 |------------------|--------------------|------|------------------------------|----------------|-----------|------|----------|------------------|-----------|-------|
-| BHI260AP (Bosch) | 3.6 x 4.1 x 0.83   |      | 249µA / 8µA                  | 1.8V           | I²C / SPI | 6    |          | 0.3 / 0.7 VDD    | 6.05      | Dev board 13$      |
-| **LSM6DSOX (ST)**|**2.5 x 3   x 0.83**|      | **170-26µA  / 3µA**          | 1.7 - 3.6V     | I²C / SPI | 6    |          | 0.3 / 0.7 VDD    | **3.62**  | ABX00101 10$, STEVAL 15$      |
+| **BHI260AP (Bosch)** | 3.6 x 4.1 x 0.83   |      | 249µA / 8µA                  | 1.8V           | I²C / SPI | 6    |          | 0.3 / 0.7 VDD    | 6.05      | **MCU intégré qui traite localement les données : beaucoup plus simple à implémenter**, Dev board 13$ |
+| LSM6DSOX (ST)    |**2.5 x 3   x 0.83**|      | **170-26µA  / 3µA**          | 1.7 - 3.6V     | I²C / SPI | 6    |          | 0.3 / 0.7 VDD    | **3.62**  | ABX00101 10$, STEVAL 15$      |
 |                  |                    |      |                              |                |           |      |          |                  |           |       |
 
 ---
@@ -92,7 +92,7 @@
 |---------------|----------------------|----------------------------------|---------------------|---------------|-----------------------------|-----------------------|---------------|-----------|
 | MCU           | nRF5340              |                                  |                     |               |                             | Multi-thread, RTOS    |               | Le plus utilisé sur le marché, grande communauté |
 | Heart Sensor (PPG) | MAX32664          |                                  | 1.71 - 3.63V        | I²C / SPI     |                            | Besoin d'un capteur optique, données brutes | 6.12          | Module, nécessite capteur optique externe |
-| IMU           | LSM6DSOX             | 170-26µA / 3µA                    | 1.7 - 3.6V         | I²C / SPI     | 6 axes                     |                      | 3.62          | ABX00101 10€, STEVAL 15€ |
+| IMU           | BHI260AP             | 249µA / 8µA                    | 1.8V         | I²C / SPI     | 6 axes                     |                      | 6.05          | **MCU intégré qui traite localement les données : beaucoup plus simple à implémenter**, Dev board 13$ |
 | Temp Sensor   | STTS22H              | 120 / 1.75 µA                     | 1.5 - 3.6V         | I²C / SMBus   | 0.25°C                      |                      | 1.45          | SEN-21262 6€ |
 | Battery       |                      |                                  |                     |               |                             |                       |               |           |
 | Wireless Charging IC |                |                                  |                     |               |                             |                       |               |           |
