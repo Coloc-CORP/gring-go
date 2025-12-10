@@ -1,0 +1,17 @@
+## Récapitulatif des composants à acheter
+
+Tous les sites pour acheter chaque composant/carte sont intégrés en hyperlien.
+
+| Composant                | Fonction / Rôle                | Lien / Datasheet / Réf.         | Carte d’évaluation / Dev Kit         |
+|--------------------------|-------------------------------|----------------------------------|--------------------------------------|
+| nRF5340 (MCU BLE)        | Microcontrôleur principal BLE | [nRF5340](https://www.mouser.fr/ProductDetail/Nordic-Semiconductor/nRF5340-CLAA-R?qs=81r%252BiQLm7BTUbHQUWWib8A%3D%3D&mgh=1&vip=1&utm_id=18189949858&utm_source=google&utm_medium=cpc&utm_marketing_tactic=emeacorp&gad_source=1&gad_campaignid=18189985405&gbraid=0AAAAADn_wf1H5A7hXqZ3Z-MRIcJ73N6WJ&gclid=CjwKCAiA0eTJBhBaEiwA-Pa-hXL2kj0GUdJKz5rNqm_YtVFvSpSPjLrBWhTpHPgSChG9DCrJEowFXRoCWOgQAvD_BwE) | [nRF5340 DK](https://www.mouser.fr/ProductDetail/Nordic-Semiconductor/NRF5340-DK?qs=T94vaHKWudSvpk%2Fi5MmNkA%3D%3D&mgh=1&vip=1&utm_id=18189909961&utm_source=google&utm_medium=cpc&utm_marketing_tactic=emeacorp&gad_source=1&gad_campaignid=18189915556&gbraid=0AAAAADn_wf2LX2m29R1FtorFCg3McUpCX&gclid=CjwKCAiA0eTJBhBaEiwA-Pa-hSZylnIRr_CUexKcZe3W3Hm7M1_NMTNbWYKbaWAjeG-TnCY7hQYBrBoCe3cQAvD_BwE) |
+| MAX32664 (PPG)           | Module capteur cardiaque      | [MAX32664](https://www.mouser.fr/ProductDetail/Analog-Devices-Maxim-Integrated/MAX32664GWEA%2bT?qs=MLItCLRbWsyDnR1OLLmFTg%3D%3D) | PCB d'éval conçu, à commander |
+| BHI260AP (IMU)           | Accéléro/Gyro 6 axes + MCU    | [BHI260AP](https://www.mouser.fr/ProductDetail/Bosch-Sensortec/BHI260AP?qs=T94vaHKWudTEPTnGI%252BTy9w%3D%3D&srsltid=AfmBOoqDyQJeb3na6sPnhlUFruoI9czkXYRRi1PuOY-V-L53PYxs8R0h) | [BHI260AP Shuttle Board](https://www.mouser.fr/ProductDetail/Bosch-Sensortec/BHI260AP-Shuttle-Board-3.0?qs=sGAEpiMZZMu3sxpa5v1qrpuLb1YRQvRHZemfRhcKQHY%3D) |
+| STTS22H (Température)    | Capteur de température        | [STTS22H](https://www.mouser.fr/ProductDetail/STMicroelectronics/STTS22HTR?qs=%252B6g0mu59x7LCfjXXPvLkpg%3D%3D) | [SEN-21262](https://www.mouser.fr/ProductDetail/SparkFun/SEN-21262?qs=9vOqFld9vZWzbY2TLzVlDA%3D%3D&srsltid=AfmBOoovlJG6ulonjrwpkD4eBeJpHDID0WHxTjRv7_asHaaaJilWiW1_) |
+| Batterie                 | Alimentation                  | (À définir)     | -                                    |
+| IC charge sans fil       | Gestion charge sans fil       | (À définir)                      | -                                    |
+| Bobine charge sans fil   | Bobine pour charge Qi         | (À définir)                      | -                                    |
+| Régulateur / LDO         | Régulation tension            | (À définir)                      | -                                    |
+| Antenne BLE              | Communication sans fil        | (À définir)                      | Intégré à la carte d'éval nRF5340 DK                                    |
+
+Chaque composant est relié à la carte principale (MCU nRF5340) via des interfaces standards (I²C/SPI pour les capteurs, GPIO pour l’antenne, etc.). Les cartes d’évaluation associées permettent de tester individuellement chaque composant avant intégration sur le PCB final.
