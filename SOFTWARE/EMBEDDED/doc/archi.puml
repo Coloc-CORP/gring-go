@@ -20,87 +20,113 @@ skinparam cloud {
   BorderColor #FF9900
 }
 
-title Architecture Logicielle du Gring-Go (Smart BLE Ring)
+title Architecture Logicielle du Gring-Go
 
 ' ====================================================================
-' DÉFINITION DES BLOCS
+' 1. DRIVERS HÔTES & ACTIONNEURS (nRF5340 - I/O)
 ' ====================================================================
 
-package "1. Accès Hardware (Le Bas)" as DRIVERS {
-  [BHI260AP_driver.c] as BHI_DRV
-  [MAX32664_driver.c] as MAX_DRV
-  [STTS22H_driver.c] as TEMP_DRV
-  [stwlc38_driver.c] as CHARGE_DRV
+package "Capteurs Intelligents (Firmware Local)" as SENSOR_FIRMWARE {
+  [BHI260AP (ARC FW)] as BHI_FW
+  [MAX32664 (WHRM FW)] as MAX_FW
 }
+
+[STTS22H] as TEMP_S
+[DRV2605L] as HAPTIC_D
+[MOTOR] as HAPTIC_MOT
+[INDUCTION] as INDUC
+
+package "1. Drivers Hôtes (I²C)" as DRIVERS {
+  [imu_driver.c] as IMU_DRV
+  [bio_driver.c] as BIO_DRV
+  [temp_driver.c] as TEMP_DRV
+  [charge_driver.c] as CHARGE_DRV
+  [haptic_driver.c] as HAPTIC_DRV
+}
+
+' ====================================================================
+' 2. LOGIQUE SYSTÈME & ALGORITHMES LÉGERS (nRF5340 Core)
+' ====================================================================
 
 package "Zephyr SDK (Pile Système)" as Z_SDK {
   [BLE Host Stack] as BLE_HOST
 }
 
-package "2. Algorithmes de Traitement" as ALGO {
-  [sleep_monitor.c] as SLEEP_MONITOR
-  [motion_tracker.c] as MOTION_TRACKER
+package "2. Logique Application & Gestion" as APP_LOGIC {
+  [sensors_wrapper.c] as SENS_WRAP 
   [power_monitor.c] as POWER_MONITOR
-
-  SLEEP_MONITOR -[hidden]right-> POWER_MONITOR
 }
 
 package "3. Services GATT (Interface BLE)" as GATT {
-  [ring_health_service.c] as RHS_C
+  [alert_service.c] as ALERT_SVC
+  [health_service.c] as HEALTH_SVC 
   [battery_service.c] as BAS_C
 }
 
 package "4. Orchestration & Système" as CORE {
   [main.c] as MAIN
-  [ring_health_service.h] as RHS_H
-
-  MAIN -[hidden]up-> RHS_H
 }
-
 
 cloud "Cœur Réseau (hci_ipc)" as CPUNET
 cloud "Application Mobile" as MOBILE_APP
 
 ' -------------------------------------------
-' A. FLUX DE LECTURE & TRAITEMENT (Bottom-Up)
+' A. FLUX DE DONNÉES ET COMMANDE (Bottom-Up/Action)
 ' -------------------------------------------
-' Données des Capteurs vers Algorithmes
-MAX_DRV -up-> SLEEP_MONITOR : BPM/HRV
-BHI_DRV -up-> MOTION_TRACKER : Événements (IMU)
-MOTION_TRACKER -right-> SLEEP_MONITOR : Statut Sommeil
-CHARGE_DRV -up-> POWER_MONITOR : Charge/Niveau (I2C)
 
-' Moniteur d'Énergie vers Battery Service
-POWER_MONITOR -up-> BAS_C : NOTIFY (Batterie)
+' 1. Capteurs vers Drivers Hôtes
+BHI_FW -up-> IMU_DRV : Pas, Statut
+MAX_FW -up-> BIO_DRV : BPM, SpO2
+TEMP_S -up-> TEMP_DRV
+HAPTIC_D <-up- HAPTIC_DRV
+HAPTIC_D -r-> HAPTIC_MOT
+INDUC -up-> CHARGE_DRV
 
-' Algorithmes/Drivers vers GATT (Notifications allégées)
-SLEEP_MONITOR -up-> RHS_C : NOTIFY (Sommeil)
-TEMP_DRV -up-> RHS_C : NOTIFY (Température)
-MAX_DRV -up-> RHS_C : NOTIFY (BPM/SpO2)
-MOTION_TRACKER -up-> RHS_C : NOTIFY (Activité)
+IMU_DRV -down-> BHI_FW : Flash
+BIO_DRV -down-> MAX_FW : Flash
+
+' 2. Aggregation et Stockage
+IMU_DRV -up-> SENS_WRAP : Mouvement
+BIO_DRV -up-> SENS_WRAP : Biométriques
+TEMP_DRV -up-> SENS_WRAP : Température
+CHARGE_DRV -up-> POWER_MONITOR : Batterie
+
+' 3. Moniteur d'Énergie vers GATT
+POWER_MONITOR -up-> BAS_C : NOTIFY (Niveau Batterie)
+
+' 4. Haptique (Flux de commande)
+ALERT_SVC -down-> HAPTIC_DRV : Déclenchement
+
+' 5. Données vers Services GATT (Transfert Périodique/Sync)
+SENS_WRAP -up-> HEALTH_SVC : NOTIFY (Synchro données)
 
 ' -------------------------------------------
-' B. FLUX D'INITIALISATION (Vertical Down)
+' B. FLUX D'INITIALISATION & CONTRÔLE
 ' -------------------------------------------
-MAIN -down-> DRIVERS : Init Hardware
-MAIN -right-> RHS_C : Enregistrement GATT
+
+' Initialisation Matérielle et Chargement FW
+MAIN -down-> IMU_DRV : Flash
+MAIN -down-> BIO_DRV : Flash
+MAIN -down-> DRIVERS : Init
+
+' Démarrage du BLE
 MAIN -up-> BLE_HOST : Init & Publicité
 
-' -------------------------------------------
-' C. PILE PROTOCOLAIRE & COMMANDE
-' -------------------------------------------
-RHS_C -up-> BLE_HOST : Enregistrement Service
+' Enregistrement des services
+HEALTH_SVC -up-> BLE_HOST : Enregistrement Service
+ALERT_SVC -up-> BLE_HOST : Enregistrement Service
 BAS_C -up-> BLE_HOST : Enregistrement Service
 
+' -------------------------------------------
+' C. PILE PROTOCOLAIRE BLE
+' -------------------------------------------
 BLE_HOST -up-> CPUNET : HCI
 CPUNET -up-> MOBILE_APP : TX BLE
 
-' Flux de commande
-MOBILE_APP -down-> CPUNET : BLE GATT Write
+' Flux de commande haptique
+MOBILE_APP -down-> CPUNET : GATT Write (Alerte)
 CPUNET -down-> BLE_HOST : CMD Décodée
-BLE_HOST -down-> RHS_C : Callback GATT Write
-RHS_C -down-> ALGO : Configuration
+BLE_HOST -down-> ALERT_SVC : Callback GATT Write
 
-MAIN -down-> ALGO : Start Thread
 
 @enduml
