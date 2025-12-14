@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.2
+          "min_clearance": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -139,7 +139,7 @@
         "min_track_width": 0.01,
         "min_via_annular_width": 0.05,
         "min_via_diameter": 0.5,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
@@ -645,6 +645,10 @@
     [
       "d29665dc-a603-413d-b9b9-433aa1d50e1d",
       "Root"
+    ],
+    [
+      "29d4f3f5-5c9e-40ce-940f-f091519cc096",
+      "BPM_Module"
     ]
   ],
   "text_variables": {}
