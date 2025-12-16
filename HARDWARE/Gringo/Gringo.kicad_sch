@@ -1439,145 +1439,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "C"
-				(at 0.635 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "C"
-				(at 0.635 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0.9652 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Unpolarized capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "C_0_1"
-				(polyline
-					(pts
-						(xy -2.032 0.762) (xy 2.032 0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.032 -0.762) (xy 2.032 -0.762)
-					)
-					(stroke
-						(width 0.508)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.794)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "importSnap:BQ500212ARGZT"
 			(pin_names
 				(offset 1.016)
@@ -2948,6 +2809,16 @@
 	)
 	(wire
 		(pts
+			(xy 207.01 44.45) (xy 220.98 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e52c387-bfec-4b32-b7c2-8f35e904e90f")
+	)
+	(wire
+		(pts
 			(xy 99.06 69.85) (xy 104.14 69.85)
 		)
 		(stroke
@@ -3358,7 +3229,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 44.45) (xy 257.81 44.45)
+			(xy 257.81 44.45) (xy 271.78 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3398,6 +3269,16 @@
 	)
 	(wire
 		(pts
+			(xy 256.54 82.55) (xy 264.16 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e80dc57-a30e-4c6b-8ef4-91f69ec9e8c1")
+	)
+	(wire
+		(pts
 			(xy 256.54 85.09) (xy 256.54 87.63)
 		)
 		(stroke
@@ -3425,6 +3306,16 @@
 			(type default)
 		)
 		(uuid "4082888d-7cf2-4b1b-a718-9bd8d4822423")
+	)
+	(wire
+		(pts
+			(xy 256.54 77.47) (xy 274.32 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40c14053-1dae-4f41-9d93-f2cfd531526d")
 	)
 	(wire
 		(pts
@@ -3595,16 +3486,6 @@
 			(type default)
 		)
 		(uuid "58fa6353-b55d-47fc-b332-dbcfa3cf9693")
-	)
-	(wire
-		(pts
-			(xy 266.7 44.45) (xy 271.78 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "59f5365d-0c54-489b-bbf5-4f0c412f19ac")
 	)
 	(wire
 		(pts
@@ -3858,6 +3739,16 @@
 	)
 	(wire
 		(pts
+			(xy 256.54 87.63) (xy 264.16 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "771d4a72-ad07-47c5-a650-1adc1fd4064f")
+	)
+	(wire
+		(pts
 			(xy 21.59 63.5) (xy 26.67 63.5)
 		)
 		(stroke
@@ -3988,16 +3879,6 @@
 	)
 	(wire
 		(pts
-			(xy 266.7 52.07) (xy 270.51 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8acd8e93-e98b-4532-8d7f-39928bdfe7fe")
-	)
-	(wire
-		(pts
 			(xy 266.7 68.58) (xy 274.32 68.58)
 		)
 		(stroke
@@ -4068,7 +3949,7 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 80.01) (xy 265.43 80.01)
+			(xy 256.54 80.01) (xy 273.05 80.01)
 		)
 		(stroke
 			(width 0)
@@ -4278,16 +4159,6 @@
 	)
 	(wire
 		(pts
-			(xy 264.16 77.47) (xy 274.32 77.47)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aad459f5-2593-4163-a152-b5cfad1c01bf")
-	)
-	(wire
-		(pts
 			(xy 66.04 102.87) (xy 69.85 102.87)
 		)
 		(stroke
@@ -4335,16 +4206,6 @@
 			(type default)
 		)
 		(uuid "b6dc02f6-3304-4669-9e9b-cf7b40fcb724")
-	)
-	(wire
-		(pts
-			(xy 220.98 44.45) (xy 214.63 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b734d8dc-57b6-47cc-98cf-cd42b860cfc6")
 	)
 	(wire
 		(pts
@@ -4858,7 +4719,7 @@
 	)
 	(wire
 		(pts
-			(xy 259.08 52.07) (xy 256.54 52.07)
+			(xy 256.54 52.07) (xy 270.51 52.07)
 		)
 		(stroke
 			(width 0)
@@ -5167,73 +5028,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 260.35 82.55 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "06e360f1-99c8-4147-a608-135cbd0f7521")
-		(property "Reference" "C1"
-			(at 262.89 83.82 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 262.636 80.772 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 264.16 81.5848 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 260.35 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 260.35 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8b7beb6a-327b-419b-9839-df3cdf712d11")
-		)
-		(pin "2"
-			(uuid "b4540514-ca40-4dca-9061-935306ab623f")
-		)
-		(instances
-			(project ""
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 180.34 74.93 0)
 		(unit 1)
@@ -5478,73 +5272,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 262.89 52.07 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2583b187-5834-45d1-85dd-381cebab16c7")
-		(property "Reference" "C3"
-			(at 265.43 53.34 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 265.176 50.292 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 266.7 51.1048 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 262.89 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 262.89 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "56328b3b-2db1-4be3-aaa9-a2e670f6efed")
-		)
-		(pin "2"
-			(uuid "cec1ad62-318f-43e3-8d45-17b91aabca8d")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 93.98 124.46 180)
 		(unit 1)
@@ -5699,73 +5426,6 @@
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
 					(reference "J5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 210.82 44.45 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "533286bc-9682-4deb-90c9-02fc4e1df860")
-		(property "Reference" "C7"
-			(at 213.36 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 213.106 42.672 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 214.63 43.4848 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 210.82 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 210.82 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "06e2e0d1-5a23-407b-ad6a-06dadceed361")
-		)
-		(pin "2"
-			(uuid "e3f1591a-e0ea-4555-9e4a-0e1a491fcaeb")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -6533,73 +6193,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 187.96 91.44 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "810c1560-ef40-4a82-bb80-96133f5d6dc4")
-		(property "Reference" "C11"
-			(at 189.23 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 186.182 89.154 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 186.9948 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 187.96 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 187.96 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c461ecbe-cec3-4541-9c5e-fb3d04359c48")
-		)
-		(pin "2"
-			(uuid "ea6953b6-3ceb-4b78-a32f-fec706639e3b")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 182.88 137.16 0)
 		(unit 1)
@@ -7056,140 +6649,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 168.91 91.44 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b72efb97-2691-485e-8404-510ac2c48025")
-		(property "Reference" "C8"
-			(at 170.18 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 167.132 89.154 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 167.9448 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 168.91 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 168.91 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "22ea30dd-82ff-4f88-a68c-acbe00e63b1e")
-		)
-		(pin "2"
-			(uuid "059995bd-8a54-4fdb-be6e-cd5050a3fa35")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 262.89 44.45 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b7fbc8a6-3d00-4b15-a9fe-de9c51082af3")
-		(property "Reference" "C2"
-			(at 265.43 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 265.176 42.672 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 266.7 43.4848 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 262.89 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 262.89 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "78b56e51-141f-4fe5-9524-d896a798e326")
-		)
-		(pin "2"
-			(uuid "b7241b23-30b0-493c-90de-cbea23e36530")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 66.04 104.14 0)
 		(unit 1)
@@ -7250,140 +6709,6 @@
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
 					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 269.24 80.01 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "be38c008-fe76-4765-a7e3-d99dac5eb8c7")
-		(property "Reference" "C5"
-			(at 271.78 81.28 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 271.526 78.232 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 273.05 79.0448 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 269.24 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4b524236-7899-4b2a-ac6c-48adc8ec09e6")
-		)
-		(pin "2"
-			(uuid "5d0bec0f-4255-42ab-bd80-f04063f3178a")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 260.35 87.63 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c482f96f-1aca-4b20-8ebb-d734a03f2ebb")
-		(property "Reference" "C4"
-			(at 262.89 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 262.636 85.852 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 264.16 86.6648 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 260.35 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 260.35 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "8a208a12-7a13-4bdc-b8e7-8d4ed6225af3")
-		)
-		(pin "2"
-			(uuid "0992f0ff-16df-46b5-b97d-3fa314234025")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -7700,140 +7025,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 260.35 77.47 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "df674eeb-d6fb-432c-9a6c-f4af02abbf4d")
-		(property "Reference" "C6"
-			(at 262.89 78.74 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 262.636 75.692 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 264.16 76.5048 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 260.35 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 260.35 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "906f7f05-1645-4dcf-8e00-26f1f940fd1d")
-		)
-		(pin "2"
-			(uuid "36e7cc3b-1d59-478b-8164-a5aa68c83bfb")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 175.26 91.44 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "e21a6acc-5ced-4110-be8f-52f7b668fae6")
-		(property "Reference" "C9"
-			(at 176.53 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 173.482 89.154 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 174.2948 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 175.26 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 175.26 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "28e4dc19-7bfc-42ca-84c0-d843a8aa0be0")
-		)
-		(pin "2"
-			(uuid "f6c3da53-1d75-4720-9c12-ea1f572240ed")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x06")
 		(at 74.93 63.5 0)
 		(unit 1)
@@ -8098,73 +7289,6 @@
 			(project ""
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
 					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 181.61 91.44 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f4f7c160-3195-40db-8027-a91a5f0ea5fa")
-		(property "Reference" "C10"
-			(at 182.88 88.9 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "C"
-			(at 179.832 89.154 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 180.6448 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 181.61 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor"
-			(at 181.61 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2945037f-2e2d-40ae-a52c-c5a46695eaa0")
-		)
-		(pin "2"
-			(uuid "ffc2a014-173f-448e-98ac-3dc9a5805029")
-		)
-		(instances
-			(project "Gringo"
-				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d"
-					(reference "C10")
 					(unit 1)
 				)
 			)

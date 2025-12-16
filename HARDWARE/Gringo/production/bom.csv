@@ -1,9 +1,9 @@
 ﻿Designator,Footprint,Quantity,Value,LCSC Part #
 "_21, _20, _19, _18, _17, _16, _15, _14, _13, _12, _11, _10, _9, _8, _7, _6, _5, _4, _3, _2, ",,21,,
-"C12, C13",0603,2,10u,
-C14,0603,1,22u,
-C15,0603,1,100n,
-"C16, C17, C18",0603,3,1u,
+"C1, C3",0603,2,10u,
+C2,0603,1,100n,
+C4,0603,1,22u,
+"C5, C6, C7",0603,3,1u,
 "J1, J10, J11, J12, J13, J14, J15, J16, J2, J3, J5, J6, J7, J8, J9",PinHeader_1x06_P2.54mm_Vertical,15,Conn_01x06,
 J17,PinHeader_1x05_P2.54mm_Vertical,1,Conn_01x05_Pin,
 J4,PinHeader_1x06_P2.54mm_Vertical,1,Alim,

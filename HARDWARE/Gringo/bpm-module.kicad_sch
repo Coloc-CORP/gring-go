@@ -5325,7 +5325,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43dba3a5-7c42-4625-9e45-6f98a5a6664f")
-		(property "Reference" "C18"
+		(property "Reference" "C7"
 			(at 207.01 126.9999 0)
 			(effects
 				(font
@@ -5379,7 +5379,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C18")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -5459,7 +5459,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4e6587b6-6190-452e-925e-fe310a41ace8")
-		(property "Reference" "C12"
+		(property "Reference" "C3"
 			(at 34.036 147.828 0)
 			(effects
 				(font
@@ -5513,7 +5513,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C12")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -6178,7 +6178,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7b5546a7-0856-4a6d-81f8-f27e8c45c3ee")
-		(property "Reference" "C15"
+		(property "Reference" "C2"
 			(at 113.284 64.77 0)
 			(effects
 				(font
@@ -6232,7 +6232,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C15")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -6449,7 +6449,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "904e646c-724c-42e7-b108-cb06c6589925")
-		(property "Reference" "C13"
+		(property "Reference" "C1"
 			(at 103.124 64.77 0)
 			(effects
 				(font
@@ -6503,7 +6503,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C13")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -6652,7 +6652,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a7dddb66-acc7-49a6-8efc-ba7edcdcd5e4")
-		(property "Reference" "C14"
+		(property "Reference" "C4"
 			(at 107.188 153.67 0)
 			(effects
 				(font
@@ -6706,7 +6706,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C14")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -6853,7 +6853,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ae85dc03-51f4-4079-a093-b3b3e779cdce")
-		(property "Reference" "C17"
+		(property "Reference" "C6"
 			(at 168.656 70.866 0)
 			(effects
 				(font
@@ -6907,7 +6907,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C17")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -7331,7 +7331,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d840e305-9ea1-4f19-890f-a075dcd47303")
-		(property "Reference" "C16"
+		(property "Reference" "C5"
 			(at 155.194 71.374 0)
 			(effects
 				(font
@@ -7385,7 +7385,7 @@
 		(instances
 			(project "Gringo"
 				(path "/d29665dc-a603-413d-b9b9-433aa1d50e1d/29d4f3f5-5c9e-40ce-940f-f091519cc096"
-					(reference "C16")
+					(reference "C5")
 					(unit 1)
 				)
 			)
