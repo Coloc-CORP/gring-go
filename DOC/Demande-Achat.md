@@ -11,9 +11,9 @@ Tous les sites pour acheter chaque composant/carte sont intégrés en hyperlien.
 | Batterie                 | Alimentation                  | (À définir)     | -                                    |
 | DRV2605L (Pilote haptique) | Pilote moteur haptique LRA    | [DRV2605L](https://www.mouser.fr/ProductDetail/Texas-Instruments/DRV2605LTDGSRQ1?qs=bY1dm4K8r4X1ywSIFHWcUw%3D%3D) | [DRV2605L Dev kit](https://fr.rs-online.com/web/p/modules-de-developpement-pour-la-robotique-la-gestion-d-alimentation-et-les-moteurs/1245480?cm_mmc=FR-PLA-DS3A-_-google-_-CSS_FR_FR_PMAX_Catch+All-_--_-1245480&matchtype=&&gclsrc=aw.ds&gad_source=1&gad_campaignid=20578377983&gbraid=0AAAAADkeWNOf1JCgaQc0pjTwe8yyNPBMd&gclid=Cj0KCQiA9OnJBhD-ARIsAPV51xNiMtSwV1MNyEf_7Fm-Ahb4cxmXP-D3dtjudJGbkZPWrh_JE1DPnkkaAiklEALw_wcB) |
 | LRA (Moteur haptique)      | Retour haptique (vibration)   | [HD-LA0503-LW28](https://www.mouser.fr/ProductDetail/PUI-Audio/HD-LA0503-LW28?qs=%252BHhoWzUJg4JRddGDY3P1CA%3D%3D) | - |
-| IC charge sans fil       | Gestion charge sans fil       | (À définir)                      | -                                    |
-| Bobine charge sans fil   | Bobine pour charge Qi         | (À définir)                      | -                                    |
-| Régulateur / LDO         | Régulation tension            | (À définir)                      | -                                    |
+| Emetteur QI              | Gestion charge sans fil       | [BQ500212A] https://www.mouser.fr/ProductDetail/Texas-Instruments/BQ500212ARGZR?qs=qMm2Sc3MXu62Fost5xc9Dg%3D%3D | PCB d'éval conçu, à commander |
+| Recepteur QI             | Gestion charge sans fil       | [BQ51003] https://www.mouser.fr/ProductDetail/Texas-Instruments/BQ51003YFPR?qs=QCUnHQQYO1rRiXeciFj5cA%3D%3D | PCB d'éval conçu, à commander |
+| Régulateur / LDO / Chargeur| Régulation tension / charge batterie | [BQ25120A] https://www.mouser.fr/ProductDetail/Texas-Instruments/BQ25120AYFPR?qs=BZBei1rCqCBtbT0X52DCMQ%3D%3D | PCB d'éval conçu, à commander |
 | Antenne BLE              | Communication sans fil        | (À définir)                      | Intégré à la carte d'éval nRF5340 DK                                    |
 
 Chaque composant est relié à la carte principale (MCU nRF5340) via des interfaces standards (I²C/SPI pour les capteurs, GPIO pour l’antenne, etc.). Les cartes d’évaluation associées permettent de tester individuellement chaque composant avant intégration sur le PCB final.
