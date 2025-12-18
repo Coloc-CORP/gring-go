@@ -6,7 +6,7 @@ Etre en entreprise (nous, acteurs le sont tous actuellement) c'est faire continu
 
 Le projet, choisi par nous mêmes, est le projet d'une bague connectée que l'on appelle *Gring-Go*. Le travail va être effectué en passant de la spécifications du projet, au développement des différentes composantes, en passant par les différents tests démonstratifs pour enfin avoir un produit complet répondant aux différentes problématiques.
 
-C'est un projet qui se déroule sur X semaines avec un nombre d'heures estimé à X heures.
+C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué au projet d'une centaine d'heures pour chaque collaborateur.
 
 ---
 ## Objectifs
@@ -26,13 +26,10 @@ C'est un projet qui se déroule sur X semaines avec un nombre d'heures estimé �
 ---
 ## Diagramme du projet
 
-==Illustration à mettre à jour==
-![[Diagramme.png]]
+![[Diagramme synopsys.png]]
 
 ---
 ## Description fonctionnelle
-
-==Illustration à mettre OU PAS==
 
 1. FP : Le produit doit permettre à l'utilisateur de suivre ces données biométriques.
 2. FP : Le produit doit permettre à l'utilisateur de suivre ces données d'activité physique.
@@ -54,9 +51,3 @@ C'est un projet qui se déroule sur X semaines avec un nombre d'heures estimé �
 ## Budget
 
 Un budget entre 300 et 400 € à été annoncé pour la réalisation du projets (matériel, prestations, composants).
-
----
-## Délais
-
-TODO : rajouter les différentes délais des différentes étapes
-
