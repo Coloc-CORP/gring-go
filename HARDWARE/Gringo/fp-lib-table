@@ -9,4 +9,5 @@
   (lib (name "PTPS7A2018PDBVR")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_PTPS7A2018PDBVR/KiCADv6/footprints.pretty")(options "")(descr ""))
   (lib (name "MAX32664GTGA-T")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_MAX32664GTGA-T/KiCADv6/footprints.pretty")(options "")(descr ""))
   (lib (name "MCP73831T-2ACI-OT")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_MCP73831T-2ACI-OT/KiCADv6/footprints.pretty")(options "")(descr ""))
+  (lib (name "ECS-327-12-5-12-TR")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_ECS-327-12-5-12-TR/KiCADv6/footprints.pretty")(options "")(descr ""))
 )

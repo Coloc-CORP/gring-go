@@ -10,4 +10,5 @@
   (lib (name "MAX32664GTGA-T")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_MAX32664GTGA-T/KiCADv6/2025-12-19_09-05-25.kicad_sym")(options "")(descr ""))
   (lib (name "TPS62842DGRR")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_TPS62842DGRR/KiCADv6/2025-12-19_09-34-40.kicad_sym")(options "")(descr ""))
   (lib (name "MCP73831T-2ACI-OT")(type "KiCad")(uri "${KIPRJMOD}/../LIB/ul_MCP73831T-2ACI-OT/KiCADv6/2025-12-19_10-08-47.kicad_sym")(options "")(descr ""))
+  (lib (name "2025-12-19_16-57-16")(type "KiCad")(uri "C:/Users/mathy/Documents/gring-go/HARDWARE/LIB/ul_ECS-327-12-5-12-TR/KiCADv6/2025-12-19_16-57-16.kicad_sym")(options "")(descr ""))
 )

@@ -5507,7 +5507,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_2012-2Pin_2.0x1.2mm"
+		(property "Footprint" "ECS-327-12-5-12-TR:XTAL_ECX-12_2X1P2_ECS"
 			(at 177.8 35.56 0)
 			(effects
 				(font
