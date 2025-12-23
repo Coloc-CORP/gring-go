@@ -7,6 +7,7 @@
 #define HAPTIC_DRIVER_H_
 
 #include "gringgo_types.h"
+#include "gringgo_status.h"
 
 int HAPTIC_Init(void);
 int HAPTIC_PlayPattern(alert_effect_t effect_id);
