@@ -13,6 +13,7 @@ target_sources(app PRIVATE src/main.c)
 
 # NORDIC SDK APP END
 zephyr_include_directories(
+    assets
     include
     drivers
     subsys/algo
@@ -24,17 +25,18 @@ target_sources(app PRIVATE
     src/main.c
 
     # Layer 1: Hardware Drivers
-    drivers/bhi260ap_driver.c
-    drivers/max32664_driver.c
-    drivers/stts22h_driver.c
-    drivers/stwlc38_driver.c
+    drivers/imu_driver.c
+    drivers/bio_driver.c
+    drivers/temp_driver.c
+    drivers/charge_driver.c
+    drivers/haptic_driver.c
 
     # Layer 2: Processing Algorithms and Monitors
-    subsys/algo/motion_tracker.c
-    subsys/algo/sleep_monitor.c
+    subsys/algo/sensors_wrapper.c
     subsys/algo/power_monitor.c
 
     # Layer 3: GATT Services (BLE Interface)
     subsys/ble/health_service.c 
-    subsys/ble/battery_service.c 
+    subsys/ble/battery_service.c
+    subsys/ble/alert_service.c 
 )
