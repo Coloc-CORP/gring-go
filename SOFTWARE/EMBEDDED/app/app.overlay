@@ -1,0 +1,19 @@
+/ {
+    aliases {
+        haptic-i2c = &drv2605l;
+    };
+
+    /* On utilise zephyr,user pour déclarer la pin proprement */
+    zephyr,user {
+        haptic-en-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    drv2605l: drv2605l@5a {
+        compatible = "i2c-device";
+        reg = <0x5a>;
+        label = "DRV2605L";
+    };
+};
