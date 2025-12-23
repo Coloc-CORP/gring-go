@@ -16,9 +16,12 @@ typedef enum {
 } activity_mode_t;
 
 typedef enum {
-    ALERT_VIB_INCOMING_CALL = 0,
-    ALERT_VIB_NOTIFICATION,
-    ALERT_VIB_ALARM
+    /* IDs basés sur la Library 6 (LRA) du DRV2605L */
+    ALERT_VIB_INCOMING_CALL = 14, // Long Buzz 100%
+    ALERT_VIB_NOTIFICATION  = 1,  // Strong Click 100%
+    ALERT_VIB_FINDMYRING    = 16, // Triple Click 100% (Alerte forte)
+    ALERT_VIB_ALARM         = 10, // Double Click 100%
+    ALERT_VIB_NONE          = 0   // Fin de séquence / Arrêt
 } alert_effect_t;
 
 typedef struct {
