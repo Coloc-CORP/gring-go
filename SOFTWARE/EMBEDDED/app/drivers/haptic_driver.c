@@ -22,11 +22,8 @@ static const struct gpio_dt_spec drv_en = GPIO_DT_SPEC_GET(DT_PATH(zephyr_user),
  * @param val Value to write
  * @return status code
  */
-static int drv_write(uint8_t reg, uint8_t val) {
-    if (i2c_reg_write_byte_dt(&drv_i2c, reg, val) != 0) {
-        return STATUS_ERR_I2C_COM;
-    }
-    return STATUS_OK;
+int HAPTIC_WriteReg(uint8_t reg, uint8_t val) {
+    return i2c_reg_write_byte_dt(&drv_i2c, reg, val) == 0 ? STATUS_OK : STATUS_ERR_I2C_COM;
 }
 
 /*
@@ -46,16 +43,16 @@ int HAPTIC_Init(void) {
 
     /* 3. Configurer le DRV2605L */
     int ret;
-    ret = drv_write(0x01, 0x00); // Mode Normal (sortir de standby)
+    ret = HAPTIC_WriteReg(0x01, 0x00); // Mode Normal (sortir de standby)
     if (ret != STATUS_OK) return ret;
 
-    ret = drv_write(0x03, 0x06); // Sélection Librairie LRA (Librairie 6 est souvent utilisée pour LRA)
+    ret = HAPTIC_WriteReg(0x03, 0x06); // Sélection Librairie LRA (Librairie 6 est souvent utilisée pour LRA)
     if (ret != STATUS_OK) return ret;
 
-    ret = drv_write(0x1A, 0xB6); // FEEDBACK : Set N_ERM_LRA (bit 7) + Gain
+    ret = HAPTIC_WriteReg(0x1A, 0xB6); // FEEDBACK : Set N_ERM_LRA (bit 7) + Gain
     if (ret != STATUS_OK) return ret;
 
-    ret = drv_write(0x1D, 0x20); // CONTROL3 : LRA Open Loop (plus stable pour débuter)
+    ret = HAPTIC_WriteReg(0x1D, 0x20); // CONTROL3 : LRA Open Loop (plus stable pour débuter)
     if (ret != STATUS_OK) return ret;
 
     LOG_INF("Haptic Driver Initialise (LRA Mode)");
@@ -69,9 +66,9 @@ int HAPTIC_Init(void) {
  */
 int HAPTIC_PlayPattern(alert_effect_t effect_id) {
     /* 1. Charger l'effet dans la séquence */
-    if (drv_write(0x04, (uint8_t)effect_id) != STATUS_OK) return STATUS_ERR_I2C_COM;
-    if (drv_write(0x05, 0x00) != STATUS_OK) return STATUS_ERR_I2C_COM; // Fin de séquence
+    if (HAPTIC_WriteReg(0x04, (uint8_t)effect_id) != STATUS_OK) return STATUS_ERR_I2C_COM;
+    if (HAPTIC_WriteReg(0x05, 0x00) != STATUS_OK) return STATUS_ERR_I2C_COM; // Fin de séquence
 
     /* 2. Register GO */
-    return drv_write(0x0C, 0x01);
+    return HAPTIC_WriteReg(0x0C, 0x01);
 }

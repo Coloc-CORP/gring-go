@@ -16,6 +16,12 @@ typedef enum {
 } activity_mode_t;
 
 typedef enum {
+    TEMP_MODE_ONESHOT = 0x01001001,
+    TEMP_MODE_FREERUN = 0x01001100,
+    TEMP_MODE_LOW_ODR = 0x11001000
+} temp_op_mode_t;
+
+typedef enum {
     /* IDs basés sur la Library 6 (LRA) du DRV2605L */
     ALERT_VIB_INCOMING_CALL = 14, // Long Buzz 100%
     ALERT_VIB_NOTIFICATION  = 1,  // Strong Click 100%

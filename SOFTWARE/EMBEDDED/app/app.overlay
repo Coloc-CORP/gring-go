@@ -1,11 +1,13 @@
 / {
     aliases {
         haptic-i2c = &drv2605l;
+        temp-i2c = &stts22h;
     };
 
     /* On utilise zephyr,user pour déclarer la pin proprement */
     zephyr,user {
         haptic-en-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
+        temp-int-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
     };
 };
 
@@ -15,5 +17,10 @@
         compatible = "i2c-device";
         reg = <0x5a>;
         label = "DRV2605L";
+    };
+    stts22h: stts22h@70 {
+        compatible = "i2c-device";
+        reg = <0x70>;
+        label = "STTS22H";
     };
 };

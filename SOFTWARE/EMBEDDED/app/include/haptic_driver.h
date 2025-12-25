@@ -11,5 +11,6 @@
 
 int HAPTIC_Init(void);
 int HAPTIC_PlayPattern(alert_effect_t effect_id);
+int HAPTIC_WriteReg(uint8_t reg, uint8_t val);
 
 #endif /* HAPTIC_DRIVER_H_ */
