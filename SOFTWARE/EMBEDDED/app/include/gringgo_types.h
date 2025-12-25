@@ -7,6 +7,7 @@
 #define GRINGGO_TYPES_H_
 
 #include <zephyr/types.h>
+#include <stdbool.h>
 
 typedef enum {
     MODE_STILL, 
@@ -14,6 +15,11 @@ typedef enum {
     MODE_RUNNING, 
     MODE_SLEEPING
 } activity_mode_t;
+
+typedef enum {
+    IMU_PERF_LONG_RUN = 0x01,     /* 20 MHz - Basse consommation */
+    IMU_PERF_TURBO    = 0x00      /* 50 MHz - Haute performance */
+} imu_perf_mode_t;
 
 typedef enum {
     /* IDs basés sur la Library 6 (LRA) du DRV2605L */
@@ -26,7 +32,7 @@ typedef enum {
 
 typedef struct {
     uint32_t steps_count;
-    activity_mode_t mode;
+    imu_perf_mode_t mode;
 } imu_data_t;
 
 typedef struct {

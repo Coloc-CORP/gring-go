@@ -1,6 +1,7 @@
 / {
     aliases {
         haptic-i2c = &drv2605l;
+        imu-i2c = &bhi260ap;
     };
 
     /* On utilise zephyr,user pour déclarer la pin proprement */
@@ -15,5 +16,11 @@
         compatible = "i2c-device";
         reg = <0x5a>;
         label = "DRV2605L";
+    };
+
+    bhi260ap: bhi260ap@28 {
+        compatible = "i2c-device";
+        reg = <0x28>; /* Adresse I2C par défaut (SDO à GND), ou 0x29 si SDO à VDD */
+        label = "BHI260AP";
     };
 };
