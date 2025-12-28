@@ -2,7 +2,7 @@
 
 La formation d'ingénieur de l'ESISAR est une formation permettant de de construire les connaissances et compétences de l'ingénieur que celui-ci pourra être confronté dans sa carrière professionnelle. Cela est fait de différentes façon lors des différents cours suivis dans l'école mais la formation passe par une étape très importante : la mise en situation réelle.
 
-Etre en entreprise (nous, acteurs le sont tous actuellement) c'est faire continuellement des *projets*. En effet, ce sont autour de ces entités que grand nombre d'entre nous naviguent en entreprise. Ceux-ci se déroulent en plusieurs étapes et requièrent un large spectre de compétences pour les mettre à bien.
+Etre en entreprise, c'est faire continuellement des *projets*. En effet, ce sont autour de ces entités que grand nombre d'entre nous naviguent en entreprise. Ceux-ci se déroulent en plusieurs étapes et requièrent un large spectre de compétences pour les mettre à bien.
 
 Le projet, choisi par nous mêmes, est le projet d'une bague connectée que l'on appelle *Gring-Go*. Le travail va être effectué en passant de la spécifications du projet, au développement des différentes composantes, en passant par les différents tests démonstratifs pour enfin avoir un produit complet répondant aux différentes problématiques.
 
@@ -16,7 +16,7 @@ C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué a
 -  Pouvoir interagir avec la bague via un système Android
 -  Choisir les composants adéquats pour la réalisation du cahier des charges
 -  Avoir un suivi des données corporelles dans le temps
--  Permettre la communication téléphonique via la bague
+-  Notifier sensoriellement l'utilisateur lors d'évenements sur le téléphone 
 -  Avoir un gabarit adapté à l'utilisation en tant que bague
 
 ### Objectifs transverses
@@ -32,9 +32,9 @@ C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué a
 ## Description fonctionnelle
 
 1. FP : Le produit doit permettre à l'utilisateur de suivre ces données biométriques.
-2. FP : Le produit doit permettre à l'utilisateur de suivre ces données d'activité physique.
-3. FP : Le produit doit permettre à l'utilisateur d'assurer la communication auditive du téléphone.
 
+2. FP : Le produit doit permettre à l'utilisateur de suivre ces données d'activité physique.
+3. FP : Le produit doit permettre à l'utilisateur d'être notifier d'évênements sur le téléphone.
 4. FC : Le produit doit être confortable à porter (forme agréable, matériau confortable)
 5. FC : L'autonomie du produit doit être suffisamment élevé (1 semaine d'autonomie).
 6. FC : La distance de communication doit être suffisamment élevé (5 m)
