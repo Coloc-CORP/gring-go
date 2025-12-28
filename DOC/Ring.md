@@ -15,16 +15,16 @@ Créer une **bague connectée** ultra-compacte, élégante et rechargeable sans 
 
 ## 🧩 Architecture générale
 
-| Composant                | Fonction                                                             |
-|--------------------------|----------------------------------------------------------------------|
-| **nRF5340 (Nordic)**     | Microcontrôleur principal avec BLE                                  |
-| **MAX86150 / MAX30102**  | Capteur PPG (fréquence cardiaque, SpO2, stress)                     |
-| **BHI260AP / LSM6DSOX**  | IMU pour mouvement, podomètre, détection du sommeil                 |
-| **STTS22H**              | Capteur de température corporelle                                   |
-| **Batterie LiPo 10-20mAh** | Alimentation, rechargeable sans fil                                |
-| **STWLC38**              | Récepteur de recharge sans fil (Qi) avec protection intégrée        |
-| **PCB flexible (FPC)**   | Support du circuit miniature                                        |
-| **Boîtier titane**       | Enveloppe solide, légère et hypoallergénique                       |
+| Composant                  | Fonction                                                     |
+| -------------------------- | ------------------------------------------------------------ |
+| **nRF5340 (Nordic)**       | Microcontrôleur principal avec BLE                           |
+| **MAX86150 / MAX30102**    | Capteur PPG (fréquence cardiaque, SpO2, stress)              |
+| **BHI260AP / LSM6DSOX**    | IMU pour mouvement, podomètre, détection du sommeil          |
+| **STTS22H**                | Capteur de température corporelle                            |
+| **Batterie LiPo 10-20mAh** | Alimentation, rechargeable sans fil                          |
+| **STWLC38**                | Récepteur de recharge sans fil (Qi) avec protection intégrée |
+| **PCB flexible (FPC)**     | Support du circuit miniature                                 |
+| **Boîtier titane**         | Enveloppe solide, légère et hypoallergénique                 |
 
 ---
 
