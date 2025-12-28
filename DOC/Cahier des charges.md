@@ -21,7 +21,7 @@ C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué a
 
 ### Objectifs transverses
 -  Conduire l'organisation et le management du projet de bout en bout
--  Renforcer ces compétences techniques en autonomie
+-  Renforcer ses compétences techniques en autonomie
 
 ---
 ## Diagramme du projet
