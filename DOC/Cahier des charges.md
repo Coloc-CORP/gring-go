@@ -4,7 +4,7 @@ La formation d'ingénieur de l'ESISAR est une formation permettant de de constru
 
 Etre en entreprise, c'est faire continuellement des *projets*. En effet, ce sont autour de ces entités que grand nombre d'entre nous naviguent en entreprise. Ceux-ci se déroulent en plusieurs étapes et requièrent un large spectre de compétences pour les mettre à bien.
 
-Le projet, choisi par nous mêmes, est le projet d'une bague connectée que l'on appelle *Gring-Go*. Le travail va être effectué en passant de la spécifications du projet, au développement des différentes composantes, en passant par les différents tests démonstratifs pour enfin avoir un produit complet répondant aux différentes problématiques.
+Le projet, choisi par nous-mêmes, est le projet d'une bague connectée que l'on appelle *Gring-Go*. Le travail va être effectué en passant de la spécification du projet au développement des différentes composantes, en passant par les différents tests démonstratifs pour enfin avoir un produit complet répondant aux différentes problématiques.
 
 C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué au projet d'une centaine d'heures pour chaque collaborateur.
 
@@ -21,7 +21,7 @@ C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué a
 
 ### Objectifs transverses
 -  Conduire l'organisation et le management du projet de bout en bout
--  Renforcer ces compétences techniques en autonomie
+-  Renforcer ses compétences techniques en autonomie
 
 ---
 ## Diagramme du projet
