@@ -1,6 +1,7 @@
 / {
     aliases {
         haptic-i2c = &drv2605l;
+        bio-i2c = &max32664;
     };
 
     /* On utilise zephyr,user pour déclarer la pin proprement */
@@ -15,5 +16,10 @@
         compatible = "i2c-device";
         reg = <0x5a>;
         label = "DRV2605L";
+    };
+    max32664: max32664@55 {
+        compatible = "i2c-device";
+        reg = <0x55>;
+        label = "MAX32664";
     };
 };
