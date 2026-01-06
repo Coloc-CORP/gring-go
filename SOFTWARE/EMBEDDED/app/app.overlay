@@ -7,6 +7,8 @@
     /* On utilise zephyr,user pour déclarer la pin proprement */
     zephyr,user {
         haptic-en-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
+        bio-rst-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+        bio-mfio-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
     };
 };
 
