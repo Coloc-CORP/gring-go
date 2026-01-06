@@ -8,6 +8,13 @@ cmake_minimum_required(VERSION 3.20.0)
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(app)
 
+# Spécifie explicitement le chemin de sortie dans le dossier de build
+generate_inc_file_for_target(app 
+    ${CMAKE_CURRENT_SOURCE_DIR}/assets/bhi260ap_arc_fw.bin 
+    ${CMAKE_CURRENT_BINARY_DIR}/bhi260ap_arc_fw.bin.inc
+)
+target_include_directories(app PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+
 # NORDIC SDK APP START
 target_sources(app PRIVATE src/main.c)
 
