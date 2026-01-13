@@ -45,12 +45,19 @@ typedef struct {
     uint8_t battery_level;
     bool is_charging;
     uint16_t voltage_mv;
-} charge_status_t;
+} charge_data_t;
+
+typedef enum {
+    CHG_STATE_READY,
+    CHG_STATE_CHARGING,
+    CHG_STATE_DONE,
+    CHG_STATE_FAULT
+} charge_state_t;
 
 typedef struct {
     bio_data_t bio;
     imu_data_t imu;
-    charge_status_t charge;
+    charge_data_t charge;
     float temp_c;
 } sensors_data_t;
 

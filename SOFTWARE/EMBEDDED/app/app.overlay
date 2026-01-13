@@ -2,6 +2,7 @@
     aliases {
         haptic-i2c = &drv2605l;
         bio-i2c = &max32664;
+        chg-i2c = &bq25120a;
     };
 
     /* On utilise zephyr,user pour déclarer la pin proprement */
@@ -23,5 +24,10 @@
         compatible = "i2c-device";
         reg = <0x55>;
         label = "MAX32664";
+    };
+    bq25120a: bq25120a@6a {
+        compatible = "i2c-device";
+        reg = <0x6a>;
+        label = "BQ25120A";
     };
 };
