@@ -1,4 +1,4 @@
-<img width="3072" height="2048" alt="image" src="https://github.com/user-attachments/assets/4cb2c9ce-88e8-4765-b679-59abb065394b" />## Introduction
+## Introduction
 
 La formation d'ingénieur de l'ESISAR est une formation permettant de de construire les connaissances et compétences de l'ingénieur que celui-ci pourra être confronté dans sa carrière professionnelle. Cela est fait de différentes façon lors des différents cours suivis dans l'école mais la formation passe par une étape très importante : la mise en situation réelle.
 
