@@ -1,4 +1,4 @@
-## Introduction
+<img width="3072" height="2048" alt="image" src="https://github.com/user-attachments/assets/4cb2c9ce-88e8-4765-b679-59abb065394b" />## Introduction
 
 La formation d'ingénieur de l'ESISAR est une formation permettant de de construire les connaissances et compétences de l'ingénieur que celui-ci pourra être confronté dans sa carrière professionnelle. Cela est fait de différentes façon lors des différents cours suivis dans l'école mais la formation passe par une étape très importante : la mise en situation réelle.
 
@@ -26,7 +26,7 @@ C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué a
 ---
 ## Diagramme du projet
 
-![Diagramme synopsys.png](IMAGES/Diagramme synopsys.png)
+![Diagramme synopsys.png](IMAGES/Diagramme%20synopsys.png)
 
 ---
 ## Description fonctionnelle
