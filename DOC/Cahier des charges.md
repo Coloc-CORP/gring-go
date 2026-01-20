@@ -26,7 +26,7 @@ C'est un projet qui se déroule sur 9 semaines avec un nombre d'heures alloué a
 ---
 ## Diagramme du projet
 
-![[Diagramme synopsys.png]]
+![Diagramme synopsys.png](IMAGES/Diagramme synopsys.png)
 
 ---
 ## Description fonctionnelle
