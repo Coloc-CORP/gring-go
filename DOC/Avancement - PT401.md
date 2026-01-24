@@ -5,7 +5,8 @@
 
 Différents documents rédigés : 
 - Cahier des charges
-- Diagramme de Gantt
+- Diagramme de Gantt (organisation + attribution des tâches)
+*Vous pouvez retrouver 2 fichiers pdf : Gantt_Gring-go.pdf & Gantt_Gring-go-V2.pdf. La deuxième version incluant les retards.* 
 - Répartition horaire
 
 Suivi organisé : [Projet gring-go Github](https://github.com/Coloc-CORP/gring-go)
@@ -109,3 +110,8 @@ Suite à l'appui du bouton *Scan Devices*, la liste d'appareils bluetooth appara
 
 On retrouve une autre thématique qui est l'autorisation de permissions. 
 
+## Retards (justification)
+
+On retrouve de légers retards sur 2 points : 
+- La partie hardware avec notamment l'alimentation boitier : celle-ci a pris du retard avec l’absence de composants.
+- L'application Android est plus lente à développer que prévu car c'est un nouvel environnement sur lequel nous débutons. C'est pour cela que le temps d'adaptation n'est pas a négligé 

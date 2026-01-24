@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt Gring-Go" company="" webLink="http://" view-date="2025-08-01" view-index="1" gantt-divider-location="351" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt Gring-Go" company="" webLink="http://" view-date="2025-08-01" view-index="0" gantt-divider-location="540" resource-divider-location="300" version="3.3.3316" locale="fr_FR">
     <description/>
     <view zooming-state="default:9" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="200" order="0"/>
-        <field id="tpd4" name="Date de début" width="75" order="1"/>
-        <field id="tpd5" name="Date de fin" width="75" order="2"/>
+        <field id="tpd3" name="Nom" width="308" order="0"/>
+        <field id="tpd4" name="Date de début" width="115" order="1"/>
+        <field id="tpd5" name="Date de fin" width="116" order="2"/>
         <field id="tpd15" name="Notes" width="20" order="3"/>
         <option id="filter.completedTasks" value="false"/>
         <option id="filter.dueTodayTasks" value="false"/>
@@ -12,8 +12,8 @@
         <option id="color.recent"><![CDATA[#0000ff #ffffff #33ccff #00cc33 #663300 #cccccc #00ccff #ff3300 #cccc00]]></option>
     </view>
     <view id="resource-table">
-        <field id="0" name="Nom" width="199" order="0"/>
-        <field id="1" name="Rôle par défaut" width="82" order="1"/>
+        <field id="0" name="Nom" width="206" order="0"/>
+        <field id="1" name="Rôle par défaut" width="90" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -63,8 +63,8 @@
             <depend id="16" type="2" difference="0" hardness="Strong"/>
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="11" uid="9dd94b4066394b76ac26c7a3724bcb19" name="HW : Alimentation et boitier" color="#ff3300" meeting="false" start="2025-09-16" duration="29" complete="0" expand="true">
-            <depend id="24" type="2" difference="51" hardness="Strong"/>
+        <task id="11" uid="9dd94b4066394b76ac26c7a3724bcb19" name="HW : Alimentation et boitier" color="#ff3300" meeting="false" start="2025-09-16" duration="40" complete="0" expand="true">
+            <depend id="24" type="2" difference="40" hardness="Strong"/>
         </task>
         <task id="24" uid="01c02e5c13544a66badef0066af7f215" name="HW : Alimentation et boitier P2" color="#ff3300" meeting="false" start="2026-01-06" duration="29" complete="0" expand="true">
             <depend id="27" type="2" difference="41" hardness="Strong"/>
@@ -83,8 +83,8 @@
             <depend id="16" type="2" difference="0" hardness="Strong"/>
             <depend id="17" type="2" difference="0" hardness="Strong"/>
         </task>
-        <task id="15" uid="08dbcd25a598463ba51170dc9adb6b25" name="SW : Application Android" color="#0000ff" meeting="false" start="2025-09-30" duration="19" complete="0" expand="true">
-            <depend id="23" type="2" difference="51" hardness="Strong"/>
+        <task id="15" uid="08dbcd25a598463ba51170dc9adb6b25" name="SW : Application Android" color="#0000ff" meeting="false" start="2025-09-30" duration="30" complete="0" expand="true">
+            <depend id="23" type="2" difference="40" hardness="Strong"/>
         </task>
         <task id="23" uid="e74fb85f8cd04e72a5f33e01f234cf18" name="SW : Application Android P2" color="#0000ff" meeting="false" start="2026-01-06" duration="29" complete="0" expand="true">
             <depend id="26" type="2" difference="41" hardness="Strong"/>
@@ -96,7 +96,7 @@
         <task id="16" uid="533d75d1ebfd4ec6b1b264f0ffdd3b27" name="Modélisation 3D" meeting="false" start="2026-05-07" duration="19" complete="0" expand="true"/>
         <task id="17" uid="91abc9da5fb84fc186dac2c171c76476" name="Etude de consommation" color="#00cc33" meeting="false" start="2026-05-07" duration="19" complete="0" expand="true"/>
         <task id="18" uid="bea8dda9183d4eea96f1b11075f46919" name="Documentation" color="#33ccff" meeting="false" start="2025-09-16" duration="186" complete="0" expand="true"/>
-        <task id="22" uid="fddacfdc466a42caa4f937c63cf1df1d" name="Commande Matériel" color="#663300" meeting="false" start="2025-10-03" duration="1" complete="0" expand="true"/>
+        <task id="22" uid="fddacfdc466a42caa4f937c63cf1df1d" name="Commande Matériel" color="#663300" meeting="false" start="2025-10-03" duration="80" complete="0" expand="true"/>
         <task id="19" uid="fd8888c008ab4fff93141c8f649d9d4c" name="Entreprise" color="#ffffff" shape="0,0,1,1,0,1,1,0,1,1,0,0,1,0,0,1" meeting="false" start="2025-10-27" duration="51" complete="0" expand="true"/>
         <task id="20" uid="91a586bf893e4f87951bd35745f2ad4e" name="Entreprise" color="#ffffff" shape="0,0,1,1,0,1,1,0,1,1,0,0,1,0,0,1" meeting="false" start="2026-02-16" duration="41" complete="0" expand="true"/>
     </tasks>
@@ -143,6 +143,30 @@
         <allocation task-id="22" resource-id="3" function="Default:0" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
-    <previous/>
+    <previous>
+        <previous-tasks name="V 1.0">
+            <previous-task id="0" start="2025-09-09" duration="5" meeting="false" super="false"/>
+            <previous-task id="1" start="2025-09-09" duration="5" meeting="false" super="false"/>
+            <previous-task id="2" start="2025-09-16" duration="10" meeting="false" super="false"/>
+            <previous-task id="3" start="2025-09-16" duration="29" meeting="false" super="false"/>
+            <previous-task id="10" start="2026-01-06" duration="29" meeting="false" super="false"/>
+            <previous-task id="28" start="2026-04-14" duration="17" meeting="false" super="false"/>
+            <previous-task id="11" start="2025-09-16" duration="29" meeting="false" super="false"/>
+            <previous-task id="24" start="2026-01-06" duration="29" meeting="false" super="false"/>
+            <previous-task id="27" start="2026-04-14" duration="17" meeting="false" super="false"/>
+            <previous-task id="12" start="2025-09-30" duration="19" meeting="false" super="false"/>
+            <previous-task id="13" start="2026-01-06" duration="29" meeting="false" super="false"/>
+            <previous-task id="29" start="2026-04-14" duration="17" meeting="false" super="false"/>
+            <previous-task id="15" start="2025-09-30" duration="19" meeting="false" super="false"/>
+            <previous-task id="23" start="2026-01-06" duration="29" meeting="false" super="false"/>
+            <previous-task id="26" start="2026-04-14" duration="17" meeting="false" super="false"/>
+            <previous-task id="16" start="2026-05-07" duration="19" meeting="false" super="false"/>
+            <previous-task id="17" start="2026-05-07" duration="19" meeting="false" super="false"/>
+            <previous-task id="18" start="2025-09-16" duration="186" meeting="false" super="false"/>
+            <previous-task id="22" start="2025-10-03" duration="1" meeting="false" super="false"/>
+            <previous-task id="19" start="2025-10-27" duration="51" meeting="false" super="false"/>
+            <previous-task id="20" start="2026-02-16" duration="41" meeting="false" super="false"/>
+        </previous-tasks>
+    </previous>
     <roles roleset-name="Default"/>
 </project>
