@@ -52,20 +52,34 @@ int TEMP_Init(void) {
  * @return status code
  */
 int TEMP_ReadTemperature(float *temp_c) {
+    uint8_t status;
     uint8_t data[2];
     int16_t temp_raw;
-    
-    /* Lecture burst des deux registres (0x06 et 0x07) */
-    /* IF_ADD_INC permet de lire les deux d'un coup proprement */
+    int retry = 10; // Sécurité pour ne pas boucler à l'infini
+
+    /* 1. Attendre que la donnée soit disponible (BUSY == 0) */
+    do {
+        if (TEMP_ReadReg(STTS22H_REG_STATUS, &status) != STATUS_OK) {
+            return STATUS_ERR_I2C_COM;
+        }
+        if (!(status & STTS22H_STATUS_BUSY)) {
+            break; // Sort de la boucle si BUSY == 0
+        }
+        k_msleep(1); // Petite pause
+    } while (--retry > 0);
+
+    if (retry == 0) {
+        return STATUS_ERR_NOT_READY;
+    }
+
+    /* 2. Lecture burst des deux registres (0x06 et 0x07) */
     if (i2c_burst_read_dt(&temp_i2c, STTS22H_REG_TEMP_L_OUT, data, 2) != 0) {
         return STATUS_ERR_I2C_COM;
     }
 
-    /* Combinaison des deux octets */
     temp_raw = (int16_t)((data[1] << 8) | data[0]);
 
-    /* Conversion selon Section 8 : 100 LSB/°C */
-    /* Le cast en int16_t gère automatiquement le complément à deux */
+    /* 3. Conversion 100 LSB/°C */
     *temp_c = (float)temp_raw / 100.0f;
 
     return STATUS_OK;

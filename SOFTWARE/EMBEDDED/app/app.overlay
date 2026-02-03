@@ -18,9 +18,9 @@
         reg = <0x5a>;
         label = "DRV2605L";
     };
-    stts22h: stts22h@70 {
+    stts22h: stts22h@3C {
         compatible = "i2c-device";
-        reg = <0x70>;
+        reg = <0x3C>;
         label = "STTS22H";
     };
 };

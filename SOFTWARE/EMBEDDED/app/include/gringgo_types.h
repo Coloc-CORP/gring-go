@@ -16,9 +16,9 @@ typedef enum {
 } activity_mode_t;
 
 typedef enum {
-    TEMP_MODE_ONESHOT = 0x01001001,
-    TEMP_MODE_FREERUN = 0x01001100,
-    TEMP_MODE_LOW_ODR = 0x11001000
+    TEMP_MODE_ONESHOT = 0x49,
+    TEMP_MODE_FREERUN = 0x4C,
+    TEMP_MODE_LOW_ODR = 0xC8
 } temp_op_mode_t;
 
 typedef enum {

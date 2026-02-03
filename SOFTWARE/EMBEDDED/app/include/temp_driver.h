@@ -20,6 +20,9 @@
 #define STTS22H_CTRL_FREERUN        BIT(2) /* Mode mesure continue */
 #define STTS22H_CTRL_ONE_SHOT       BIT(0) /* Déclenche une mesure unique */
 
+/* --- Masques Registre STATUS (05h) --- */
+#define STTS22H_STATUS_BUSY         BIT(0)
+
 /* --- Valeurs fixes --- */
 #define STTS22H_VAL_WHOAMI          0xA0
 
