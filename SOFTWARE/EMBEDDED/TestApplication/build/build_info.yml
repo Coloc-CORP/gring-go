@@ -1,0 +1,27 @@
+cmake:
+  application:
+    source-dir: '/home/bolobos/ncs/v3.1.1/zephyr/share/sysbuild'
+  board:
+    name: 'nrf5340dk'
+    path:
+     - '/home/bolobos/ncs/v3.1.1/zephyr/boards/nordic/nrf5340dk'
+    qualifiers: 'nrf5340/cpuapp'
+    revision: ''
+  images:
+   - name: 'peripheral_uart'
+     source-dir: '/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart'
+     type: 'MAIN'
+   - name: 'ipc_radio'
+     source-dir: ''
+  kconfig:
+    files:
+     - '/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/empty.conf'
+     - '/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/empty.conf'
+    user-files:
+     - '/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/empty.conf'
+  sysbuild: 'true'
+version: '0.1.0'
+west:
+  command: '/home/bolobos/ncs/toolchains/b2ecd2435d/usr/local/bin/west build --build-dir /home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build /home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart --pristine --board nrf5340dk/nrf5340/cpuapp -- -DCONFIG_DEBUG_THREAD_INFO=y'
+  topdir: '/home/bolobos/ncs/v3.1.1'
+  version: '1.4.0'

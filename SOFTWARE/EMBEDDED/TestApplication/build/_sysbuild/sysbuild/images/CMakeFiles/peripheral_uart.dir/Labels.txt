@@ -1,0 +1,13 @@
+# Target labels
+ peripheral_uart
+# Source files and their labels
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_uart
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_uart.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_uart-complete.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-build.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-configure.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-download.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-install.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-mkdir.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-patch.rule
+/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-update.rule

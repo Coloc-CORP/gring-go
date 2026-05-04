@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_uart"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_uart.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/CMakeFiles/peripheral_uart-complete.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-build.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-configure.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-download.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-install.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-mkdir.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-patch.rule"
+		},
+		{
+			"file" : "/home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/_sysbuild/sysbuild/images/peripheral_uart-prefix/src/peripheral_uart-stamp/peripheral_uart-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"peripheral_uart"
+		],
+		"name" : "peripheral_uart"
+	}
+}

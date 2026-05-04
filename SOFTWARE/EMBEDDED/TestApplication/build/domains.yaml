@@ -1,0 +1,10 @@
+default: peripheral_uart
+build_dir: /home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build
+domains:
+  - name: peripheral_uart
+    build_dir: /home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/peripheral_uart
+  - name: ipc_radio
+    build_dir: /home/bolobos/Documents/gring-go/SOFTWARE/EMBEDDED/peripheral_uart/build/ipc_radio
+flash_order:
+  - ipc_radio
+  - peripheral_uart
