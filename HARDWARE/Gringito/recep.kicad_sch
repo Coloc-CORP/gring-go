@@ -2445,6 +2445,12 @@
 		(uuid "0789e0d3-117c-46c1-8a89-2ce121564b22")
 	)
 	(junction
+		(at 194.31 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "11a98b86-da9c-4000-8188-9bf9840d3189")
+	)
+	(junction
 		(at 80.01 139.7)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2461,12 +2467,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "266ae468-18df-4e59-a324-3494a8604501")
-	)
-	(junction
-		(at 63.5 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "32a728b8-e742-4bd2-bb94-6fbbf1e92c0f")
 	)
 	(junction
 		(at 71.12 151.13)
@@ -2533,12 +2533,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "76cf1591-9824-4e83-b11a-6da5cb4d529c")
-	)
-	(junction
-		(at 71.12 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7e000a56-c7a4-40f6-9346-a8c537c5a1fe")
 	)
 	(junction
 		(at 127 80.01)
@@ -2611,6 +2605,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c7cc5dc4-e67a-4d59-8749-7ca5f287e447")
+	)
+	(junction
+		(at 191.77 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb327cc2-c360-4014-a83f-92099cf455f9")
 	)
 	(junction
 		(at 76.2 172.72)
@@ -2818,6 +2818,16 @@
 	)
 	(wire
 		(pts
+			(xy 186.69 128.27) (xy 189.23 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "263fac5e-dc9b-487f-88d8-e8fec19d2d01")
+	)
+	(wire
+		(pts
 			(xy 210.82 123.19) (xy 210.82 124.46)
 		)
 		(stroke
@@ -2938,13 +2948,13 @@
 	)
 	(wire
 		(pts
-			(xy 71.12 139.7) (xy 63.5 139.7)
+			(xy 194.31 137.16) (xy 194.31 143.51)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4848d5e1-2f6a-4a30-931e-3ad116135acd")
+		(uuid "4e8498f4-0019-4327-ab07-4dccb1987d77")
 	)
 	(wire
 		(pts
@@ -3208,7 +3218,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 130.81) (xy 194.31 143.51)
+			(xy 194.31 130.81) (xy 194.31 137.16)
 		)
 		(stroke
 			(width 0)
@@ -3285,6 +3295,16 @@
 			(type default)
 		)
 		(uuid "a994bb66-9d83-438b-8373-90f3e1289263")
+	)
+	(wire
+		(pts
+			(xy 189.23 137.16) (xy 194.31 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa48166e-2b6a-46b3-80c3-9c5a9eda1f8d")
 	)
 	(wire
 		(pts
@@ -3405,6 +3425,16 @@
 			(type default)
 		)
 		(uuid "bbc9d659-46b0-4405-81eb-40c77fc5a06d")
+	)
+	(wire
+		(pts
+			(xy 186.69 125.73) (xy 191.77 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc690ddc-736c-45a2-93ed-e1b4e4769c3c")
 	)
 	(wire
 		(pts
@@ -3698,6 +3728,16 @@
 	)
 	(wire
 		(pts
+			(xy 191.77 125.73) (xy 191.77 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3cd7b3e-fcde-4f28-bf7c-aff2769965fa")
+	)
+	(wire
+		(pts
 			(xy 49.53 57.15) (xy 53.34 57.15)
 		)
 		(stroke
@@ -3735,6 +3775,16 @@
 			(type default)
 		)
 		(uuid "f9402106-c018-4d26-b219-3245e7050371")
+	)
+	(wire
+		(pts
+			(xy 189.23 128.27) (xy 189.23 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fda2b121-1d7f-4530-8d5f-3fdee3837ba4")
 	)
 	(global_label "AC2"
 		(shape input)
@@ -6380,6 +6430,74 @@
 			(project "Gringito"
 				(path "/b72a56c5-f9ec-4576-b7ce-b467e19fda9b/470eb5a5-9a20-43a6-b8ca-581ac88d1304"
 					(reference "C41")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 181.61 128.27 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bec5da27-dbcb-4894-929d-89a2a4d37dcb")
+		(property "Reference" "J4"
+			(at 181.61 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 181.61 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 181.61 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 181.61 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 181.61 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "02904177-18d0-495c-95aa-3b8ea0315b68")
+		)
+		(pin "1"
+			(uuid "b9f2dc38-e23b-4209-bd11-4c6cfb6f9fda")
+		)
+		(instances
+			(project "Gringito"
+				(path "/b72a56c5-f9ec-4576-b7ce-b467e19fda9b/470eb5a5-9a20-43a6-b8ca-581ac88d1304"
+					(reference "J4")
 					(unit 1)
 				)
 			)
