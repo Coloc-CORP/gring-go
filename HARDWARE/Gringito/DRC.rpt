@@ -1,0 +1,192 @@
+** Drc report for Gringito.kicad_pcb **
+** Created on 2026-05-06T11:04:59+0200 **
+
+** Found 59 DRC violations **
+[malformed_courtyard]: Empreinte a une zone d'occupation mal formée (n'est pas une forme fermée)
+    Forçage local; error
+    @(135,2390 mm, 104,3570 mm): Empreinte U2
+[malformed_courtyard]: Empreinte a une zone d'occupation mal formée (n'est pas une forme fermée)
+    Forçage local; error
+    @(135,2390 mm, 104,3570 mm): Empreinte U2
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(77,9000 mm, 84,5000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(109,2390 mm, 89,3570 mm): Pad métallisé V [GND] de U5
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(110,9640 mm, 90,1570 mm): Pad métallisé V [GND] de U5
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(109,2390 mm, 90,1570 mm): Pad métallisé V [GND] de U5
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(107,5140 mm, 90,1570 mm): Pad métallisé V [GND] de U5
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(109,2390 mm, 90,9570 mm): Pad métallisé V [GND] de U5
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(116,5000 mm, 88,9000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(76,5000 mm, 84,5000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [GND1] de U6
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [GND1] de U6
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [GND1] de U6
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [GND1] de U6
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [GND1] de U6
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(122,9500 mm, 50,9752 mm): Pad Métallisé [GND1] de U6
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(106,1000 mm, 89,6000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(116,5000 mm, 88,0000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(105,0000 mm, 91,8000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(116,5000 mm, 89,7000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(77,7000 mm, 98,8000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(119,4140 mm, 87,9570 mm): Pad métallisé V [GND] de U3
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(121,1390 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(119,4140 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(117,6890 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(119,4140 mm, 89,5570 mm): Pad métallisé V [GND] de U3
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(105,0000 mm, 89,6000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(106,1000 mm, 90,6000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(79,3000 mm, 84,5000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(120,2175 mm, 98,7285 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(118,6105 mm, 98,7285 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(121,7390 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(120,2175 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(118,6105 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(117,0890 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(121,7390 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(120,2175 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(118,6105 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(117,0890 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(120,2175 mm, 103,3785 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(118,6105 mm, 103,3785 mm): Pad métallisé V [GNDA] de U4
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(106,1000 mm, 91,8000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(115,7000 mm, 90,8000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(76,4000 mm, 89,1000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
+    Règle: configuration des contraintes du PCB; error
+    @(105,0000 mm, 90,6000 mm): Pad métallisé V [GND] de 
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(148,0400 mm, 104,0664 mm): Via [VBUS] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(81,9000 mm, 96,0000 mm): Via [VBUS] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(118,8000 mm, 94,3000 mm): Via [/VIN_MOSFET] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(108,6000 mm, 95,3000 mm): Via [/VIN_MOSFET] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(143,0000 mm, 100,3000 mm): Via [/VIN_MOSFET] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(124,6000 mm, 103,3000 mm): Via [/COMM-] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(124,7000 mm, 102,2000 mm): Via [/COMM-] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(123,8965 mm, 102,8035 mm): Via [/COMM+] sur F.Cu - B.Cu
+[drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
+    Règle: netclasse 'Default'; error
+    @(123,9919 mm, 104,1500 mm): Via [/COMM+] sur F.Cu - B.Cu
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche In2.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(67,0000 mm, 73,5000 mm): Zone [GND] sur F.Cu, B.Cu et 2 en plus, priorité 2
+    @(117,6890 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(102,8000 mm, 85,4000 mm): Zone [Net-(U5-VSW)] sur F.Cu, priorité 6
+    @(108,6640 mm, 88,5570 mm): Pad 4 [Net-(U5-VSW)] de U5 sur F.Cu
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(167,0000 mm, 23,7500 mm): Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1
+    @(124,0937 mm, 53,9876 mm): Pad 1 [GND1] de U6 sur F.Cu
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(167,0000 mm, 23,7500 mm): Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1
+    @(122,5937 mm, 53,9876 mm): Pad 20 [GND1] de U6 sur F.Cu
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(167,0000 mm, 23,7500 mm): Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [GND1] de U6
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

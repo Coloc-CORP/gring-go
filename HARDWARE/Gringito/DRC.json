@@ -1,0 +1,3436 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-05-06T10:10:22+0200",
+    "kicad_version": "9.0.7",
+    "schematic_parity": [],
+    "source": "Gringito.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Zone [GND] sur F.Cu, priorité 9",
+                    "pos": {
+                        "x": 104.2,
+                        "y": 95.6
+                    },
+                    "uuid": "71fb84b2-3e45-42ba-a05a-fdbe2fff866f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Zone [GND] sur F.Cu, priorité 9",
+                    "pos": {
+                        "x": 104.2,
+                        "y": 95.6
+                    },
+                    "uuid": "71fb84b2-3e45-42ba-a05a-fdbe2fff866f"
+                },
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad B9 [VBUS] de J1 sur F.Cu",
+                    "pos": {
+                        "x": 73.75,
+                        "y": 92.73
+                    },
+                    "uuid": "928fa552-309e-46e5-a44a-35ccae7bf0c5"
+                },
+                {
+                    "description": "Pad A9 [VBUS] de J1 sur F.Cu",
+                    "pos": {
+                        "x": 73.75,
+                        "y": 95.77
+                    },
+                    "uuid": "5ed728df-509a-403a-81c3-b777e6da1734"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad A9 [VBUS] de J1 sur F.Cu",
+                    "pos": {
+                        "x": 73.75,
+                        "y": 95.77
+                    },
+                    "uuid": "5ed728df-509a-403a-81c3-b777e6da1734"
+                },
+                {
+                    "description": "Pad 1 [VBUS] de C3 sur F.Cu",
+                    "pos": {
+                        "x": 77.7175,
+                        "y": 95.75
+                    },
+                    "uuid": "99469008-c618-423e-8fbb-c4be25f2e1e1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad 1 [VBUS] de C2 sur F.Cu",
+                    "pos": {
+                        "x": 77.7175,
+                        "y": 92.75
+                    },
+                    "uuid": "aaac3e9d-9452-4565-a2a4-7576951a662a"
+                },
+                {
+                    "description": "Pad 1 [VBUS] de C3 sur F.Cu",
+                    "pos": {
+                        "x": 77.7175,
+                        "y": 95.75
+                    },
+                    "uuid": "99469008-c618-423e-8fbb-c4be25f2e1e1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Zone [VBUS] sur F.Cu, priorité 2",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 92.15
+                    },
+                    "uuid": "b921fbac-4c9c-4578-9729-3cbcf3559703"
+                },
+                {
+                    "description": "Pad 1 [VBUS] de C3 sur F.Cu",
+                    "pos": {
+                        "x": 77.7175,
+                        "y": 95.75
+                    },
+                    "uuid": "99469008-c618-423e-8fbb-c4be25f2e1e1"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad 3 [VBUS] de U1 sur F.Cu",
+                    "pos": {
+                        "x": 84.7175,
+                        "y": 94.700001
+                    },
+                    "uuid": "122a8804-6342-4f85-bb7c-03180f89a85f"
+                },
+                {
+                    "description": "Piste [VBUS] sur F.Cu, long. 0,0000 mm",
+                    "pos": {
+                        "x": 84.717499,
+                        "y": 92.8
+                    },
+                    "uuid": "3b438e33-284c-4c92-ba59-b053cae163f6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad 2 [AC1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 125.0687,
+                        "y": 53.512599
+                    },
+                    "uuid": "b2bc268d-5299-4941-a212-12a969fc992a"
+                },
+                {
+                    "description": "Zone [AC1] sur F.Cu, priorité 12",
+                    "pos": {
+                        "x": 120.5,
+                        "y": 62.6
+                    },
+                    "uuid": "28a7b70a-e99b-4de5-9be2-80f03b5094bf"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Connexion manquante entre les éléments",
+            "items": [
+                {
+                    "description": "Pad 2 [AC2] de C39 sur F.Cu",
+                    "pos": {
+                        "x": 122.45,
+                        "y": 56.3
+                    },
+                    "uuid": "9b2bf62b-72b3-4492-bd0b-b67b1776f89f"
+                },
+                {
+                    "description": "Pad [AC2] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 121.6187,
+                        "y": 53.512599
+                    },
+                    "uuid": "efc8ea9f-a61c-4495-9bc7-77b99166db14"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Eléments court-circuitant deux nets (nets GND1 et  )",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,1250 mm)",
+            "items": [
+                {
+                    "description": "Piste [BOOT2] sur F.Cu, long. 3,5561 mm",
+                    "pos": {
+                        "x": 121.6187,
+                        "y": 52.512601
+                    },
+                    "uuid": "0a3749c6-6a83-48f9-a0f1-0e140d5eb80b"
+                },
+                {
+                    "description": "Piste [Net-(U6-RECT)] sur F.Cu, long. 0,9721 mm",
+                    "pos": {
+                        "x": 119.9874,
+                        "y": 53.0126
+                    },
+                    "uuid": "3f7e6955-3bfb-4aca-954c-bf27d5437a8a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0147 mm)",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Eléments court-circuitant deux nets (nets GND1 et  )",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 49.537601
+                    },
+                    "uuid": "31712008-9f8f-4921-b98a-8d1d82a17d74"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 50.9752
+                    },
+                    "uuid": "eec1e83a-3edd-4578-924c-7c98636a160b"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Eléments court-circuitant deux nets (nets  et  GND1)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 52.55
+                    },
+                    "uuid": "3f71ace9-fc11-4aaa-8d6d-bbf045d83c69"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 53.987599
+                    },
+                    "uuid": "4899af83-80d2-4135-96b3-4fd89739456c"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Eléments court-circuitant deux nets (nets  et  GND1)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 53.987599
+                    },
+                    "uuid": "6cb38921-6d2f-4c74-b3c1-094abc7113ab"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Eléments court-circuitant deux nets (nets  et  GND1)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 50.9752
+                    },
+                    "uuid": "5512640f-12a7-4b49-beca-d3ecc6713bd1"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 49.537601
+                    },
+                    "uuid": "74f7fb2f-1cf2-4a90-895b-a4faa4d667e9"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0147 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 51.012599
+                    },
+                    "uuid": "807cfbaa-fefe-4d14-87ab-85d29710ab39"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Eléments court-circuitant deux nets (nets  et  GND1)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 52.512601
+                    },
+                    "uuid": "b773e82f-325c-4071-9e56-ec5a586487f7"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,8000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "7283b6d3-a1fe-446e-8ed2-5c5115f40d27"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 107.513998,
+                        "y": 90.157003
+                    },
+                    "uuid": "55960713-5e76-416b-b055-d2b4cb5a5960"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 89.357002
+                    },
+                    "uuid": "98fc80c2-6432-4871-9bcc-cbb17baf7689"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 110.963998,
+                        "y": 90.157003
+                    },
+                    "uuid": "2040cda2-288d-45e9-b806-1c9a8940df2a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.957004
+                    },
+                    "uuid": "519df5a0-27c7-4b5a-beb8-46a32313eb30"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 50.9752
+                    },
+                    "uuid": "eec1e83a-3edd-4578-924c-7c98636a160b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 50.9752
+                    },
+                    "uuid": "5512640f-12a7-4b49-beca-d3ecc6713bd1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 52.55
+                    },
+                    "uuid": "3f71ace9-fc11-4aaa-8d6d-bbf045d83c69"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 51.7626
+                    },
+                    "uuid": "e906f8e0-5f35-436f-9fa8-2ac5f31e15da"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 117.688998,
+                        "y": 88.757003
+                    },
+                    "uuid": "f914826e-a2e2-4d01-a45c-c560645cef78"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 87.957002
+                    },
+                    "uuid": "c2025440-26d4-4750-ae6b-b0257b52bbc3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,8000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "a7ad3db5-d7fe-4a98-8f65-fd019374db55"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 89.557004
+                    },
+                    "uuid": "f01bd01c-ebae-4ab0-b26f-4f9240db8f85"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 121.138998,
+                        "y": 88.757003
+                    },
+                    "uuid": "0f998676-6675-4105-bda2-3d7803854db9"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 121.738998,
+                        "y": 100.25
+                    },
+                    "uuid": "d0c071d8-d401-4483-81d2-b02d8db16f3a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 100.25
+                    },
+                    "uuid": "c1e7e209-a954-4bf3-a73c-0a4ac6c684dc"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 98.728502
+                    },
+                    "uuid": "7b988339-b951-473b-a8de-7411778dd455"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 100.25
+                    },
+                    "uuid": "8fc3850b-0d43-4447-b6bd-1cde273d4fb5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 103.3785
+                    },
+                    "uuid": "2d64e385-80df-404f-b9ac-82dc28b8922d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 103.3785
+                    },
+                    "uuid": "87f927f6-b23f-4f72-bca1-03595cdf5680"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 121.738998,
+                        "y": 101.857002
+                    },
+                    "uuid": "0ee35091-e80a-4807-8807-539f3e6eeca1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 101.857002
+                    },
+                    "uuid": "18682d89-576d-4422-adc9-4d879afd68b1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 117.089,
+                        "y": 100.25
+                    },
+                    "uuid": "9ae10dfc-72c2-42b7-9e2c-c6fad7e4edb0"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 101.857002
+                    },
+                    "uuid": "f2bf8911-c37d-4899-b507-71d490c38555"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 117.089,
+                        "y": 101.857002
+                    },
+                    "uuid": "cc463b5d-296e-4ef3-ac5a-b506bce02b38"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 98.728502
+                    },
+                    "uuid": "f3d29f67-9dcf-4a70-86b8-a935aed794ef"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Empreinte a une zone d'occupation mal formée (n'est pas une forme fermée)",
+            "items": [
+                {
+                    "description": "Empreinte U2",
+                    "pos": {
+                        "x": 135.238998,
+                        "y": 104.357002
+                    },
+                    "uuid": "297dd980-79de-4e1c-b4c8-1d0c5085b5d8"
+                }
+            ],
+            "severity": "error",
+            "type": "malformed_courtyard"
+        },
+        {
+            "description": "Empreinte a une zone d'occupation mal formée (n'est pas une forme fermée)",
+            "items": [
+                {
+                    "description": "Empreinte U2",
+                    "pos": {
+                        "x": 135.238998,
+                        "y": 104.357002
+                    },
+                    "uuid": "297dd980-79de-4e1c-b4c8-1d0c5085b5d8"
+                }
+            ],
+            "severity": "error",
+            "type": "malformed_courtyard"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 77.9,
+                        "y": 84.5
+                    },
+                    "uuid": "e6a7e8e0-9d5d-462e-9923-71b087464b0c"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 89.357002
+                    },
+                    "uuid": "98fc80c2-6432-4871-9bcc-cbb17baf7689"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 110.963998,
+                        "y": 90.157003
+                    },
+                    "uuid": "2040cda2-288d-45e9-b806-1c9a8940df2a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "7283b6d3-a1fe-446e-8ed2-5c5115f40d27"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 107.513998,
+                        "y": 90.157003
+                    },
+                    "uuid": "55960713-5e76-416b-b055-d2b4cb5a5960"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.957004
+                    },
+                    "uuid": "519df5a0-27c7-4b5a-beb8-46a32313eb30"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 116.5,
+                        "y": 88.9
+                    },
+                    "uuid": "727cdbe8-68e5-4f77-992c-68c0a0ad30c7"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 76.5,
+                        "y": 84.5
+                    },
+                    "uuid": "298d9a2d-ecd2-4ae3-b518-dd2eb3a0d283"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 50.9752
+                    },
+                    "uuid": "eec1e83a-3edd-4578-924c-7c98636a160b"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 52.55
+                    },
+                    "uuid": "3f71ace9-fc11-4aaa-8d6d-bbf045d83c69"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 51.7626
+                    },
+                    "uuid": "e906f8e0-5f35-436f-9fa8-2ac5f31e15da"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 50.9752
+                    },
+                    "uuid": "5512640f-12a7-4b49-beca-d3ecc6713bd1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 106.1,
+                        "y": 89.6
+                    },
+                    "uuid": "a281a597-6532-429e-a5af-80db0d0b6e26"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 116.5,
+                        "y": 88.0
+                    },
+                    "uuid": "7930363a-9e86-42b0-900f-9865496e12d7"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 105.0,
+                        "y": 91.8
+                    },
+                    "uuid": "342a379a-a289-4c11-bd9a-21e123673d33"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 116.5,
+                        "y": 89.7
+                    },
+                    "uuid": "b8783201-e5fb-4e79-83e2-d7bc8138a69d"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 77.7,
+                        "y": 98.8
+                    },
+                    "uuid": "50be2d6c-4185-4a71-afd4-c25cf676f2c8"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 87.957002
+                    },
+                    "uuid": "c2025440-26d4-4750-ae6b-b0257b52bbc3"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 121.138998,
+                        "y": 88.757003
+                    },
+                    "uuid": "0f998676-6675-4105-bda2-3d7803854db9"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "a7ad3db5-d7fe-4a98-8f65-fd019374db55"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 117.688998,
+                        "y": 88.757003
+                    },
+                    "uuid": "f914826e-a2e2-4d01-a45c-c560645cef78"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 89.557004
+                    },
+                    "uuid": "f01bd01c-ebae-4ab0-b26f-4f9240db8f85"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 105.0,
+                        "y": 89.6
+                    },
+                    "uuid": "cf366302-22e3-4f32-b26f-00cc7d291bdc"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 106.1,
+                        "y": 90.6
+                    },
+                    "uuid": "e7c494a7-7adc-4960-a94f-8e3128e39de3"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 79.3,
+                        "y": 84.5
+                    },
+                    "uuid": "dd44a49d-cb13-46e0-845c-6815c4b5019d"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 98.728502
+                    },
+                    "uuid": "7b988339-b951-473b-a8de-7411778dd455"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 98.728502
+                    },
+                    "uuid": "f3d29f67-9dcf-4a70-86b8-a935aed794ef"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 121.738998,
+                        "y": 100.25
+                    },
+                    "uuid": "d0c071d8-d401-4483-81d2-b02d8db16f3a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 100.25
+                    },
+                    "uuid": "c1e7e209-a954-4bf3-a73c-0a4ac6c684dc"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 100.25
+                    },
+                    "uuid": "8fc3850b-0d43-4447-b6bd-1cde273d4fb5"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 117.089,
+                        "y": 100.25
+                    },
+                    "uuid": "9ae10dfc-72c2-42b7-9e2c-c6fad7e4edb0"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 121.738998,
+                        "y": 101.857002
+                    },
+                    "uuid": "0ee35091-e80a-4807-8807-539f3e6eeca1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 101.857002
+                    },
+                    "uuid": "18682d89-576d-4422-adc9-4d879afd68b1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 101.857002
+                    },
+                    "uuid": "f2bf8911-c37d-4899-b507-71d490c38555"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 117.089,
+                        "y": 101.857002
+                    },
+                    "uuid": "cc463b5d-296e-4ef3-ac5a-b506bce02b38"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 103.3785
+                    },
+                    "uuid": "2d64e385-80df-404f-b9ac-82dc28b8922d"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 103.3785
+                    },
+                    "uuid": "87f927f6-b23f-4f72-bca1-03595cdf5680"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 106.1,
+                        "y": 91.8
+                    },
+                    "uuid": "c0cec721-e069-40c3-bf9d-8f0d47501b99"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 115.7,
+                        "y": 90.8
+                    },
+                    "uuid": "583ab7cd-80e4-4637-97a5-f67bc9dd72d1"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 76.4,
+                        "y": 89.1
+                    },
+                    "uuid": "21b428ab-731c-4c92-83b2-2b7354b9b004"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)",
+            "items": [
+                {
+                    "description": "Pad métallisé V [GND] de ",
+                    "pos": {
+                        "x": 105.0,
+                        "y": 90.6
+                    },
+                    "uuid": "e3301db8-da39-49bc-a4fa-357011e68234"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [VBUS] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 148.039998,
+                        "y": 104.066426
+                    },
+                    "uuid": "cd8e423c-6ed0-4da1-b713-6781ef4670bd"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [VBUS] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 81.9,
+                        "y": 96.0
+                    },
+                    "uuid": "f5bb1928-58db-4bde-beb1-4c15a595064f"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/VIN_MOSFET] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 118.8,
+                        "y": 94.3
+                    },
+                    "uuid": "198c273e-d046-41e0-b124-891442a72ee6"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/VIN_MOSFET] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 108.6,
+                        "y": 95.3
+                    },
+                    "uuid": "66c0c89d-c0c0-4090-acd8-c1b063393e49"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/VIN_MOSFET] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 143.0,
+                        "y": 100.3
+                    },
+                    "uuid": "ac26dd82-3f58-4f81-9608-33dbd8807955"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/COMM-] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 124.6,
+                        "y": 103.3
+                    },
+                    "uuid": "28107e05-de4a-4207-a7e9-99db8949e394"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/COMM-] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 124.6,
+                        "y": 102.4
+                    },
+                    "uuid": "cc672f4f-c85f-428b-b43f-6672e3ffe34a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/COMM+] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 123.9,
+                        "y": 103.9045
+                    },
+                    "uuid": "257f111f-0d0b-4a69-bec8-e33ada7cfa8b"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)",
+            "items": [
+                {
+                    "description": "Via [/COMM+] sur F.Cu - B.Cu",
+                    "pos": {
+                        "x": 123.8965,
+                        "y": 102.8035
+                    },
+                    "uuid": "fc0b5a29-cafb-4a8c-86e9-ff28cfc042e7"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Le C.I. a un contour mal formé (n'est pas une forme fermée)",
+            "items": [
+                {
+                    "description": "Segment sur Edge.Cuts",
+                    "pos": {
+                        "x": 67.0,
+                        "y": 73.5
+                    },
+                    "uuid": "d6e75ee3-090b-4300-8420-9ea75690ecc5"
+                }
+            ],
+            "severity": "error",
+            "type": "invalid_outline"
+        },
+        {
+            "description": "Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)",
+            "items": [
+                {
+                    "description": "Zone [Net-(U5-VSW)] sur F.Cu, priorité 6",
+                    "pos": {
+                        "x": 102.8,
+                        "y": 85.4
+                    },
+                    "uuid": "c1d246a9-d4c3-4d72-a7a5-b5adb618dace"
+                },
+                {
+                    "description": "Pad 4 [Net-(U5-VSW)] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 108.663998,
+                        "y": 88.557004
+                    },
+                    "uuid": "d7ff274b-1876-4579-879b-f0e8230327cc"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)",
+            "items": [
+                {
+                    "description": "Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1",
+                    "pos": {
+                        "x": 167.0,
+                        "y": 23.75
+                    },
+                    "uuid": "4aa1ffa2-b896-4f5f-8691-feca75222258"
+                },
+                {
+                    "description": "Pad 1 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 53.987599
+                    },
+                    "uuid": "d9346e68-9e33-4af7-9953-e898099cff18"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)",
+            "items": [
+                {
+                    "description": "Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1",
+                    "pos": {
+                        "x": 167.0,
+                        "y": 23.75
+                    },
+                    "uuid": "4aa1ffa2-b896-4f5f-8691-feca75222258"
+                },
+                {
+                    "description": "Pad 20 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 53.987599
+                    },
+                    "uuid": "36b15492-cd95-40c2-be7e-12aa0986f17f"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 50.9752
+                    },
+                    "uuid": "eec1e83a-3edd-4578-924c-7c98636a160b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 52.55
+                    },
+                    "uuid": "3f71ace9-fc11-4aaa-8d6d-bbf045d83c69"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 51.7626
+                    },
+                    "uuid": "e906f8e0-5f35-436f-9fa8-2ac5f31e15da"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 49.537601
+                    },
+                    "uuid": "31712008-9f8f-4921-b98a-8d1d82a17d74"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 50.9752
+                    },
+                    "uuid": "eec1e83a-3edd-4578-924c-7c98636a160b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 53.987599
+                    },
+                    "uuid": "4899af83-80d2-4135-96b3-4fd89739456c"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 52.55
+                    },
+                    "uuid": "3f71ace9-fc11-4aaa-8d6d-bbf045d83c69"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 53.987599
+                    },
+                    "uuid": "6cb38921-6d2f-4c74-b3c1-094abc7113ab"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 49.537601
+                    },
+                    "uuid": "74f7fb2f-1cf2-4a90-895b-a4faa4d667e9"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 50.9752
+                    },
+                    "uuid": "5512640f-12a7-4b49-beca-d3ecc6713bd1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 51.012599
+                    },
+                    "uuid": "807cfbaa-fefe-4d14-87ab-85d29710ab39"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 51.7626
+                    },
+                    "uuid": "e906f8e0-5f35-436f-9fa8-2ac5f31e15da"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 51.012599
+                    },
+                    "uuid": "807cfbaa-fefe-4d14-87ab-85d29710ab39"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 50.9752
+                    },
+                    "uuid": "5512640f-12a7-4b49-beca-d3ecc6713bd1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 52.512601
+                    },
+                    "uuid": "b773e82f-325c-4071-9e56-ec5a586487f7"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 52.512601
+                    },
+                    "uuid": "b773e82f-325c-4071-9e56-ec5a586487f7"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 89.357002
+                    },
+                    "uuid": "98fc80c2-6432-4871-9bcc-cbb17baf7689"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 110.963998,
+                        "y": 90.157003
+                    },
+                    "uuid": "2040cda2-288d-45e9-b806-1c9a8940df2a"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "7283b6d3-a1fe-446e-8ed2-5c5115f40d27"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 107.513998,
+                        "y": 90.157003
+                    },
+                    "uuid": "55960713-5e76-416b-b055-d2b4cb5a5960"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U5 sur F.Cu",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.157003
+                    },
+                    "uuid": "45d15471-d711-4c9e-bb90-644b33c85dd3"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U5",
+                    "pos": {
+                        "x": 109.238998,
+                        "y": 90.957004
+                    },
+                    "uuid": "519df5a0-27c7-4b5a-beb8-46a32313eb30"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 52.55
+                    },
+                    "uuid": "3f71ace9-fc11-4aaa-8d6d-bbf045d83c69"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 51.7626
+                    },
+                    "uuid": "575e8f78-3429-49c3-9a7e-ee8e1715319c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 50.9752
+                    },
+                    "uuid": "eec1e83a-3edd-4578-924c-7c98636a160b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 51.7626
+                    },
+                    "uuid": "e906f8e0-5f35-436f-9fa8-2ac5f31e15da"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 122.95,
+                        "y": 50.9752
+                    },
+                    "uuid": "5512640f-12a7-4b49-beca-d3ecc6713bd1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 21 [GND1] de U6 sur F.Cu",
+                    "pos": {
+                        "x": 123.3437,
+                        "y": 51.7626
+                    },
+                    "uuid": "e46970b8-a521-44ce-919a-a93a60f27461"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U6",
+                    "pos": {
+                        "x": 123.7374,
+                        "y": 52.55
+                    },
+                    "uuid": "002f70c8-aed0-48fd-9552-e8c5731d44a9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 123.15,
+                        "y": 53.351099
+                    },
+                    "uuid": "922d6ff7-6b6c-4a54-bd8c-3459cee09832"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 53.351099
+                    },
+                    "uuid": "02c947da-9afd-45bb-b04d-2231943a766b"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 53.351099
+                    },
+                    "uuid": "f4cc59cf-6abc-402c-8e01-9036e0f420f1"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 53.987599
+                    },
+                    "uuid": "4899af83-80d2-4135-96b3-4fd89739456c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 52.35
+                    },
+                    "uuid": "63769d5b-b0ec-4266-977d-f3abfa3b0c43"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 123.15,
+                        "y": 53.351099
+                    },
+                    "uuid": "922d6ff7-6b6c-4a54-bd8c-3459cee09832"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 53.351099
+                    },
+                    "uuid": "02c947da-9afd-45bb-b04d-2231943a766b"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 51.5626
+                    },
+                    "uuid": "ed100323-5140-4956-b014-d54e1fe3fb9d"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 52.35
+                    },
+                    "uuid": "63769d5b-b0ec-4266-977d-f3abfa3b0c43"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 123.15,
+                        "y": 53.351099
+                    },
+                    "uuid": "922d6ff7-6b6c-4a54-bd8c-3459cee09832"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 53.351099
+                    },
+                    "uuid": "02c947da-9afd-45bb-b04d-2231943a766b"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 51.5626
+                    },
+                    "uuid": "ed100323-5140-4956-b014-d54e1fe3fb9d"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 50.7752
+                    },
+                    "uuid": "4cd7a795-83e9-4dc2-8a7b-02a08bc420b3"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 49.537601
+                    },
+                    "uuid": "31712008-9f8f-4921-b98a-8d1d82a17d74"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 122.75,
+                        "y": 53.351099
+                    },
+                    "uuid": "e5277391-206d-4d34-8b0f-1570c1af8ace"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 123.15,
+                        "y": 53.351099
+                    },
+                    "uuid": "922d6ff7-6b6c-4a54-bd8c-3459cee09832"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 53.351099
+                    },
+                    "uuid": "f4cc59cf-6abc-402c-8e01-9036e0f420f1"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 53.987599
+                    },
+                    "uuid": "4899af83-80d2-4135-96b3-4fd89739456c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 52.35
+                    },
+                    "uuid": "63769d5b-b0ec-4266-977d-f3abfa3b0c43"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 122.75,
+                        "y": 53.351099
+                    },
+                    "uuid": "e5277391-206d-4d34-8b0f-1570c1af8ace"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 123.15,
+                        "y": 53.351099
+                    },
+                    "uuid": "922d6ff7-6b6c-4a54-bd8c-3459cee09832"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 51.5626
+                    },
+                    "uuid": "ed100323-5140-4956-b014-d54e1fe3fb9d"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 52.35
+                    },
+                    "uuid": "63769d5b-b0ec-4266-977d-f3abfa3b0c43"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 122.75,
+                        "y": 53.351099
+                    },
+                    "uuid": "e5277391-206d-4d34-8b0f-1570c1af8ace"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 122.593699,
+                        "y": 52.512601
+                    },
+                    "uuid": "1c7fd85e-3a03-4f23-8652-5ee642e3e33f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 123.15,
+                        "y": 53.351099
+                    },
+                    "uuid": "922d6ff7-6b6c-4a54-bd8c-3459cee09832"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 51.5626
+                    },
+                    "uuid": "ed100323-5140-4956-b014-d54e1fe3fb9d"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,0607 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 51.012599
+                    },
+                    "uuid": "04c3ae3f-0f26-41c7-b1b3-064ff5ab2b8d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Polygone de U6 sur F.Mask",
+                    "pos": {
+                        "x": 124.4322,
+                        "y": 50.7752
+                    },
+                    "uuid": "4cd7a795-83e9-4dc2-8a7b-02a08bc420b3"
+                },
+                {
+                    "description": "Piste [GND1] sur F.Cu, long. 1,4750 mm",
+                    "pos": {
+                        "x": 124.093701,
+                        "y": 49.537601
+                    },
+                    "uuid": "31712008-9f8f-4921-b98a-8d1d82a17d74"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 87.957002
+                    },
+                    "uuid": "c2025440-26d4-4750-ae6b-b0257b52bbc3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 121.138998,
+                        "y": 88.757003
+                    },
+                    "uuid": "0f998676-6675-4105-bda2-3d7803854db9"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "a7ad3db5-d7fe-4a98-8f65-fd019374db55"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 117.688998,
+                        "y": 88.757003
+                    },
+                    "uuid": "f914826e-a2e2-4d01-a45c-c560645cef78"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 9 [GND] de U3 sur F.Cu",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 88.757003
+                    },
+                    "uuid": "dab37645-d57f-4d61-b32b-41d9b794e04f"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U3",
+                    "pos": {
+                        "x": 119.413998,
+                        "y": 89.557004
+                    },
+                    "uuid": "f01bd01c-ebae-4ab0-b26f-4f9240db8f85"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 98.728502
+                    },
+                    "uuid": "7b988339-b951-473b-a8de-7411778dd455"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 100.25
+                    },
+                    "uuid": "c1e7e209-a954-4bf3-a73c-0a4ac6c684dc"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 121.738998,
+                        "y": 100.25
+                    },
+                    "uuid": "d0c071d8-d401-4483-81d2-b02d8db16f3a"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 121.738998,
+                        "y": 101.857002
+                    },
+                    "uuid": "0ee35091-e80a-4807-8807-539f3e6eeca1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 98.728502
+                    },
+                    "uuid": "f3d29f67-9dcf-4a70-86b8-a935aed794ef"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 100.25
+                    },
+                    "uuid": "8fc3850b-0d43-4447-b6bd-1cde273d4fb5"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 117.089,
+                        "y": 100.25
+                    },
+                    "uuid": "9ae10dfc-72c2-42b7-9e2c-c6fad7e4edb0"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 101.857002
+                    },
+                    "uuid": "f2bf8911-c37d-4899-b507-71d490c38555"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 117.089,
+                        "y": 101.857002
+                    },
+                    "uuid": "cc463b5d-296e-4ef3-ac5a-b506bce02b38"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 101.857002
+                    },
+                    "uuid": "18682d89-576d-4422-adc9-4d879afd68b1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 120.2175,
+                        "y": 103.3785
+                    },
+                    "uuid": "2d64e385-80df-404f-b9ac-82dc28b8922d"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "L’ouverture du masque de soudure de dessus relie des éléments de différents nets",
+            "items": [
+                {
+                    "description": "Pad 49 [GNDA] de U4 sur F.Cu",
+                    "pos": {
+                        "x": 119.413999,
+                        "y": 101.053501
+                    },
+                    "uuid": "8c972360-da8e-4d78-af93-18d87e429244"
+                },
+                {
+                    "description": "Pad métallisé V [<no net>] de U4",
+                    "pos": {
+                        "x": 118.610498,
+                        "y": 103.3785
+                    },
+                    "uuid": "87f927f6-b23f-4f72-bca1-03595cdf5680"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        }
+    ]
+}
