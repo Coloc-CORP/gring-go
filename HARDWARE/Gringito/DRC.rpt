@@ -1,7 +1,151 @@
 ** Drc report for Gringito.kicad_pcb **
-** Created on 2026-05-06T11:04:59+0200 **
+** Created on 2026-05-11T11:23:10+0200 **
 
-** Found 59 DRC violations **
+** Found 205 DRC violations **
+[shorting_items]: Eléments court-circuitant deux nets (nets GND1 et  )
+    Forçage local; error
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[shorting_items]: Eléments court-circuitant deux nets (nets GND1 et  )
+    Forçage local; error
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[shorting_items]: Eléments court-circuitant deux nets (nets GND1 et  )
+    Forçage local; error
+    @(124,0937 mm, 49,5376 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[shorting_items]: Eléments court-circuitant deux nets (nets GND1 et  )
+    Forçage local; error
+    @(122,5937 mm, 53,9876 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[shorting_items]: Eléments court-circuitant deux nets (nets  et  GND1)
+    Forçage local; error
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+    @(124,0937 mm, 53,9876 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+[shorting_items]: Eléments court-circuitant deux nets (nets GND1 et  )
+    Forçage local; error
+    @(122,5937 mm, 49,5376 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(122,9500 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0147 mm)
+    Règle: netclasse 'Default'; error
+    @(122,5937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[shorting_items]: Eléments court-circuitant deux nets (nets  et  GND1)
+    Forçage local; error
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+    @(124,0937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(109,2390 mm, 89,3570 mm): Pad métallisé V [<no net>] de U5
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(110,9640 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(109,2390 mm, 90,9570 mm): Pad métallisé V [<no net>] de U5
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,8000 mm)
+    Règle: netclasse 'Default'; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(109,2390 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(107,5140 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)
+    Règle: netclasse 'Default'; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)
+    Règle: netclasse 'Default'; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)
+    Règle: netclasse 'Default'; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)
+    Règle: netclasse 'Default'; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)
+    Règle: netclasse 'Default'; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,3773 mm)
+    Règle: netclasse 'Default'; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(122,9500 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(119,4140 mm, 89,5570 mm): Pad métallisé V [<no net>] de U3
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(119,4140 mm, 87,9570 mm): Pad métallisé V [<no net>] de U3
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(117,6890 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(121,1390 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,8000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(119,4140 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(121,7390 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(117,0890 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 98,7285 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 98,7285 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(121,7390 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 1,5215 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(117,0890 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 103,3785 mm): Pad métallisé V [<no net>] de U4
+[clearance]: Violation d'isolation (netclasse 'Default' isolation 0,2000 mm; réel 0,0000 mm)
+    Règle: netclasse 'Default'; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 103,3785 mm): Pad métallisé V [<no net>] de U4
 [malformed_courtyard]: Empreinte a une zone d'occupation mal formée (n'est pas une forme fermée)
     Forçage local; error
     @(135,2390 mm, 104,3570 mm): Empreinte U2
@@ -13,19 +157,19 @@
     @(77,9000 mm, 84,5000 mm): Pad métallisé V [GND] de 
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(109,2390 mm, 89,3570 mm): Pad métallisé V [GND] de U5
+    @(109,2390 mm, 89,3570 mm): Pad métallisé V [<no net>] de U5
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(110,9640 mm, 90,1570 mm): Pad métallisé V [GND] de U5
+    @(110,9640 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(109,2390 mm, 90,1570 mm): Pad métallisé V [GND] de U5
+    @(109,2390 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(107,5140 mm, 90,1570 mm): Pad métallisé V [GND] de U5
+    @(107,5140 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(109,2390 mm, 90,9570 mm): Pad métallisé V [GND] de U5
+    @(109,2390 mm, 90,9570 mm): Pad métallisé V [<no net>] de U5
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
     @(116,5000 mm, 88,9000 mm): Pad métallisé V [GND] de 
@@ -34,22 +178,22 @@
     @(76,5000 mm, 84,5000 mm): Pad métallisé V [GND] de 
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
     Règle: configuration des contraintes du PCB; error
-    @(123,7374 mm, 50,9752 mm): Pad métallisé V [GND1] de U6
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
     Règle: configuration des contraintes du PCB; error
-    @(123,7374 mm, 52,5500 mm): Pad métallisé V [GND1] de U6
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
     Règle: configuration des contraintes du PCB; error
-    @(123,7374 mm, 51,7626 mm): Pad métallisé V [GND1] de U6
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
     Règle: configuration des contraintes du PCB; error
-    @(122,9500 mm, 52,5500 mm): Pad métallisé V [GND1] de U6
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
     Règle: configuration des contraintes du PCB; error
-    @(122,9500 mm, 51,7626 mm): Pad métallisé V [GND1] de U6
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2540 mm)
     Règle: configuration des contraintes du PCB; error
-    @(122,9500 mm, 50,9752 mm): Pad Métallisé [GND1] de U6
+    @(122,9500 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
     @(106,1000 mm, 89,6000 mm): Pad métallisé V [GND] de 
@@ -67,19 +211,19 @@
     @(77,7000 mm, 98,8000 mm): Pad métallisé V [GND] de 
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(119,4140 mm, 87,9570 mm): Pad métallisé V [GND] de U3
+    @(119,4140 mm, 87,9570 mm): Pad métallisé V [<no net>] de U3
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(121,1390 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+    @(121,1390 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(119,4140 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+    @(119,4140 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(117,6890 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+    @(117,6890 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(119,4140 mm, 89,5570 mm): Pad métallisé V [GND] de U3
+    @(119,4140 mm, 89,5570 mm): Pad métallisé V [<no net>] de U3
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
     @(105,0000 mm, 89,6000 mm): Pad métallisé V [GND] de 
@@ -91,40 +235,40 @@
     @(79,3000 mm, 84,5000 mm): Pad métallisé V [GND] de 
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(120,2175 mm, 98,7285 mm): Pad métallisé V [GNDA] de U4
+    @(120,2175 mm, 98,7285 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(118,6105 mm, 98,7285 mm): Pad métallisé V [GNDA] de U4
+    @(118,6105 mm, 98,7285 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(121,7390 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+    @(121,7390 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(120,2175 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+    @(120,2175 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(118,6105 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+    @(118,6105 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(117,0890 mm, 100,2500 mm): Pad métallisé V [GNDA] de U4
+    @(117,0890 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(121,7390 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+    @(121,7390 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(120,2175 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+    @(120,2175 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(118,6105 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+    @(118,6105 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(117,0890 mm, 101,8570 mm): Pad métallisé V [GNDA] de U4
+    @(117,0890 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(120,2175 mm, 103,3785 mm): Pad métallisé V [GNDA] de U4
+    @(120,2175 mm, 103,3785 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
-    @(118,6105 mm, 103,3785 mm): Pad métallisé V [GNDA] de U4
+    @(118,6105 mm, 103,3785 mm): Pad métallisé V [<no net>] de U4
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2032 mm)
     Règle: configuration des contraintes du PCB; error
     @(106,1000 mm, 91,8000 mm): Pad métallisé V [GND] de 
@@ -160,18 +304,25 @@
     @(124,7000 mm, 102,2000 mm): Via [/COMM-] sur F.Cu - B.Cu
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
     Règle: netclasse 'Default'; error
-    @(123,8965 mm, 102,8035 mm): Via [/COMM+] sur F.Cu - B.Cu
+    @(123,9919 mm, 104,1500 mm): Via [/COMM+] sur F.Cu - B.Cu
 [drill_out_of_range]: Taille du trou en dehors de la plage (configuration des contraintes du PCB trou min 0,3000 mm ; réel 0,2000 mm)
     Règle: netclasse 'Default'; error
-    @(123,9919 mm, 104,1500 mm): Via [/COMM+] sur F.Cu - B.Cu
-[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche In2.Cu ; zone nbre min de rayons 2 ; réel 1)
+    @(123,8965 mm, 102,8035 mm): Via [/COMM+] sur F.Cu - B.Cu
+[invalid_outline]: Le C.I. a un contour mal formé (n'est pas une forme fermée)
     Forçage local; error
-    @(67,0000 mm, 73,5000 mm): Zone [GND] sur F.Cu, B.Cu et 2 en plus, priorité 2
-    @(117,6890 mm, 88,7570 mm): Pad métallisé V [GND] de U3
+    @(67,0000 mm, 73,2000 mm): Segment sur Edge.Cuts
 [starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
     Forçage local; error
-    @(102,8000 mm, 85,4000 mm): Zone [Net-(U5-VSW)] sur F.Cu, priorité 6
+    @(102,2500 mm, 85,4000 mm): Zone [Net-(U5-VSW)] sur F.Cu, priorité 6
     @(108,6640 mm, 88,5570 mm): Pad 4 [Net-(U5-VSW)] de U5 sur F.Cu
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(121,5000 mm, 70,0000 mm): Zone [AC2] sur F.Cu, priorité 13
+    @(121,6187 mm, 53,5126 mm): Pad 19 [AC2] de U6 sur F.Cu
+[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
+    Forçage local; error
+    @(120,5000 mm, 62,6000 mm): Zone [AC1] sur F.Cu, priorité 12
+    @(125,0687 mm, 53,5126 mm): Pad 2 [AC1] de U6 sur F.Cu
 [starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
     Forçage local; error
     @(167,0000 mm, 23,7500 mm): Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1
@@ -180,12 +331,426 @@
     Forçage local; error
     @(167,0000 mm, 23,7500 mm): Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1
     @(122,5937 mm, 53,9876 mm): Pad 20 [GND1] de U6 sur F.Cu
-[starved_thermal]: Connexion de frein thermique à la zone incomplète (couche F.Cu ; zone nbre min de rayons 2 ; réel 1)
-    Forçage local; error
-    @(167,0000 mm, 23,7500 mm): Zone [GND1] sur F.Cu, B.Cu et 2 en plus, priorité 1
-    @(122,9500 mm, 51,7626 mm): Pad métallisé V [GND1] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,0937 mm, 49,5376 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,5937 mm, 53,9876 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,0937 mm, 53,9876 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,5937 mm, 49,5376 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+    @(122,9500 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,5937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,5937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(122,9500 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,0937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,0937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(109,2390 mm, 89,3570 mm): Pad métallisé V [<no net>] de U5
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(110,9640 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(109,2390 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(107,5140 mm, 90,1570 mm): Pad métallisé V [<no net>] de U5
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(109,2390 mm, 90,9570 mm): Pad métallisé V [<no net>] de U5
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(122,9500 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(123,7374 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(123,7374 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(122,9500 mm, 51,7626 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(122,9500 mm, 50,9752 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,3437 mm, 51,7626 mm): Pad 21 [GND1] de U6 sur F.Cu
+    @(123,7374 mm, 52,5500 mm): Pad métallisé V [<no net>] de U6
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,1500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 53,9876 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 52,3500 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,1500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 51,5626 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 52,3500 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,1500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 51,5626 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 50,7752 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 49,5376 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,7500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,1500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 53,9876 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 52,3500 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,7500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,1500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 51,5626 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 52,3500 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(122,7500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(122,5937 mm, 52,5126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(123,1500 mm, 53,3511 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 51,5626 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 51,0126 mm): Piste [GND1] sur F.Cu, long. 1,0607 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(124,4322 mm, 50,7752 mm): Polygone de U6 sur F.Mask
+    @(124,0937 mm, 49,5376 mm): Piste [GND1] sur F.Cu, long. 1,4750 mm
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(119,4140 mm, 87,9570 mm): Pad métallisé V [<no net>] de U3
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(121,1390 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(119,4140 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(117,6890 mm, 88,7570 mm): Pad métallisé V [<no net>] de U3
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
+    @(119,4140 mm, 89,5570 mm): Pad métallisé V [<no net>] de U3
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 98,7285 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(121,7390 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(121,7390 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 98,7285 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(117,0890 mm, 100,2500 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(117,0890 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 101,8570 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(120,2175 mm, 103,3785 mm): Pad métallisé V [<no net>] de U4
+[solder_mask_bridge]: L’ouverture du masque de soudure de dessus relie des éléments de différents nets
+    Règle: configuration largeur min masque de soudure; error
+    @(119,4140 mm, 101,0535 mm): Pad 49 [GNDA] de U4 sur F.Cu
+    @(118,6105 mm, 103,3785 mm): Pad métallisé V [<no net>] de U4
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(126,0000 mm, 59,9000 mm): Champ référence de C40
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(104,6500 mm, 84,7500 mm): Champ référence de C18
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(109,2390 mm, 90,1570 mm): Champ référence de U5
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(111,7390 mm, 94,7070 mm): Champ référence de R22
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(139,7000 mm, 55,8000 mm): Champ référence de U7
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(115,4690 mm, 89,8070 mm): Champ référence de C22
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(135,2390 mm, 104,3570 mm): Champ référence de U2
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(133,6642 mm, 101,7154 mm): Texte empreinte de U2 (Designator113)
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(111,3640 mm, 101,0070 mm): Champ référence de R15
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(123,3437 mm, 51,7626 mm): Champ référence de U6
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(123,0664 mm, 54,2146 mm): Segment de U6 sur F.Silkscreen
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(123,6210 mm, 49,3106 mm): Segment de U6 sur F.Silkscreen
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(124,0937 mm, 55,2000 mm): Texte empreinte de U6 (*)
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(116,9000 mm, 94,2000 mm): Champ référence de C13
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(85,8680 mm, 93,7500 mm): Champ référence de U1
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(82,9724 mm, 90,5242 mm): Texte empreinte de U1 (Designator74)
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(122,2855 mm, 105,1770 mm): Champ référence de C15
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(123,4000 mm, 57,9800 mm): Champ référence de C39
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(110,6500 mm, 84,7500 mm): Champ référence de C16
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(120,6890 mm, 91,1770 mm): Champ référence de C11
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(119,4140 mm, 88,7570 mm): Champ référence de U3
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(107,6500 mm, 84,7500 mm): Champ référence de C19
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(119,4140 mm, 101,0535 mm): Champ référence de U4
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(153,2995 mm, 52,6000 mm): Champ référence de U8
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(110,7890 mm, 92,1770 mm): Champ référence de C24
+[silk_over_copper]: Sérigraphie tronquée par masque de soudure
+    Forçage local; warning
+    @(131,5000 mm, 96,1000 mm): Champ référence de C17
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(123,4000 mm, 57,9800 mm): Champ référence de C39
+    @(123,6613 mm, 58,3150 mm): Segment de C40 sur F.Silkscreen
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(104,4100 mm, 85,4613 mm): Segment de C21 sur F.Silkscreen
+    @(104,6500 mm, 84,7500 mm): Champ référence de C18
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(107,6500 mm, 84,7500 mm): Champ référence de C19
+    @(107,4100 mm, 85,4613 mm): Segment de C18 sur F.Silkscreen
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(110,5277 mm, 94,5920 mm): Segment de C24 sur F.Silkscreen
+    @(111,7390 mm, 94,7070 mm): Champ référence de R22
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(111,5911 mm, 101,2220 mm): Segment de R18 sur F.Silkscreen
+    @(111,3640 mm, 101,0070 mm): Champ référence de R15
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(79,8000 mm, 91,4000 mm): Champ référence de C2
+    @(82,9724 mm, 90,5242 mm): Texte empreinte de U1 (Designator74)
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(111,4640 mm, 92,0820 mm): Segment de U5 sur F.Silkscreen
+    @(110,7890 mm, 92,1770 mm): Champ référence de C24
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(111,6640 mm, 91,8820 mm): Segment de U5 sur F.Silkscreen
+    @(110,7890 mm, 92,1770 mm): Champ référence de C24
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(117,0503 mm, 93,5920 mm): Segment de C13 sur F.Silkscreen
+    @(116,9000 mm, 94,2000 mm): Champ référence de C13
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(110,4100 mm, 85,4613 mm): Segment de C19 sur F.Silkscreen
+    @(110,6500 mm, 84,7500 mm): Champ référence de C16
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(116,1369 mm, 94,7220 mm): Segment de R21 sur F.Silkscreen
+    @(116,9000 mm, 94,2000 mm): Champ référence de C13
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(148,8000 mm, 50,5000 mm): Champ référence de C33
+    @(150,4039 mm, 49,3742 mm): Texte empreinte de U8 (Designator74)
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(139,0271 mm, 79,6220 mm): Segment de R17 sur F.Silkscreen
+    @(138,7000 mm, 79,1000 mm): Champ référence de R17
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(122,8390 mm, 104,7785 mm): Segment de U4 sur F.Silkscreen
+    @(122,2855 mm, 105,1770 mm): Champ référence de C15
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(123,1390 mm, 104,4785 mm): Segment de U4 sur F.Silkscreen
+    @(122,2855 mm, 105,1770 mm): Champ référence de C15
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(133,0000 mm, 101,0000 mm): Champ référence de C5
+    @(133,6642 mm, 101,7154 mm): Texte empreinte de U2 (Designator113)
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(133,6642 mm, 101,7154 mm): Texte empreinte de U2 (Designator113)
+    @(135,7390 mm, 101,5070 mm): Champ référence de R1
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(120,6890 mm, 91,1770 mm): Champ référence de C11
+    @(121,6390 mm, 90,6820 mm): Segment de U3 sur F.Silkscreen
+[silk_overlap]: Recouvrement de sérigraphie
+    Règle: configuration des contraintes de la sérigraphie; warning
+    @(120,6890 mm, 91,1770 mm): Champ référence de C11
+    @(121,8390 mm, 90,4820 mm): Segment de U3 sur F.Silkscreen
 
-** Found 0 unconnected pads **
+** Found 2 unconnected pads **
+[unconnected_items]: Connexion manquante entre les éléments
+    Forçage local; error
+    @(109,2390 mm, 90,1570 mm): Pad 9 [GND] de U5 sur F.Cu
+    @(104,2000 mm, 95,6000 mm): Zone [GND] sur F.Cu, priorité 9
+[unconnected_items]: Connexion manquante entre les éléments
+    Forçage local; error
+    @(104,2000 mm, 95,6000 mm): Zone [GND] sur F.Cu, priorité 9
+    @(119,4140 mm, 88,7570 mm): Pad 9 [GND] de U3 sur F.Cu
 
 ** Found 0 Footprint errors **
 
