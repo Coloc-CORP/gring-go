@@ -1,0 +1,9 @@
+Manufacturer=Texas Instruments
+PartNumber=BQ25120AYFPR
+PartCategory=Integrated Circuit
+PackageCategory=BGA
+PinCount=25
+Version=5.1
+Released=2019-01-09 06:42:16
+Downloaded=2026-05-04 08:42:52
+3D=Y

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BQ25120AYFPR
+D 700nA Low Iq Highly Integrated Battery Charge Management Solution
+K
+F http://www.ti.com/lit/ds/symlink/bq25120a.pdf
+$ENDCMP
+#
+#End Doc Library
