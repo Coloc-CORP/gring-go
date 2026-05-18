@@ -1,2 +1,0 @@
-"nrf":"/home/bolobos/ncs/v3.1.1/nrf":"/home/bolobos/ncs/v3.1.1/nrf/sysbuild"
-"mcuboot":"/home/bolobos/ncs/v3.1.1/bootloader/mcuboot":"/home/bolobos/ncs/v3.1.1/bootloader/mcuboot/boot/zephyr/sysbuild"

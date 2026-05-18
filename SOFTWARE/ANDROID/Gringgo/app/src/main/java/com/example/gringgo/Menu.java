@@ -4,11 +4,16 @@ package com.example.gringgo;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.le.BluetoothLeScanner;
+import android.bluetooth.le.ScanCallback;
+import android.bluetooth.le.ScanResult;
+import android.bluetooth.le.ScanSettings;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -18,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -28,8 +34,11 @@ import android.bluetooth.BluetoothManager;
 import android.Manifest;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.gringgo.ViewModel.BluetoothViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +62,11 @@ public class Menu extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private BroadcastReceiver receiver;
+
     private static final String TAG = "MenuFragment";
+
+    private BluetoothViewModel bluetoothViewModel;
 
 
 
@@ -118,12 +131,16 @@ public class Menu extends Fragment {
     //            }
     //        }
     //    }
-    private final BroadcastReceiver receiver = new BroadcastReceiver() {
+    // Remplace le BroadcastReceiver par ceci :
+    private final ScanCallback leScanCallback = new ScanCallback() {
         @Override
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+        public void onScanResult(int callbackType, ScanResult result) {
+            super.onScanResult(callbackType, result);
+            BluetoothDevice device = result.getDevice();
+
+            // Le scanner BLE récupère le nom directement dans le paquet advertising
+            String name = result.getScanRecord() != null ? result.getScanRecord().getDeviceName() : null;
+            if (name == null)
                 if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
@@ -133,12 +150,18 @@ public class Menu extends Fragment {
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
                     return;
-                }
-                if (device != null && device.getName() != null) {
-                    devicesList.add(device);
-                    devicesAdapter.add(device.getName() + "\n" + device.getAddress());
-                }
+                }name = device.getName();
+
+            if (name != null && !devicesList.contains(device)) {
+                devicesList.add(device);
+                devicesAdapter.add(name + "\n" + device.getAddress());
+                devicesAdapter.notifyDataSetChanged();
             }
+        }
+
+        @Override
+        public void onScanFailed(int errorCode) {
+            Log.e(TAG, "Erreur de scan BLE : " + errorCode);
         }
     };
 
@@ -198,6 +221,8 @@ public class Menu extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        bluetoothViewModel = new ViewModelProvider(requireActivity()).get(BluetoothViewModel.class);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -208,8 +233,6 @@ public class Menu extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-        requireContext().registerReceiver(receiver, filter);
     }
 
     @Override
@@ -246,7 +269,7 @@ public class Menu extends Fragment {
     @Override
     public void onStop() {
         super.onStop();
-        requireContext().unregisterReceiver(receiver);
+        stopBleScan();
     }
 
     // Manipulation of buttons
@@ -254,18 +277,62 @@ public class Menu extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button button = (Button) view.findViewById(R.id.button);
+        TextView tvHeartRate = view.findViewById(R.id.chiffre_bpm); // Assure-toi d'avoir ces ID dans ton XML
+        TextView tvStep = view.findViewById(R.id.chiffre_pas);
+        //TextView tvBattery = view.findViewById(R.id.battery);
+
+        bluetoothViewModel.getHeartRate().observe(getViewLifecycleOwner(), hr -> {
+            tvHeartRate.setText(hr);
+        });
+
+        bluetoothViewModel.getStepsCount().observe(getViewLifecycleOwner(), hr -> {
+            tvStep.setText(hr);
+        });
+
+        // 1. Récupération du bouton
+        final Button button = (Button) view.findViewById(R.id.button);
 
         if (button != null) {
-            button.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    Log.d("BUTTONS", "User tapped the Supabutton in Menu Fragment (onViewCreated)");
-                    // Autres actions
+            // 2. Gestion du clic pour ouvrir la popup
+            button.setOnClickListener(v -> {
+                String currentState = bluetoothViewModel.getConnectionState().getValue();
+
+                if ("CONNECTED".equals(currentState)) {
+                    // Si on est connecté, on demande la déconnexion
+                    bluetoothViewModel.disconnect();
+                } else {
+                    // Sinon, on lance la procédure habituelle (scan/popup)
                     showBluetoothPopup();
                 }
             });
+
+            // 3. OBSERVATION de l'état de connexion
+            // On demande au ViewModel de nous prévenir quand l'état change
+            bluetoothViewModel.getConnectionState().observe(getViewLifecycleOwner(), state -> {
+                // 'state' est une String (ou un Enum) envoyée par le BleManager
+                Log.d("TEST_UI", "État reçu dans le Fragment : " + state); // Ajoute cette ligne !
+                switch (state) {
+                    case "CONNECTED":
+                        button.setText("Connecté !");
+                        button.setBackgroundColor(Color.GREEN);
+                        break;
+                    case "CONNECTING":
+                        button.setText("Connexion...");
+                        button.setBackgroundColor(Color.YELLOW);
+                        break;
+                    case "DISCONNECTED":
+                        button.setText("Se connecter");
+                        button.setBackgroundColor(Color.BLUE);
+                        break;
+                    default:
+                        button.setText("Erreur");
+                        button.setBackgroundColor(Color.RED);
+                        break;
+                }
+            });
+
         } else {
-            Log.e(TAG, "Button 'supabutton' not found in fragment_menu.xml");
+            Log.e(TAG, "Button 'button' not found in fragment_menu.xml");
         }
     }
 
@@ -316,57 +383,60 @@ public class Menu extends Fragment {
 
     // Display bluetooth device finder pop up
     public void showBluetoothPopup() {
-        devicesAdapter = new ArrayAdapter<>(requireContext(),
-                android.R.layout.simple_list_item_1);
-
-        BluetoothManager bluetoothManager = (BluetoothManager) requireContext().getSystemService(Context.BLUETOOTH_SERVICE);
-        BluetoothAdapter bluetoothAdapter;
-
-        if (bluetoothManager != null) {
-            bluetoothAdapter = bluetoothManager.getAdapter();
+        devicesList.clear();
+        if (devicesAdapter == null) {
+            devicesAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1);
         } else {
-            bluetoothAdapter = null;
+            devicesAdapter.clear();
         }
 
-        // Lance la découverte
-        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+        BluetoothLeScanner scanner = bluetoothAdapter.getBluetoothLeScanner();
+        if (scanner == null) {
+            Toast.makeText(requireContext(), "Scanner BLE non disponible", Toast.LENGTH_SHORT).show();
             return;
         }
-        bluetoothAdapter.startDiscovery();
+
+        // Vérification des permissions avant de scanner
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+
+        // Lancer le scan BLE (On peut ajouter des ScanSettings pour plus de rapidité)
+        ScanSettings settings = new ScanSettings.Builder()
+                .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
+                .build();
+
+        scanner.startScan(null, settings, leScanCallback);
+
+        // On arrête le scan automatiquement après 10 secondes pour économiser la batterie
+        new android.os.Handler().postDelayed(() -> {
+            stopBleScan();
+        }, 10000);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setTitle("Appareils Bluetooth");
+        builder.setTitle("Recherche nRF5340...");
         builder.setAdapter(devicesAdapter, (dialog, which) -> {
-            // Quand on clique sur un appareil
-            this.selectedDevice = devicesList.get(which);
-            if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return;
-            }
-            Toast.makeText(requireContext(),
-                    "Sélectionné : " + this.selectedDevice.getName(),
-                    Toast.LENGTH_SHORT).show();
+            stopBleScan(); // Très important d'arrêter avant de se connecter
 
-            // Ici tu peux lancer la connexion avec selectedDevice
+            BluetoothDevice device = devicesList.get(which);
+            if (device.getName().toLowerCase().contains("nrf") || device.getName().toLowerCase().contains("nordic")) {
+                bluetoothViewModel.connect(device);
+            } else {
+                Toast.makeText(requireContext(), "Cet appareil n'est pas un nRF", Toast.LENGTH_SHORT).show();
+            }
         });
-        builder.setNegativeButton("Annuler", (dialog, which) -> {
-            bluetoothAdapter.cancelDiscovery();
-            dialog.dismiss();
-        });
+        builder.setNegativeButton("Annuler", (dialog, which) -> stopBleScan());
         builder.show();
+    }
+
+    private void stopBleScan() {
+        BluetoothLeScanner scanner = bluetoothAdapter.getBluetoothLeScanner();
+        if (scanner != null && bluetoothAdapter.isEnabled()) {
+            if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.BLUETOOTH_SCAN) == PackageManager.PERMISSION_GRANTED) {
+                scanner.stopScan(leScanCallback);
+                Log.d(TAG, "Scan BLE arrêté");
+            }
+        }
     }
 
     //Start bluetooth socket

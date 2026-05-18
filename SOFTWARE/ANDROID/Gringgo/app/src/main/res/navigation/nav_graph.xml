@@ -6,28 +6,24 @@
     app:startDestination="@id/menu">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.gringgo.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/menu" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.gringgo.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/menu"
         android:name="com.example.gringgo.Menu"
-        android:label="Main menu"
+        android:label="Gring'go"
         tools:layout="@layout/fragment_menu" />
+    <fragment
+        android:id="@+id/bdd"
+        android:name="com.example.gringgo.Bdd"
+        android:label="Bdd" />
+    <fragment
+        android:id="@+id/command"
+        android:name="com.example.gringgo.Command"
+        android:label="Command" />
+    <fragment
+        android:id="@+id/distance"
+        android:name="com.example.gringgo.Distance"
+        android:label="Distance" />
+    <fragment
+        android:id="@+id/parametre"
+        android:name="com.example.gringgo.Parametre"
+        android:label="Parametre" />
 </navigation>

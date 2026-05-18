@@ -1,34 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
              android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="289dp"
-        android:layout_height="142dp"
-        android:background="#FFAE9D"
-        android:text="DIstance"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="289dp"
-        android:layout_height="142dp"
-        android:background="#FFAE9D"
+        android:id="@+id/bloc_pas2"
+        android:layout_width="311dp"
+        android:layout_height="140dp"
+        android:background="@drawable/fond_arrondi_home"
+        android:gravity="top|center_horizontal"
+        android:paddingTop="8dp"
         android:text="Pas"
-        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintVertical_bias="0.174" />
+
+    <TextView
+        android:id="@+id/bloc_pas4"
+        android:layout_width="311dp"
+        android:layout_height="140dp"
+        android:background="@drawable/fond_arrondi_home"
+        android:gravity="top|center_horizontal"
+        android:paddingTop="8dp"
+        android:text="Distance"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+        android:id="@+id/bloc_pas_"
+        android:layout_width="220dp"
+        android:layout_height="74dp"
+        android:background="@drawable/rectangle"
+        android:gravity="top|center_horizontal"
+        android:paddingTop="8dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas2"
+        app:layout_constraintEnd_toEndOf="@+id/bloc_pas2"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/bloc_pas2"
+        app:layout_constraintTop_toTopOf="@+id/bloc_pas2"
+        app:layout_constraintVertical_bias="0.672" />
+
+    <TextView
+        android:id="@+id/bloc_pas_4"
+        android:layout_width="220dp"
+        android:layout_height="74dp"
+        android:background="@drawable/rectangle"
+        android:gravity="top|center_horizontal"
+        android:paddingTop="8dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas4"
+        app:layout_constraintEnd_toEndOf="@+id/bloc_pas4"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/bloc_pas4"
+        app:layout_constraintTop_toTopOf="@+id/bloc_pas4"
+        app:layout_constraintVertical_bias="0.724" />
+
+    <TextView
+        android:id="@+id/chiffre_pas2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/atkinson_hyperlegible_bold"
+        android:text="60000"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas_"
+        app:layout_constraintEnd_toEndOf="@+id/bloc_pas_"
+        app:layout_constraintStart_toStartOf="@+id/bloc_pas_"
+        app:layout_constraintTop_toTopOf="@+id/bloc_pas_" />
+
+    <TextView
+        android:id="@+id/chiffre_distance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/atkinson_hyperlegible_bold"
+        android:text="60000"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas_4"
+        app:layout_constraintEnd_toEndOf="@+id/bloc_pas_4"
+        app:layout_constraintStart_toStartOf="@+id/bloc_pas_4"
+        app:layout_constraintTop_toTopOf="@+id/bloc_pas_4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
