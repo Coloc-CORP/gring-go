@@ -39,6 +39,7 @@
 int IMU_Init(void);
 int IMU_UploadFW(void);
 int IMU_SetPerformanceMode(imu_perf_mode_t mode);
+int IMU_EnableSensor(uint8_t sensor_id, float freq_hz);
 int IMU_WriteReg(uint8_t reg, uint8_t val);
 int IMU_ReadData(sensors_data_t *data);
 

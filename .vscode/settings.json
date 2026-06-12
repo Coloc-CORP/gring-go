@@ -1,5 +1,6 @@
 {
     "nrf-connect.applications": [
-        "${workspaceFolder}\\SOFTWARE\\EMBEDDED\\app"
+        "${workspaceFolder}\\SOFTWARE\\EMBEDDED\\app",
+        "${workspaceFolder}/SOFTWARE/EMBEDDED/app"
     ]
 }

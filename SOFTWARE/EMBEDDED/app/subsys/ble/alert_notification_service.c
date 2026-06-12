@@ -23,7 +23,7 @@ static ssize_t alert_level_write(struct bt_conn *conn,
         LOG_INF("Alert Level: %d", alert_level);
         return len;
     }
-    return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTR_LEN);
+    return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
 }
 
 static ssize_t alert_level_read(struct bt_conn *conn,

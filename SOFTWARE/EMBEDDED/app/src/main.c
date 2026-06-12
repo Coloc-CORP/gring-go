@@ -27,12 +27,13 @@
 #include "device_info_service.h"
 #include "alert_notification_service.h"
 
+
 LOG_MODULE_REGISTER(gringgo_main, CONFIG_LOG_DEFAULT_LEVEL);
 
 /* ===== Bluetooth Configuration ===== */
 static const struct bt_data ad[] = {
-    BT_DATA_BYTES(BT_AD_FLAGS, (BT_AD_GENERAL | BT_AD_NO_BREDR)),
-    BT_DATA_BYTES(BT_AD_UUID16_ALL,
+    BT_DATA_BYTES(BT_DATA_FLAGS, (BT_LE_AD_GENERAL | BT_LE_AD_NO_BREDR)),
+    BT_DATA_BYTES(BT_DATA_UUID16_ALL,
                   0x0d, 0x18, /* Heart Rate Service */
                   0x09, 0x18, /* Health Thermometer */
                   0x22, 0x18, /* Pulse Oximeter */
@@ -40,8 +41,14 @@ static const struct bt_data ad[] = {
                   0x0a, 0x18, /* Device Information */
                   0x11, 0x18, /* Alert Notification */
                   0x0f, 0x18),/* Battery */
-    BT_DATA_BYTES(BT_AD_NAME_COMPLETE, 'G', 'r', 'i', 'n', 'g', 'g', 'o'),
+    BT_DATA_BYTES(BT_DATA_NAME_COMPLETE, 'G', 'r', 'i', 'n', 'g', 'g', 'o'),
 };
+
+static const struct bt_le_adv_param *const adv_param = BT_LE_ADV_PARAM(
+    BT_LE_ADV_OPT_CONNECTABLE | BT_LE_ADV_OPT_USE_NAME,
+    BT_GAP_ADV_FAST_INT_MIN_2,
+    BT_GAP_ADV_FAST_INT_MAX_2,
+    NULL);
 
 /* ===== Bluetooth Connection Callbacks ===== */
 static void connected(struct bt_conn *conn, uint8_t err)
@@ -157,7 +164,7 @@ static void sensor_thread(void *p1, void *p2, void *p3)
 }
 
 K_THREAD_DEFINE(sensor_tid, SENSOR_STACK_SIZE, sensor_thread, NULL, NULL, NULL,
-                SENSOR_PRIORITY, 0, K_NO_WAIT);
+                SENSOR_PRIORITY, 0, 0);
 
 /* ===== Main Application ===== */
 int main(void)
@@ -175,7 +182,7 @@ int main(void)
     LOG_INF("Bluetooth initialized");
 
     /* Start advertising */
-    err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), NULL, 0);
+    err = bt_le_adv_start(adv_param, ad, ARRAY_SIZE(ad), NULL, 0);
     if (err) {
         LOG_ERR("Advertising failed to start (err %d)", err);
         return err;

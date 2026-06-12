@@ -3,6 +3,7 @@
 #define GRINGGO_STATUS_H_
 
 #define STATUS_OK                 0
+#define BIO_STATUS_SUCCESS        STATUS_OK
 #define STATUS_ERR_I2C_COM        -1001
 #define STATUS_ERR_FW_FLASH       -1002
 #define STATUS_ERR_NOT_READY      -1003

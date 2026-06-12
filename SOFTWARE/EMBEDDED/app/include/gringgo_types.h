@@ -39,6 +39,9 @@ typedef enum {
 typedef struct {
     uint32_t steps_count;
     imu_perf_mode_t mode;
+    int16_t accel_x;
+    int16_t accel_y;
+    int16_t accel_z;
 } imu_data_t;
 
 typedef struct {
