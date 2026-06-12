@@ -17,6 +17,12 @@ typedef enum {
 } activity_mode_t;
 
 typedef enum {
+    TEMP_MODE_ONESHOT = 0x49,
+    TEMP_MODE_FREERUN = 0x4C,
+    TEMP_MODE_LOW_ODR = 0xC8
+} temp_op_mode_t;
+
+typedef enum {
     IMU_PERF_LONG_RUN = 0x01,     /* 20 MHz - Basse consommation */
     IMU_PERF_TURBO    = 0x00      /* 50 MHz - Haute performance */
 } imu_perf_mode_t;
@@ -45,12 +51,19 @@ typedef struct {
     uint8_t battery_level;
     bool is_charging;
     uint16_t voltage_mv;
-} charge_status_t;
+} charge_data_t;
+
+typedef enum {
+    CHG_STATE_READY,
+    CHG_STATE_CHARGING,
+    CHG_STATE_DONE,
+    CHG_STATE_FAULT
+} charge_state_t;
 
 typedef struct {
     bio_data_t bio;
     imu_data_t imu;
-    charge_status_t charge;
+    charge_data_t charge;
     float temp_c;
 } sensors_data_t;
 

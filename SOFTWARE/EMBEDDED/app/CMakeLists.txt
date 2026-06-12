@@ -45,5 +45,9 @@ target_sources(app PRIVATE
     # Layer 3: GATT Services (BLE Interface)
     subsys/ble/health_service.c 
     subsys/ble/battery_service.c
-    subsys/ble/alert_service.c 
+    subsys/ble/alert_notification_service.c 
+    subsys/ble/temperature_service.c
+    subsys/ble/pulse_oximeter_service.c
+    subsys/ble/speed_cadence_service.c
+    subsys/ble/device_info_service.c
 )
