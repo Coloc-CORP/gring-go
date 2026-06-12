@@ -6,10 +6,10 @@
 LOG_MODULE_REGISTER(imu_drv, CONFIG_LOG_DEFAULT_LEVEL);
 static const struct i2c_dt_spec imu_i2c = I2C_DT_SPEC_GET(DT_ALIAS(imu_i2c));
 
-/* Inclusion du binaire via CMake */
-static const uint8_t bhi260_fw[] = { 
-    #include <bhi260ap_arc_fw.bin.inc> 
-};
+/* Inclusion directe de ton tableau d'octets */
+#include "bhi260ap_arc_fw.bin.h"
+//extern unsigned char BHI260AP_flash_fw[];
+//extern unsigned int BHI260AP_flash_fw_len;
 
 int IMU_WriteReg(uint8_t reg, uint8_t val) {
     return i2c_reg_write_byte_dt(&imu_i2c, reg, val) == 0 ? STATUS_OK : STATUS_ERR_I2C_COM;
@@ -20,7 +20,8 @@ int IMU_WriteReg(uint8_t reg, uint8_t val) {
  * @return STATUS_OK ou code d'erreur
  */
 int IMU_UploadFW(void) {
-    uint32_t total_len = sizeof(bhi260_fw);
+    /* Utilisation stricte des majuscules sur BHI260AP */
+    uint32_t total_len = BHI260AP_flash_fw_len;
     uint16_t total_words = (uint16_t)(total_len / 4);
     
     // Annonce de l'upload (Cmd 0x0002)
@@ -31,10 +32,13 @@ int IMU_UploadFW(void) {
     };
     if (i2c_write_dt(&imu_i2c, cmd, 5) != 0) return STATUS_ERR_I2C_COM;
 
-    // Transfert des données (Multiple de 4 octets requis)
+    // Transfert des données par blocs (Multiple de 4 octets requis)
     for (uint32_t i = 0; i < total_len; i += 32) {
         uint8_t block[33] = { BHI260_REG_CH0_CMD };
-        memcpy(&block[1], &bhi260_fw[i], 32);
+        
+        // Match parfait avec le nom du tableau de ton .inc
+        memcpy(&block[1], &BHI260AP_flash_fw[i], 32);
+        
         if (i2c_write_dt(&imu_i2c, block, 33) != 0) return STATUS_ERR_I2C_COM;
     }
     return STATUS_OK;
@@ -104,31 +108,42 @@ int IMU_ReadData(sensors_data_t *data) {
     // Lecture du descripteur (2 octets de taille + 2 octets timestamp)
     if (i2c_burst_read_dt(&imu_i2c, BHI260_REG_CH2_NWU_FIFO, header, 4) != 0) return STATUS_ERR_I2C_COM;
     uint16_t len = (uint16_t)(header[0] | (header[1] << 8));
+    
+    // Tes repères de debug d'origine conservés
+    printk("[DEBUG FIFO] Taille annoncee : %u octets\n", len);
+    printk("[DEBUG FIFO] Timestamp : %u ms\n", (uint16_t)(header[2] | (header[3] << 8)));
+    printk("[DEBUG FIFO] Header brut : %u %u %u %u\n", header[0], header[1], header[2], header[3]);
 
-    if (len <= 4) return STATUS_OK;
+    if (len <= 4) return STATUS_OK; 
 
-    // Lecture Burst du contenu
+    // Lecture Burst du contenu utile restant
     uint16_t to_read = (len - 4 > 256) ? 256 : len - 4;
-    i2c_burst_read_dt(&imu_i2c, BHI260_REG_CH2_NWU_FIFO, buffer, to_read);
+    if (i2c_burst_read_dt(&imu_i2c, BHI260_REG_CH2_NWU_FIFO, buffer, to_read) != 0) return STATUS_ERR_I2C_COM;
 
     // Parsing selon Table 88
     for (int i = 0; i < to_read; ) {
         uint8_t id = buffer[i++];
+        
+        // Tes repères d'affichage du flux conservés
+        printk("[DEBUG FIFO] ID: %u\n", id);
+        printk("[DEBUG FIFO] Buffer: %u\n", buffer[i-1]);
+        
         switch (id) {
-            case BHI260_SENSOR_ID_STEP_COUNTER:
+            case BHI260_SENSOR_ID_STEP_COUNTER: // ID 0x88 (136 décimal) révisé
                 data->imu.steps_count = (uint32_t)(buffer[i] | (buffer[i+1] << 8) | (buffer[i+2] << 16) | (buffer[i+3] << 24));
                 i += 4;
+                printk("[DEBUG FIFO] Paquet Pas detecte ! Valeur brute : %u\n", data->imu.steps_count);
                 break;
             case BHI260_SENSOR_ID_ACTIVITY:
-                i += 3; // Payload activité = 3 octets
+                i += 3; 
                 break;
             case BHI260_ID_META_EVENT:
-                i += 3; // Payload méta-événement = 3 octets
+                i += 3; 
                 break;
             case BHI260_ID_PADDING:
                 continue;
             default:
-                return STATUS_OK; // ID inconnu, arrêt pour éviter corruption
+                return STATUS_OK; 
         }
     }
     return STATUS_OK;
