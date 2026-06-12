@@ -1,243 +1,84 @@
-/*
- * Copyright (c) 2018 Nordic Semiconductor ASA
- *
- * SPDX-License-Identifier: LicenseRef-Nordic-5-Clause
- */
-
-#include <zephyr/types.h>
-#include <stddef.h>
-#include <string.h>
-#include <errno.h>
-#include <zephyr/sys/printk.h>
-#include <zephyr/sys/byteorder.h>
 #include <zephyr/kernel.h>
-#include <zephyr/drivers/gpio.h>
-#include <soc.h>
+#include <zephyr/sys/printk.h>
+#include "bio_driver.h"
+#include "gringgo_types.h"
+#include "gringgo_status.h"
 
-#include <zephyr/bluetooth/bluetooth.h>
-#include <zephyr/bluetooth/hci.h>
-#include <zephyr/bluetooth/conn.h>
-#include <zephyr/bluetooth/uuid.h>
-#include <zephyr/bluetooth/gatt.h>
+#define TEST_DELAY_MS 1000
 
-#include <bluetooth/services/lbs.h>
+int main(void) {
+    int ret;
+    bio_data_t test_bio_data = {0};
+    
+    // Structure de fausses données IMU pour alimenter l'algo de Maxim
+    // On simule une bague immobile au repos (1G sur l'axe Z)
+    imu_data_t fake_imu = {
+        .accel_x = 0,
+        .accel_y = 0,
+        .accel_z = 16384 // Equivalent à 1G si l'IMU est en sensibilité +-2g (16384 LSB/g)
+    };
 
-#include <zephyr/settings/settings.h>
+    printk("\n========================================\n");
+    printk("   STARTING GRING-GO BIO SENSOR TEST   \n");
+    printk("========================================\n");
 
-#include <dk_buttons_and_leds.h>
+    /* 1. Initialisation complète du MAX32664 */
+    printk("[INIT] Tentative de boot et configuration...\n");
+    ret = BIO_Init();
+    if (ret != STATUS_OK) {
+        printk("[CRITICAL] Echec BIO_Init: Code d'erreur %d\n", ret);
+        printk("-> Verifie le cablage des 5 fils et les pull-ups I2C !\n");
+        // On bloque ici si le hardware ne repond pas
+        while (1) { k_msleep(1000); }
+    }
+    printk("[INIT] MAX32664 identifie et configure avec succes !\n");
 
-#define DEVICE_NAME             "Gring-Go"
-#define DEVICE_NAME_LEN         (sizeof(DEVICE_NAME) - 1)
+    /* 2. Passage en mode actif (Walking par exemple) */
+    printk("[MODE] Passage en mode MODE_WALKING...\n");
+    BIO_SetMode(MODE_WALKING);
 
+    /* 3. Boucle principale de simulation et de lecture */
+    while (1) {
+        printk("\n--- Nouvelle iteration ---\n");
 
-#define RUN_STATUS_LED          DK_LED1
-#define CON_STATUS_LED          DK_LED2
-#define RUN_LED_BLINK_INTERVAL  1000
+        /* A. Injection obligatoire de la fausse donnée IMU */
+        // L'algorithme interne du MAX32664 exige une synchro temporelle avec l'accelo
+        ret = BIO_InjectMotionData(&fake_imu);
+        if (ret == STATUS_OK) {
+            printk("[IMU] Injection Fake IMU reussie (Z: %d)\n", fake_imu.accel_z);
+        } else {
+            printk("[IMU] Erreur d'injection: %d\n", ret);
+        }
 
-#define BUTTON_LED              DK_LED3
-#define USER_LED                DK_LED4
+        /* B. Lecture des constantes vitales */
+        ret = BIO_ReadData(&test_bio_data);
+        if (ret == STATUS_OK) {
+            // Note : Si ton doigt n'est pas sur le capteur, 
+            // le MAX32664 va cracher 0 BPM / 0% SpO2 (c'est normal).
+            if (test_bio_data.bpm > 0) {
+                printk("[BIO DATA] ❤️ BPM  : %u\n", test_bio_data.bpm);
+                printk("[BIO DATA] 🫁 SpO2 : %u %%\n", test_bio_data.spo2);
+                printk("[BIO DATA] 📈 HRV  : %u ms\n", test_bio_data.hrv);
+            } else {
+                printk("[BIO DATA] Capteur libre (Place ton doigt sur la led rouge)\n");
+            }
+        } else {
+            printk("[BIO DATA] Erreur I2C lors de la lecture des donnees: %d\n", ret);
+            
+            // Tentative de secours : On relance l'init si le capteur a decroche
+            printk("[RECOVERY] Tentative de re-initialisation...\n");
+            if (BIO_Init() == STATUS_OK) {
+                printk("[RECOVERY] Capteur recupere !\n");
+                BIO_SetMode(MODE_WALKING);
+            }
+        }
 
-#define USER_BUTTON             DK_BTN1_MSK
+        // Fais varier légèrement la fausse donnée IMU pour simuler un petit tremblement
+        fake_imu.accel_x += 10;
+        if(fake_imu.accel_x > 500) fake_imu.accel_x = -500;
 
-static bool app_button_state;
+        k_msleep(TEST_DELAY_MS);
+    }
 
-static const struct bt_data ad[] = {
-	BT_DATA_BYTES(BT_DATA_FLAGS, (BT_LE_AD_GENERAL | BT_LE_AD_NO_BREDR)),
-	BT_DATA(BT_DATA_NAME_COMPLETE, DEVICE_NAME, DEVICE_NAME_LEN),
-};
-
-static const struct bt_data sd[] = {
-	BT_DATA_BYTES(BT_DATA_UUID128_ALL, BT_UUID_LBS_VAL),
-};
-
-static void connected(struct bt_conn *conn, uint8_t err)
-{
-	if (err) {
-		printk("Connection failed (err %u)\n", err);
-		return;
-	}
-
-	printk("Connected\n");
-
-	dk_set_led_on(CON_STATUS_LED);
-}
-
-static void disconnected(struct bt_conn *conn, uint8_t reason)
-{
-	printk("Disconnected (reason %u)\n", reason);
-
-	dk_set_led_off(CON_STATUS_LED);
-}
-
-static void security_changed(struct bt_conn *conn, bt_security_t level,
-			     enum bt_security_err err)
-{
-	char addr[BT_ADDR_LE_STR_LEN];
-
-	bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
-
-	if (!err) {
-		printk("Security changed: %s level %u\n", addr, level);
-	} else {
-		printk("Security failed: %s level %u err %d\n", addr, level,
-			err);
-	}
-}
-
-BT_CONN_CB_DEFINE(conn_callbacks) = {
-	.connected        = connected,
-	.disconnected     = disconnected,
-	// .security_changed = security_changed,
-};
-
-static void auth_passkey_display(struct bt_conn *conn, unsigned int passkey)
-{
-	char addr[BT_ADDR_LE_STR_LEN];
-
-	bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
-
-	printk("Passkey for %s: %06u\n", addr, passkey);
-}
-
-static void auth_cancel(struct bt_conn *conn)
-{
-	char addr[BT_ADDR_LE_STR_LEN];
-
-	bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
-
-	printk("Pairing cancelled: %s\n", addr);
-}
-
-static void pairing_complete(struct bt_conn *conn, bool bonded)
-{
-	char addr[BT_ADDR_LE_STR_LEN];
-
-	bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
-
-	printk("Pairing completed: %s, bonded: %d\n", addr, bonded);
-}
-
-static void pairing_failed(struct bt_conn *conn, enum bt_security_err reason)
-{
-	char addr[BT_ADDR_LE_STR_LEN];
-
-	bt_addr_le_to_str(bt_conn_get_dst(conn), addr, sizeof(addr));
-
-	printk("Pairing failed conn: %s, reason %d\n", addr, reason);
-}
-
-static struct bt_conn_auth_cb conn_auth_callbacks = {
-	.passkey_display = auth_passkey_display,
-	.cancel = auth_cancel,
-};
-
-static struct bt_conn_auth_info_cb conn_auth_info_callbacks = {
-	.pairing_complete = pairing_complete,
-	.pairing_failed = pairing_failed
-};
-
-
-static void app_led_cb(bool led_state)
-{
-	printk("Led change to %u\n", led_state);
-	dk_set_led(USER_LED, led_state);
-}
-
-static bool app_button_cb(void)
-{
-	return app_button_state;
-}
-
-static struct bt_lbs_cb lbs_callbacs = {
-	.led_cb    = app_led_cb,
-	.button_cb = app_button_cb,
-};
-
-static void button_changed(uint32_t button_state, uint32_t has_changed)
-{
-	if (has_changed & USER_BUTTON) {
-		uint32_t user_button_state = button_state & USER_BUTTON;
-
-		bt_lbs_send_button_state(user_button_state);
-		app_button_state = user_button_state ? true : false;
-		dk_set_led(BUTTON_LED, user_button_state);
-	}
-}
-
-static int init_button(void)
-{
-	int err;
-
-	err = dk_buttons_init(button_changed);
-	if (err) {
-		printk("Cannot init buttons (err: %d)\n", err);
-	}
-
-	return err;
-}
-
-int main(void)
-{
-	int blink_status = 0;
-	int err;
-
-	printk("Starting Bluetooth Peripheral LBS example\n");
-
-	err = dk_leds_init();
-	if (err) {
-		printk("LEDs init failed (err %d)\n", err);
-		return 0;
-	}
-
-	err = init_button();
-	if (err) {
-		printk("Button init failed (err %d)\n", err);
-		return 0;
-	}
-
-	if (IS_ENABLED(CONFIG_BT_LBS_SECURITY_ENABLED)) {
-		err = bt_conn_auth_cb_register(&conn_auth_callbacks);
-		if (err) {
-			printk("Failed to register authorization callbacks.\n");
-			return 0;
-		}
-
-		err = bt_conn_auth_info_cb_register(&conn_auth_info_callbacks);
-		if (err) {
-			printk("Failed to register authorization info callbacks.\n");
-			return 0;
-		}
-	}
-
-	err = bt_enable(NULL);
-	if (err) {
-		printk("Bluetooth init failed (err %d)\n", err);
-		return 0;
-	}
-
-	printk("Bluetooth initialized\n");
-
-	if (IS_ENABLED(CONFIG_SETTINGS)) {
-		settings_load();
-	}
-
-	err = bt_lbs_init(&lbs_callbacs);
-	if (err) {
-		printk("Failed to init LBS (err:%d)\n", err);
-		return 0;
-	}
-
-	err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad),
-			      sd, ARRAY_SIZE(sd));
-	if (err) {
-		printk("Advertising failed to start (err %d)\n", err);
-		return 0;
-	}
-
-	printk("Advertising successfully started\n");
-
-	for (;;) {
-		dk_set_led(RUN_STATUS_LED, (++blink_status) % 2);
-		k_sleep(K_MSEC(RUN_LED_BLINK_INTERVAL));
-	}
+    return 0;
 }
