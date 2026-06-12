@@ -43,7 +43,7 @@ static ssize_t health_activation_write(struct bt_conn *conn,
         LOG_INF("Health Activation: %d", health_activation);
         return len;
     }
-    return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTR_LEN);
+    return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
 }
 
 /* Low Energy Activation characteristic read/write */
@@ -65,7 +65,7 @@ static ssize_t low_energy_write(struct bt_conn *conn,
         LOG_INF("Low Energy Activation: %d", low_energy_activation);
         return len;
     }
-    return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTR_LEN);
+    return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
 }
 
 /* Device Information Service UUID (0x180A) */

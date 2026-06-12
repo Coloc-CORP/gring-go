@@ -24,11 +24,12 @@
 #define BHI260_VAL_CHIP_CTRL_TURBO_EN   0x00   /* Mode 50MHz */
 
 /* --- IDs des Capteurs Virtuels (Table 88, p.120-121) --- */
-#define BHI260_SENSOR_ID_STEP_COUNTER   52     /* Pas (32-bit uint) */
-#define BHI260_SENSOR_ID_ACTIVITY       63     /* Sport (Still, Walking, Running...) */
+/* --- IDs des Capteurs Virtuels Officiels (Manuel Bosch p.22-23) --- */
+#define BHI260_SENSOR_ID_STEP_COUNTER   0x88  /* 136 en décimal : Compteur de pas (UINT32) */
+#define BHI260_SENSOR_ID_ACTIVITY       0x8E  /* 142 en décimal : SENSOR_TYPE_ANY_MOTION */
+#define BHI260_ID_META_EVENT            254   /* Événements système */
+#define BHI260_ID_PADDING               0     /* Padding */
 #define BHI260_SENSOR_ID_STATIONARY     75     /* Sommeil (Détection immobilité) */
-#define BHI260_ID_META_EVENT            254    /* Événements système */
-#define BHI260_ID_PADDING               0      /* Padding (à ignorer) */
 
 /* --- Masques pour BHI260_REG_BOOT_STATUS --- */
 #define BHI260_STATUS_HOST_IF_READY     0x10  /* Bit 4 : Interface prête */

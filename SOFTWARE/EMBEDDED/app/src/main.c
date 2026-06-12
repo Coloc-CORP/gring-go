@@ -1,62 +1,155 @@
-/*
- * @file
- * @brief Main application for Gringgo BLE ring
- * Reads sensor data and transmits via Bluetooth GATT services
- */
-
-#include <zephyr/kernel.h>
+#include <zephyr/types.h>
+#include <stddef.h>
+#include <string.h>
+#include <errno.h>
 #include <zephyr/sys/printk.h>
+#include <zephyr/sys/byteorder.h>
+#include <zephyr/kernel.h>
 #include <zephyr/bluetooth/bluetooth.h>
 #include <zephyr/bluetooth/hci.h>
 #include <zephyr/bluetooth/conn.h>
 #include <zephyr/bluetooth/uuid.h>
 #include <zephyr/bluetooth/gatt.h>
-#include <zephyr/logging/log.h>
+#include <dk_buttons_and_leds.h>
 
-#include "temp_driver.h"
-#include "bio_driver.h"
-#include "imu_driver.h"
-#include "charge_driver.h"
-#include "haptic_driver.h"
+#define DEVICE_NAME             "nrf"
+#define DEVICE_NAME_LEN         (sizeof(DEVICE_NAME) - 1)
 
-#include "temperature_service.h"
-#include "pulse_oximeter_service.h"
-#include "speed_cadence_service.h"
-#include "health_service.h"
-#include "battery_service.h"
-#include "device_info_service.h"
-#include "alert_notification_service.h"
+#define RUN_STATUS_LED          DK_LED1
+#define CON_STATUS_LED          DK_LED2
+#define SIMUL_INTERVAL_MS       1000
 
-LOG_MODULE_REGISTER(gringgo_main, CONFIG_LOG_DEFAULT_LEVEL);
+/* --- Variables Globales de Simulation --- */
+static uint8_t sim_bpm = 70;
+static uint8_t sim_spo2 = 98;
+static uint32_t sim_steps = 1250;
+static uint8_t sim_battery = 85;
+static uint8_t sim_temp = 36; // Température simulée (en °C)
 
-/* ===== Bluetooth Configuration ===== */
-static const struct bt_data ad[] = {
-    BT_DATA_BYTES(BT_AD_FLAGS, (BT_AD_GENERAL | BT_AD_NO_BREDR)),
-    BT_DATA_BYTES(BT_AD_UUID16_ALL,
-                  0x0d, 0x18, /* Heart Rate Service */
-                  0x09, 0x18, /* Health Thermometer */
-                  0x22, 0x18, /* Pulse Oximeter */
-                  0x14, 0x18, /* Running Speed/Cadence */
-                  0x0a, 0x18, /* Device Information */
-                  0x11, 0x18, /* Alert Notification */
-                  0x0f, 0x18),/* Battery */
-    BT_DATA_BYTES(BT_AD_NAME_COMPLETE, 'G', 'r', 'i', 'n', 'g', 'g', 'o'),
-};
+// Variables pour stocker les états d'activation (reçus de l'appli Android)
+static uint8_t health_activation_state = 0;
+static uint8_t low_energy_state = 0;
+static uint8_t haptic_alert_level = 0;
 
-/* ===== Bluetooth Connection Callbacks ===== */
-static void connected(struct bt_conn *conn, uint8_t err)
+/* --- Déclaration des UUIDs GATT (16-bit) --- */
+#define UUID_SERV_HRS             0x180D
+#define UUID_CHAR_HRS_MEAS        0x2A37
+#define UUID_SERV_HTS             0x1809
+#define UUID_CHAR_HTS_MEAS        0x2B03
+#define UUID_SERV_PLX             0x1822
+#define UUID_CHAR_PLX_MEAS        0x2B04
+#define UUID_SERV_RSC             0x1814
+#define UUID_CHAR_RSC_MEAS        0x1068
+#define UUID_SERV_DIS             0x180A
+#define UUID_CHAR_HEALTH_ACT      0x2B01
+#define UUID_CHAR_LOW_EN_ACT      0x2B02
+#define UUID_CHAR_MANUF_NAME      0x2A29
+#define UUID_SERV_ANS             0x1811
+#define UUID_CHAR_ALERT_LEVEL     0x2A45
+#define UUID_SERV_BAS             0x180F
+#define UUID_CHAR_BATT_LEVEL      0x2A19
+
+/* --- Callbacks d'écriture de l'application Android --- */
+static ssize_t write_health_act(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+                               const void *buf, uint16_t len, uint16_t offset, uint8_t flags)
 {
-    if (err) {
-        LOG_ERR("Connection failed (err 0x%02x)", err);
-    } else {
-        LOG_INF("Connected!");
-        HAPTIC_PlayPattern(ALERT_VIB_INCOMING_CALL); /* Haptic feedback on connection */
-    }
+    if (len != 1) return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+    health_activation_state = ((uint8_t *)buf)[0];
+    printk("[GATT WRITE] Health Activation modifie par Android : %u\n", health_activation_state);
+    return len;
 }
 
-static void disconnected(struct bt_conn *conn, uint8_t reason)
+static ssize_t write_low_en(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+                            const void *buf, uint16_t len, uint16_t offset, uint8_t flags)
 {
-    LOG_INF("Disconnected (reason 0x%02x)", reason);
+    if (len != 1) return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+    low_energy_state = ((uint8_t *)buf)[0];
+    printk("[GATT WRITE] Low Energy Activation modifie par Android : %u\n", low_energy_state);
+    return len;
+}
+
+static ssize_t write_haptic(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+                            const void *buf, uint16_t len, uint16_t offset, uint8_t flags)
+{
+    if (len != 1) return BT_GATT_ERR(BT_ATT_ERR_INVALID_ATTRIBUTE_LEN);
+    haptic_alert_level = ((uint8_t *)buf)[0];
+    printk("[GATT WRITE] Alerte Haptique recue depuis Android ! Niveau : %u\n", haptic_alert_level);
+    return len;
+}
+
+/* --- DÉFINITION DE LA TABLE DES SERVICES GATT DE GRING-GO --- */
+BT_GATT_SERVICE_DEFINE(gringgo_svc,
+    /* 1. Heart Rate Service (BPM) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_HRS)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_HRS_MEAS), 
+                           BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_NONE, NULL, NULL, NULL),
+    BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+
+    /* 2. Health Thermometer Service (Température) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_HTS)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_HTS_MEAS), 
+                           BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_NONE, NULL, NULL, NULL),
+    BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+
+    /* 3. Pulse Oximeter Service (SpO2) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_PLX)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_PLX_MEAS), 
+                           BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_NONE, NULL, NULL, NULL),
+    BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+
+    /* 4. Running Speed and Cadence Service (Steps) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_RSC)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_RSC_MEAS), 
+                           BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_NONE, NULL, NULL, NULL),
+    BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+
+    /* 5. Device Information Service (DIS) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_DIS)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_MANUF_NAME), 
+                           BT_GATT_CHRC_READ, BT_GATT_PERM_READ, NULL, NULL, "Gring-Go Team"),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_HEALTH_ACT), 
+                           BT_GATT_CHRC_WRITE, BT_GATT_PERM_WRITE, NULL, write_health_act, &health_activation_state),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_LOW_EN_ACT), 
+                           BT_GATT_CHRC_WRITE, BT_GATT_PERM_WRITE, NULL, write_low_en, &low_energy_state),
+
+    /* 6. Alert Notification Service (Haptic Return) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_ANS)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_ALERT_LEVEL), 
+                           BT_GATT_CHRC_WRITE, BT_GATT_PERM_WRITE, NULL, write_haptic, &haptic_alert_level),
+
+    /* 7. Battery Service (BAS) */
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_16(UUID_SERV_BAS)),
+    BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_16(UUID_CHAR_BATT_LEVEL), 
+                           BT_GATT_CHRC_READ | BT_GATT_CHRC_NOTIFY, BT_GATT_PERM_READ, NULL, NULL, &sim_battery),
+    BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE)
+);
+
+/* --- Configuration de l'Advertising --- */
+static const struct bt_data ad[] = {
+    BT_DATA_BYTES(BT_DATA_FLAGS, (BT_LE_AD_GENERAL | BT_LE_AD_NO_BREDR)),
+    BT_DATA(BT_DATA_NAME_COMPLETE, DEVICE_NAME, DEVICE_NAME_LEN),
+};
+
+static const struct bt_data sd[] = {
+    BT_DATA_BYTES(BT_DATA_UUID16_ALL, 
+                  BT_UUID_16_ENCODE(UUID_SERV_HRS), 
+                  BT_UUID_16_ENCODE(UUID_SERV_HTS), 
+                  BT_UUID_16_ENCODE(UUID_SERV_BAS)),
+};
+
+/* --- Callbacks Connexion Bluetooth --- */
+static void connected(struct bt_conn *conn, uint8_t err) {
+    if (err) { 
+        printk("[STATUS] Echec connexion BLE (err %u)\n", err); 
+        return; 
+    }
+    printk("[STATUS] Connecte a l'application Android !\n");
+    dk_set_led_on(CON_STATUS_LED);
+}
+
+static void disconnected(struct bt_conn *conn, uint8_t reason) {
+    printk("[STATUS] Deconnecte (Raison : %u)\n", reason);
+    dk_set_led_off(CON_STATUS_LED);
 }
 
 BT_CONN_CB_DEFINE(conn_callbacks) = {
@@ -64,128 +157,112 @@ BT_CONN_CB_DEFINE(conn_callbacks) = {
     .disconnected = disconnected,
 };
 
-/* ===== Sensor Data Structure ===== */
-static sensors_data_t sensor_data = {
-    .bio = {.bpm = 0, .spo2 = 0, .hrv = 0},
-    .imu = {.steps_count = 0},
-    .charge = {.battery_level = 100, .is_charging = false, .voltage_mv = 0},
-    .temp_c = 25.0f,
-};
-
-/* ===== Sensor Reading Task ===== */
-#define SENSOR_STACK_SIZE 2048
-#define SENSOR_PRIORITY 7
-
-static void sensor_thread(void *p1, void *p2, void *p3)
-{
-    LOG_INF("Sensor thread started");
-
-    /* Sensor initialization */
-    int ret;
-    
-    LOG_INF("Initializing temperature sensor...");
-    ret = TEMP_Init();
-    if (ret != STATUS_OK) {
-        LOG_ERR("Temperature sensor init failed: %d", ret);
-    }
-
-    LOG_INF("Initializing biometric sensor...");
-    ret = BIO_Init();
-    if (ret != STATUS_OK) {
-        LOG_ERR("Biometric sensor init failed: %d", ret);
-    }
-
-    LOG_INF("Initializing IMU...");
-    ret = IMU_Init();
-    if (ret != STATUS_OK) {
-        LOG_ERR("IMU init failed: %d", ret);
-    }
-
-    LOG_INF("Initializing charge controller...");
-    ret = CHG_Init();
-    if (ret != STATUS_OK) {
-        LOG_ERR("Charge controller init failed: %d", ret);
-    }
-
-    LOG_INF("Initializing haptic driver...");
-    ret = HAPTIC_Init();
-    if (ret != STATUS_OK) {
-        LOG_ERR("Haptic driver init failed: %d", ret);
-    }
-
-    /* Enable biometric sensor measurements */
-    BIO_SetMode(MODE_WALKING);
-    IMU_EnableSensor(BHI260_SENSOR_ID_STEP_COUNTER, 1.0f);
-
-    LOG_INF("All sensors initialized successfully");
-
-    /* Main sensor reading loop */
-    while (1) {
-        /* Read Temperature */
-        ret = TEMP_ReadTemperature(&sensor_data.temp_c);
-        if (ret == STATUS_OK) {
-            LOG_INF("Temp: %.2f°C", sensor_data.temp_c);
-            TEMP_SERVICE_Update(sensor_data.temp_c);
-        }
-
-        /* Read Biometric Data */
-        ret = BIO_ReadData(&sensor_data.bio);
-        if (ret == STATUS_OK) {
-            LOG_INF("BPM: %d, SpO2: %d%%, HRV: %d", 
-                    sensor_data.bio.bpm, sensor_data.bio.spo2, sensor_data.bio.hrv);
-            HRS_Notify(sensor_data.bio.bpm, sensor_data.bio.hrv);
-            PLX_SERVICE_Update(sensor_data.bio.spo2, sensor_data.bio.bpm);
-        }
-
-        /* Read IMU Data */
-        ret = IMU_ReadData(&sensor_data);
-        if (ret == STATUS_OK) {
-            LOG_INF("Steps: %d", sensor_data.imu.steps_count);
-            RSC_SERVICE_Update(sensor_data.imu.steps_count);
-        }
-
-        /* Read Charge Status */
-        ret = CHG_GetStatus((charge_state_t *)&sensor_data.charge.is_charging);
-        if (ret == STATUS_OK) {
-            LOG_INF("Charge: %d%%", sensor_data.charge.battery_level);
-            BAS_NotifyLevel(sensor_data.charge.battery_level);
-        }
-
-        /* Sleep before next read */
-        k_msleep(1000); /* 1 second interval */
+/* --- Fonctions d'envoi des Notifications (Simulation avec logs de succès) --- */
+void notify_bpm(uint8_t bpm_val) {
+    uint8_t hrm_data[2] = {0x00, bpm_val}; 
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[2], hrm_data, sizeof(hrm_data));
+    if (err) {
+        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi BPM (err %d)\n", err);
+    } else {
+        printk("[NOTIFY SUCCESS] Packet BPM (%u) transmis avec succes\n", bpm_val);
     }
 }
 
-K_THREAD_DEFINE(sensor_tid, SENSOR_STACK_SIZE, sensor_thread, NULL, NULL, NULL,
-                SENSOR_PRIORITY, 0, K_NO_WAIT);
+void notify_temperature(uint8_t temp_val) {
+    // Format HTS simplifié pour la démo : Flag 0x00 + valeur sur 1 octet
+    uint8_t hts_data[2] = {0x00, temp_val}; 
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[5], hts_data, sizeof(hts_data));
+    if (err) {
+        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi Temperature (err %d)\n", err);
+    } else {
+        printk("[NOTIFY SUCCESS] Packet Temperature (%u°C) transmis avec succes\n", temp_val);
+    }
+}
 
-/* ===== Main Application ===== */
+void notify_spo2(uint8_t spo2_val) {
+    uint8_t plx_data[2] = {0x00, spo2_val}; 
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[8], plx_data, sizeof(plx_data));
+    if (err) {
+        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi SpO2 (err %d)\n", err);
+    } else {
+        printk("[NOTIFY SUCCESS] Packet SpO2 (%u%%) transmis avec succes\n", spo2_val);
+    }
+}
+
+void notify_steps(uint32_t steps_val) {
+    uint8_t step_data[4];
+    sys_put_le32(steps_val, step_data); 
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[11], step_data, sizeof(step_data));
+    if (err) {
+        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi Pas (err %d)\n", err);
+    } else {
+        printk("[NOTIFY SUCCESS] Packet Pas (%u) transmis avec succes\n", steps_val);
+    }
+}
+
+void notify_battery(uint8_t batt_val) {
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[19], &batt_val, sizeof(batt_val));
+    if (err) {
+        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi Batterie (err %d)\n", err);
+    } else {
+        printk("[NOTIFY SUCCESS] Packet Batterie (%u%%) transmis avec succes\n", batt_val);
+    }
+}
+
 int main(void)
 {
+    int blink_status = 0;
     int err;
 
-    LOG_INF("\n--- Gringgo BLE Ring ---\n");
+    printk("\n--- INITIALISATION DU SYSTEME SIMULE ---\n");
 
-    /* Initialize Bluetooth subsystem */
+    err = dk_leds_init();
+    if (err) {
+        printk("[ERR] Initialisation des LEDs impossible (err %d)\n", err);
+        return 0;
+    }
+    printk("[INIT] LEDs initialisees avec succes\n");
+
     err = bt_enable(NULL);
-    if (err) {
-        LOG_ERR("Bluetooth init failed (err %d)", err);
-        return err;
+    if (err) { 
+        printk("[ERR] Initialisation du Bluetooth echouee (err %d)\n", err); 
+        return 0; 
     }
-    LOG_INF("Bluetooth initialized");
+    printk("[INIT] Stack Bluetooth activee\n");
 
-    /* Start advertising */
-    err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), NULL, 0);
-    if (err) {
-        LOG_ERR("Advertising failed to start (err %d)", err);
-        return err;
+    err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), sd, ARRAY_SIZE(sd));
+    if (err) { 
+        printk("[ERR] Lancement de l'Advertising echoue (err %d)\n", err); 
+        return 0; 
     }
-    LOG_INF("Advertising started");
+    printk("[INIT] Advertising lance avec succes, en attente du smartphone...\n");
 
-    /* Main loop */
-    while (1) {
-        k_msleep(10000); /* 10 second tick */
+    /* --- Boucle de Simulation Active --- */
+    for (;;) {
+        dk_set_led(RUN_STATUS_LED, (++blink_status) % 2);
+
+        // Simulation des variations temporelles
+        sim_bpm++; if(sim_bpm > 110) sim_bpm = 65;
+        sim_steps += 2;
+        sim_spo2 = (blink_status % 20 == 0) ? 97 : 99;
+        
+        // Oscillation lente de la température entre 36°C et 37°C
+        sim_temp = (blink_status % 10 == 0) ? 37 : 36;
+
+        // Décrémentation lente de la batterie pour le réalisme
+        if (blink_status % 60 == 0 && sim_battery > 5) {
+            sim_battery--;
+        }
+
+        printk("[SIMUL] --- Generation Top %d ---\n", blink_status);
+
+        // Envoi de l'intégralité des 5 métriques à l'application Android
+        notify_bpm(sim_bpm);
+        notify_temperature(sim_temp);
+        notify_spo2(sim_spo2);
+        notify_steps(sim_steps);
+        notify_battery(sim_battery);
+
+        k_sleep(K_MSEC(SIMUL_INTERVAL_MS));
     }
-
-    return 0;
 }
