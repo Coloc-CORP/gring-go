@@ -159,9 +159,10 @@ int BIO_ReadData(bio_data_t *data) {
  * @param motion_data Pointer to imu_data_t structure containing motion data
  * @return STATUS_OK on success, error code otherwise
  */
+/*
 int BIO_InjectMotionData(imu_data_t *motion_data) {
     /* Injection via famille 0x14 (Input FIFO) */
-    uint8_t tx[8];
+    /*uint8_t tx[8];
     tx[0] = BIO_FAM_INPUT_FIFO;
     tx[1] = 0x00; // Index
     
@@ -179,4 +180,4 @@ int BIO_InjectMotionData(imu_data_t *motion_data) {
     uint8_t status;
     i2c_read_dt(&bio_i2c, &status, 1);
     return (status == BIO_STATUS_SUCCESS) ? STATUS_OK : STATUS_ERR_INVALID_PARAM;
-}
+}*/
