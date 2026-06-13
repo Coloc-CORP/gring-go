@@ -1,0 +1,56 @@
+/ {
+    aliases {
+        haptic-i2c = &drv2605l;
+        imu-i2c = &bhi260ap;
+        temp-i2c = &stts22h;
+        bio-i2c = &max32664;
+        chg-i2c = &bq25120a;
+    };
+
+    /* GPIO pins for various functions */
+    zephyr,user {
+        haptic-en-gpios = <&gpio0 7 GPIO_ACTIVE_HIGH>;
+        bio-rst-gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
+        bio-mfio-gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+        temp-int-gpios = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+    };
+};
+
+&i2c1 {
+    status = "okay";
+    
+    /* Haptic Driver DRV2605L */
+    drv2605l: drv2605l@5a {
+        compatible = "i2c-device";
+        reg = <0x5a>;
+        label = "DRV2605L";
+    };
+
+    /* IMU BHI260AP */
+    bhi260ap: bhi260ap@28 {
+        compatible = "i2c-device";
+        reg = <0x28>;
+        label = "BHI260AP";
+    };
+
+    /* Temperature Sensor STTS22H */
+    stts22h: stts22h@70 {
+        compatible = "i2c-device";
+        reg = <0x70>;
+        label = "STTS22H";
+    };
+
+    /* Biometric Sensor MAX32664 */
+    max32664: max32664@55 {
+        compatible = "i2c-device";
+        reg = <0x55>;
+        label = "MAX32664";
+    };
+
+    /* Charge Controller BQ25120A */
+    bq25120a: bq25120a@6b {
+        compatible = "i2c-device";
+        reg = <0x6b>;
+        label = "BQ25120A";
+    };
+};
