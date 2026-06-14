@@ -70,6 +70,8 @@ public class Menu extends Fragment {
 
 
 
+
+
     // Permission members
     private static final String[] BLUETOOTH_PERMISSIONS = new String[]{
             Manifest.permission.BLUETOOTH_SCAN,
@@ -277,43 +279,53 @@ public class Menu extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        TextView tvHeartRate = view.findViewById(R.id.chiffre_bpm); // Assure-toi d'avoir ces ID dans ton XML
+        // TextViews pour les données
+        TextView tvHeartRate = view.findViewById(R.id.chiffre_bpm);
         TextView tvStep = view.findViewById(R.id.chiffre_pas);
-        //TextView tvBattery = view.findViewById(R.id.battery);
+        TextView tvTemp = view.findViewById(R.id.chiffre_temp);
+        TextView tvSpo2 = view.findViewById(R.id.chiffre_spo2);
+        TextView tvBattery = view.findViewById(R.id.chiffre_battery); // ← AJOUTER
 
+        // Observers
         bluetoothViewModel.getHeartRate().observe(getViewLifecycleOwner(), hr -> {
-            tvHeartRate.setText(hr);
+            if (tvHeartRate != null) tvHeartRate.setText(hr);
         });
 
-        bluetoothViewModel.getStepsCount().observe(getViewLifecycleOwner(), hr -> {
-            tvStep.setText(hr);
+        bluetoothViewModel.getStepsCount().observe(getViewLifecycleOwner(), steps -> {
+            if (tvStep != null) tvStep.setText(steps);
         });
 
-        // 1. Récupération du bouton
-        final Button button = (Button) view.findViewById(R.id.button);
+        bluetoothViewModel.getTemperature().observe(getViewLifecycleOwner(), temp -> {
+            if (tvTemp != null) tvTemp.setText(temp);
+        });
+
+        bluetoothViewModel.getSpO2().observe(getViewLifecycleOwner(), spo2 -> {
+            if (tvSpo2 != null) tvSpo2.setText(spo2);
+        });
+
+        bluetoothViewModel.getBatteryLevel().observe(getViewLifecycleOwner(), battery -> {
+            if (tvBattery != null) tvBattery.setText(battery);
+        });
+
+        // === BOUTON CONNEXION ===
+        final Button button = view.findViewById(R.id.button);
 
         if (button != null) {
-            // 2. Gestion du clic pour ouvrir la popup
             button.setOnClickListener(v -> {
                 String currentState = bluetoothViewModel.getConnectionState().getValue();
-
                 if ("CONNECTED".equals(currentState)) {
-                    // Si on est connecté, on demande la déconnexion
                     bluetoothViewModel.disconnect();
                 } else {
-                    // Sinon, on lance la procédure habituelle (scan/popup)
                     showBluetoothPopup();
                 }
             });
 
-            // 3. OBSERVATION de l'état de connexion
-            // On demande au ViewModel de nous prévenir quand l'état change
+            // Observer état de connexion
             bluetoothViewModel.getConnectionState().observe(getViewLifecycleOwner(), state -> {
-                // 'state' est une String (ou un Enum) envoyée par le BleManager
-                Log.d("TEST_UI", "État reçu dans le Fragment : " + state); // Ajoute cette ligne !
+                Log.d(TAG, "État: " + state);
                 switch (state) {
                     case "CONNECTED":
-                        button.setText("Connecté !");
+                        button.setText("Déconnecter");
                         button.setBackgroundColor(Color.GREEN);
                         break;
                     case "CONNECTING":
@@ -321,18 +333,11 @@ public class Menu extends Fragment {
                         button.setBackgroundColor(Color.YELLOW);
                         break;
                     case "DISCONNECTED":
-                        button.setText("Se connecter");
-                        button.setBackgroundColor(Color.BLUE);
-                        break;
-                    default:
-                        button.setText("Erreur");
-                        button.setBackgroundColor(Color.RED);
+                        button.setText("@string/scan_devices");
+                        button.setBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark));
                         break;
                 }
             });
-
-        } else {
-            Log.e(TAG, "Button 'button' not found in fragment_menu.xml");
         }
     }
 
@@ -443,6 +448,7 @@ public class Menu extends Fragment {
     public void startBluetoothSocket() {
         ConnectThread connectThread = new ConnectThread(this.selectedDevice,requireContext(),bluetoothAdapter);
     }
+
 
 
 }

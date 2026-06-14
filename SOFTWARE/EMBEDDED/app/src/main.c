@@ -18,13 +18,15 @@
 #define RUN_STATUS_LED          DK_LED1
 #define CON_STATUS_LED          DK_LED2
 #define SIMUL_INTERVAL_MS       1000
+#define LOW_ENERGY_INTERVAL_MS  5000 // Intervalle quand Low Energy est activé (5 secondes)
 
 /* --- Variables Globales de Simulation --- */
 static uint8_t sim_bpm = 70;
 static uint8_t sim_spo2 = 98;
 static uint32_t sim_steps = 1250;
 static uint8_t sim_battery = 85;
-static uint8_t sim_temp = 36; // Température simulée (en °C)
+static uint8_t sim_temp = 36; 
+static uint8_t last_notified_battery = 85; // Initialisée à la même valeur que sim_battery
 
 // Variables pour stocker les états d'activation (reçus de l'appli Android)
 static uint8_t health_activation_state = 0;
@@ -157,56 +159,39 @@ BT_CONN_CB_DEFINE(conn_callbacks) = {
     .disconnected = disconnected,
 };
 
-/* --- Fonctions d'envoi des Notifications (Simulation avec logs de succès) --- */
 void notify_bpm(uint8_t bpm_val) {
     uint8_t hrm_data[2] = {0x00, bpm_val}; 
     int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[2], hrm_data, sizeof(hrm_data));
-    if (err) {
-        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi BPM (err %d)\n", err);
-    } else {
-        printk("[NOTIFY SUCCESS] Packet BPM (%u) transmis avec succes\n", bpm_val);
-    }
+    if (err && err != -ENOTCONN) printk("[NOTIFY ERR] BPM (err %d)\n", err);
+    else if (!err) printk("[NOTIFY SUCCESS] BPM (%u) transmis\n", bpm_val);
 }
 
 void notify_temperature(uint8_t temp_val) {
-    // Format HTS simplifié pour la démo : Flag 0x00 + valeur sur 1 octet
     uint8_t hts_data[2] = {0x00, temp_val}; 
-    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[5], hts_data, sizeof(hts_data));
-    if (err) {
-        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi Temperature (err %d)\n", err);
-    } else {
-        printk("[NOTIFY SUCCESS] Packet Temperature (%u°C) transmis avec succes\n", temp_val);
-    }
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[6], hts_data, sizeof(hts_data));
+    if (err && err != -ENOTCONN) printk("[NOTIFY ERR] TEMP (err %d)\n", err);
+    else if (!err) printk("[NOTIFY SUCCESS] TEMP (%u°C) transmis\n", temp_val);
 }
 
 void notify_spo2(uint8_t spo2_val) {
     uint8_t plx_data[2] = {0x00, spo2_val}; 
-    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[8], plx_data, sizeof(plx_data));
-    if (err) {
-        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi SpO2 (err %d)\n", err);
-    } else {
-        printk("[NOTIFY SUCCESS] Packet SpO2 (%u%%) transmis avec succes\n", spo2_val);
-    }
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[10], plx_data, sizeof(plx_data));
+    if (err && err != -ENOTCONN) printk("[NOTIFY ERR] SPO2 (err %d)\n", err);
+    else if (!err) printk("[NOTIFY SUCCESS] SPO2 (%u%%) transmis\n", spo2_val);
 }
 
 void notify_steps(uint32_t steps_val) {
     uint8_t step_data[4];
     sys_put_le32(steps_val, step_data); 
-    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[11], step_data, sizeof(step_data));
-    if (err) {
-        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi Pas (err %d)\n", err);
-    } else {
-        printk("[NOTIFY SUCCESS] Packet Pas (%u) transmis avec succes\n", steps_val);
-    }
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[14], step_data, sizeof(step_data));
+    if (err && err != -ENOTCONN) printk("[NOTIFY ERR] STEPS (err %d)\n", err);
+    else if (!err) printk("[NOTIFY SUCCESS] STEPS (%u) transmis\n", steps_val);
 }
 
 void notify_battery(uint8_t batt_val) {
-    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[19], &batt_val, sizeof(batt_val));
-    if (err) {
-        if (err != -ENOTCONN) printk("[NOTIFY ERR] Echec envoi Batterie (err %d)\n", err);
-    } else {
-        printk("[NOTIFY SUCCESS] Packet Batterie (%u%%) transmis avec succes\n", batt_val);
-    }
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[28], &batt_val, sizeof(batt_val));
+    if (err && err != -ENOTCONN) printk("[NOTIFY ERR] BATT (err %d)\n", err);
+    else if (!err) printk("[NOTIFY SUCCESS] BATT (%u%%) transmis\n", batt_val);
 }
 
 int main(void)
@@ -237,32 +222,62 @@ int main(void)
     }
     printk("[INIT] Advertising lance avec succes, en attente du smartphone...\n");
 
-    /* --- Boucle de Simulation Active --- */
     for (;;) {
         dk_set_led(RUN_STATUS_LED, (++blink_status) % 2);
 
-        // Simulation des variations temporelles
-        sim_bpm++; if(sim_bpm > 110) sim_bpm = 65;
-        sim_steps += 2;
-        sim_spo2 = (blink_status % 20 == 0) ? 97 : 99;
-        
-        // Oscillation lente de la température entre 36°C et 37°C
-        sim_temp = (blink_status % 10 == 0) ? 37 : 36;
+        printk("\n[SIMUL] --- Generation Top %d ---", blink_status);
+        printk(" | Sante: %s | Low Energy: %s\n",
+            (health_activation_state == 1) ? "ON" : "OFF",
+            (low_energy_state == 1) ? "ON" : "OFF");
 
-        // Décrémentation lente de la batterie pour le réalisme
-        if (blink_status % 60 == 0 && sim_battery > 5) {
-            sim_battery--;
+        /* --- LOGIQUE 1 : MODE SANTÉ --- */
+        // Mise à jour des variables de simulation (toujours active)
+        if (health_activation_state == 1) {
+            sim_bpm++; if(sim_bpm > 110) sim_bpm = 65;
+            sim_steps += 2;
+            sim_spo2 = (blink_status % 20 == 0) ? 97 : 99;
+            sim_temp = (blink_status % 10 == 0) ? 37 : 36;
         }
 
-        printk("[SIMUL] --- Generation Top %d ---\n", blink_status);
+        /* --- LOGIQUE 2 : ENVOI DES NOTIFICATIONS --- */
+        // On n'envoie les notifications que si :
+        // - Le mode Santé est activé ET le mode Low Energy est désactivé
+        if (health_activation_state == 1 && low_energy_state == 0) {
+            notify_bpm(sim_bpm);
+            notify_temperature(sim_temp);
+            notify_spo2(sim_spo2);
+            notify_steps(sim_steps);
+        } else if (low_energy_state == 1) {
+            printk("[SIMUL] Mode Low Energy actif : notifications des capteurs désactivées.\n");
+        } else {
+            printk("[SIMUL] Suivi Santé désactivé, capteurs en veille.\n");
+        }
 
-        // Envoi de l'intégralité des 5 métriques à l'application Android
-        notify_bpm(sim_bpm);
-        notify_temperature(sim_temp);
-        notify_spo2(sim_spo2);
-        notify_steps(sim_steps);
-        notify_battery(sim_battery);
+        /* --- LA BATTERIE --- */
+        // La batterie est toujours envoyée, même en Low Energy
+        if (blink_status % 60 == 0 && sim_battery > 5) {
+            sim_battery--;
+            notify_battery(sim_battery); // notify_battery vérifie si la valeur a changé
+        }
 
-        k_sleep(K_MSEC(SIMUL_INTERVAL_MS));
+        /* --- LOGIQUE 3 : MODE LOW ENERGY --- */
+        // On ajuste le temps de pause en fonction de l'état du Low Energy
+        int current_delay = (low_energy_state == 1) ? LOW_ENERGY_INTERVAL_MS : SIMUL_INTERVAL_MS;
+        k_sleep(K_MSEC(current_delay));
     }
+
+    void notify_battery(uint8_t batt_val) {
+    // Ne pas envoyer de notification si la valeur n'a pas changé
+    if (batt_val == last_notified_battery) {
+        return;
+    }
+
+    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[28], &batt_val, sizeof(batt_val));
+    if (err && err != -ENOTCONN) {
+        printk("[NOTIFY ERR] BATT (err %d)\n", err);
+    } else if (!err) {
+        printk("[NOTIFY SUCCESS] BATT (%u%%) transmis\n", batt_val);
+        last_notified_battery = batt_val; // Mettre à jour la dernière valeur envoyée
+    }
+}
 }

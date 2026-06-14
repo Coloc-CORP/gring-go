@@ -1,64 +1,98 @@
 package com.example.gringgo;
 
+import android.content.Context;
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Switch;
+import android.util.Log;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Command#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.gringgo.ViewModel.BluetoothViewModel;
+import com.example.gringgo.ViewModel.Nrf5340Manager;
+
 public class Command extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private Switch switchHealth;
+    private Switch switchLowEnergy;
+    private BluetoothViewModel bluetoothViewModel;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private final MutableLiveData<Boolean> healthTrackingState = new MutableLiveData<>(false);
 
     public Command() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Command.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Command newInstance(String param1, String param2) {
-        Command fragment = new Command();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Constructeur public vide requis
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_command, container, false);
+    }
+
+    public void setHealthTracking(boolean enabled, Context context) {
+        // 1. Sauvegarde persistante
+        context.getSharedPreferences("GringoPrefs", Context.MODE_PRIVATE)
+                .edit().putBoolean("health_state", enabled).apply();
+
+        // 2. Mise à jour du LiveData
+        healthTrackingState.setValue(enabled);
+    }
+
+    public boolean getSavedHealthState(Context context) {
+        return context.getSharedPreferences("GringoPrefs", Context.MODE_PRIVATE)
+                .getBoolean("health_state", false);
+    }
+
+    public LiveData<Boolean> getHealthTrackingState() {
+        return healthTrackingState;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        switchHealth = view.findViewById(R.id.switch1);
+        switchLowEnergy = view.findViewById(R.id.switch2);
+
+
+        switchHealth.setChecked(bluetoothViewModel.getSavedState(requireContext(), true));
+        // 1. Récupération du ViewModel partagé avec l'Activité
+        bluetoothViewModel = new ViewModelProvider(requireActivity()).get(BluetoothViewModel.class);
+
+        // 2. Action lors de l'appui sur l'interrupteur "Santé"
+        switchHealth.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Nrf5340Manager manager = bluetoothViewModel.getBleManager();
+            Log.d("COMMAND_FRAG", "Manager: " + (manager != null ? "OK" : "NULL"));
+            Log.d("COMMAND_FRAG", "Connected: " + (manager != null && manager.isConnected()));
+
+            if (manager != null && manager.isConnected()) {
+                manager.setHealthTrackingEnabled(isChecked);
+                bluetoothViewModel.setTrackingState(isChecked, requireContext(), true);
+            } else {
+                Log.e("COMMAND_FRAG", "BLE non connecté ou manager null");
+                buttonView.setChecked(!isChecked);
+            }
+        });
+        switchLowEnergy.setChecked(bluetoothViewModel.getSavedState(requireContext(), false));
+        // 3. Action lors de l'appui sur l'interrupteur "Low Energy"
+        switchLowEnergy.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Nrf5340Manager manager = bluetoothViewModel.getBleManager();
+            Log.d("COMMAND_FRAG", "Manager: " + (manager != null ? "OK" : "NULL"));
+            Log.d("COMMAND_FRAG", "Connected: " + (manager != null && manager.isConnected()));
+
+            if (manager != null && manager.isConnected()) {
+                manager.setHealthTrackingEnabled(isChecked);
+                bluetoothViewModel.setTrackingState(isChecked, requireContext(), false);
+            } else {
+                Log.e("COMMAND_FRAG", "BLE non connecté ou manager null");
+                buttonView.setChecked(!isChecked);
+            }
+        });
     }
 }

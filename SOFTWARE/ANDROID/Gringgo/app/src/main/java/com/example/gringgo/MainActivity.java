@@ -3,6 +3,7 @@ package com.example.gringgo;
 import android.os.Bundle;
 
 import com.example.gringgo.ViewModel.BluetoothViewModel;
+import com.example.gringgo.ViewModel.Nrf5340Manager;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -32,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private BluetoothViewModel bluetoothViewModel;
+
+    // À ajouter dans ton MainActivity.java si tu ne l'as pas déjà fait
+
+    // La méthode qui permet aux Fragments d'y accéder :
+    public Nrf5340Manager getBleManager() {
+        return bluetoothViewModel.getBleManager();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
