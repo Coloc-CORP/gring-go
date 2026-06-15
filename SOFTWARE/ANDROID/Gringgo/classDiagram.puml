@@ -1,0 +1,93 @@
+@startuml
+class com.example.gringgo.ViewModel.Nrf5340Manager {
+- BluetoothGattCharacteristic hrsChar
+- OnConnectionStatusChangedListener connectionListener
+- OnGattDataListener dataListener
++ <<Create>> Nrf5340Manager(Context)
++ void setOnGattDataListener(OnGattDataListener)
++ void setOnConnectionStatusChangedListener(OnConnectionStatusChangedListener)
+- void setupGattStreams()
+# boolean isRequiredServiceSupported(BluetoothGatt)
+# void onServicesInvalidated()
+# BleManagerGattCallback getGattCallback()
++ void setHealthTrackingEnabled(boolean)
++ void setLowEnergyModeEnabled(boolean)
+}
+
+
+interface com.example.gringgo.ViewModel.Nrf5340Manager$OnGattDataListener {
+~ void onHeartRateReceived(int)
+~ void onBatteryReceived(int)
+~ void onTemperatureReceived(int)
+~ void onPulseOxReceived(int)
+~ void onStepsReceived(int)
+}
+
+interface com.example.gringgo.ViewModel.Nrf5340Manager$OnConnectionStatusChangedListener {
+~ void onStatusChanged(String)
+}
+
+class com.example.gringgo.ViewModel.BluetoothUUIDs {
++ {static} UUID HEART_RATE_SERVICE_UUID
++ {static} UUID HEALTH_THERMOMETER_SERVICE_UUID
++ {static} UUID PULSE_OXIMETER_SERVICE_UUID
++ {static} UUID RUNNING_SPEED_AND_CADENCE_SERVICE_UUID
++ {static} UUID BATTERY_SERVICE_UUID
++ {static} UUID DEVICE_INFORMATION_SERVICE_UUID
++ {static} UUID ALERT_NOTIFICATION_SERVICE_UUID
++ {static} UUID HEART_RATE_MEASUREMENT_CHARACTERISTIC_UUID
++ {static} UUID HEALTH_THERMOMETER_MEASUREMENT_CHARACTERISTIC_UUID
++ {static} UUID PULSE_OXIMETER_CHARACTERISTIC_UUID
++ {static} UUID RUNNING_SPEED_AND_CADENCE_CHARACTERISTIC_UUID
++ {static} UUID BATTERY_LEVEL_CHARACTERISTIC_UUID
++ {static} UUID ALERT_LEVEL_CHARACTERISTIC_UUID
++ {static} UUID HEALTH_ACTIVATION_CHARACTERISTIC_UUID
++ {static} UUID LE_ACTIVATION_CHARACTERISTIC_UUID
++ {static} UUID DIS_SERVICE_UUID
++ {static} UUID HEALTH_ACT_CHARACTERISTIC_UUID
++ {static} UUID LOW_ENERGY_CHARACTERISTIC_UUID
+}
+
+class com.example.gringgo.ViewModel.BluetoothViewModel {
+- Nrf5340Manager manager
+- MutableLiveData<List<BluetoothDevice>> devices
+- MutableLiveData<BluetoothDevice> selectedDevice
+- MutableLiveData<String> connectionState
+- MutableLiveData<String> heartRate
+- MutableLiveData<String> batteryLevel
+- MutableLiveData<String> stepsCount
+- MutableLiveData<String> temperature
+- MutableLiveData<String> spO2
+- {static} String PREFS_NAME
+- {static} String KEY_HEALTH_STATE
+- {static} String KEY_LOW_ENERGY_STATE
++ <<Create>> BluetoothViewModel(Application)
++ void onHeartRateReceived(int)
++ void onBatteryReceived(int)
++ void onTemperatureReceived(int)
++ void onPulseOxReceived(int)
++ void onStepsReceived(int)
++ void addDevice(BluetoothDevice)
++ void connect(BluetoothDevice)
++ void disconnect()
++ Nrf5340Manager getBleManager()
++ LiveData<List<BluetoothDevice>> getDevices()
++ LiveData<String> getConnectionState()
++ LiveData<String> getHeartRate()
++ LiveData<String> getBatteryLevel()
++ LiveData<String> getStepsCount()
++ LiveData<String> getTemperature()
++ LiveData<String> getSpO2()
++ boolean getSavedState(Context,boolean)
++ void setTrackingState(boolean,Context,boolean)
+}
+
+
+
+
+no.nordicsemi.android.ble.BleManager <|-- com.example.gringgo.ViewModel.Nrf5340Manager
+com.example.gringgo.ViewModel.Nrf5340Manager +.. com.example.gringgo.ViewModel.Nrf5340Manager$OnGattDataListener
+com.example.gringgo.ViewModel.Nrf5340Manager +.. com.example.gringgo.ViewModel.Nrf5340Manager$OnConnectionStatusChangedListener
+com.example.gringgo.ViewModel.OnGattDataListener <|.. com.example.gringgo.ViewModel.BluetoothViewModel
+androidx.lifecycle.AndroidViewModel <|-- com.example.gringgo.ViewModel.BluetoothViewModel
+@enduml

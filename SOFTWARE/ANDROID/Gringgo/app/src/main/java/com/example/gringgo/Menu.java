@@ -333,7 +333,7 @@ public class Menu extends Fragment {
                         button.setBackgroundColor(Color.YELLOW);
                         break;
                     case "DISCONNECTED":
-                        button.setText("@string/scan_devices");
+                        button.setText(getString(R.string.scan_devices));
                         button.setBackgroundColor(ContextCompat.getColor(requireContext(), android.R.color.holo_green_dark));
                         break;
                 }
@@ -387,13 +387,37 @@ public class Menu extends Fragment {
     }
 
     // Display bluetooth device finder pop up
+    // Display bluetooth device finder pop up
     public void showBluetoothPopup() {
         devicesList.clear();
-        if (devicesAdapter == null) {
-            devicesAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1);
-        } else {
-            devicesAdapter.clear();
-        }
+
+        // --- NOUVEAU CODE : Initialisation personnalisée de l'adaptateur ---
+        // On surcharge getView() pour modifier l'affichage des éléments de la liste
+        devicesAdapter = new ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1, new ArrayList<>()) {
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                // Récupération de la vue par défaut
+                View view = super.getView(position, convertView, parent);
+                TextView textView = view.findViewById(android.R.id.text1);
+
+                // Récupération du texte
+                String deviceString = getItem(position);
+
+                // Si le nom contient "nrf", on le met en vert et en gras
+                if (deviceString != null && deviceString.toLowerCase().contains("nrf")) {
+                    textView.setTextColor(Color.parseColor("#4CAF50")); // Vert
+                    textView.setTypeface(null, android.graphics.Typeface.BOLD);
+                } else {
+                    // Sinon (très important pour le recyclage des vues), on remet par défaut
+                    textView.setTextColor(Color.BLACK); // Mettre Color.WHITE si l'app est en mode sombre
+                    textView.setTypeface(null, android.graphics.Typeface.NORMAL);
+                }
+
+                return view;
+            }
+        };
+        // -------------------------------------------------------------------
 
         BluetoothLeScanner scanner = bluetoothAdapter.getBluetoothLeScanner();
         if (scanner == null) {
@@ -424,7 +448,8 @@ public class Menu extends Fragment {
             stopBleScan(); // Très important d'arrêter avant de se connecter
 
             BluetoothDevice device = devicesList.get(which);
-            if (device.getName().toLowerCase().contains("nrf") || device.getName().toLowerCase().contains("nordic")) {
+            // On s'assure que le nom n'est pas nul avant d'appeler toLowerCase()
+            if (device.getName() != null && (device.getName().toLowerCase().contains("nrf") || device.getName().toLowerCase().contains("nordic"))) {
                 bluetoothViewModel.connect(device);
             } else {
                 Toast.makeText(requireContext(), "Cet appareil n'est pas un nRF", Toast.LENGTH_SHORT).show();

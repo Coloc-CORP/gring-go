@@ -1,64 +1,98 @@
 package com.example.gringgo;
 
 import android.os.Bundle;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
+import androidx.lifecycle.ViewModelProvider;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Bdd#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.gringgo.bdd.HealthData; // Assurez-vous que cet import correspond à votre package
+import com.example.gringgo.ViewModel.BluetoothViewModel;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+
 public class Bdd extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private BluetoothViewModel bluetoothViewModel;
+    private ArrayAdapter<String> listAdapter;
+    private ArrayList<String> historyList;
 
     public Bdd() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Bdd.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static Bdd newInstance(String param1, String param2) {
-        Bdd fragment = new Bdd();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Constructeur public vide requis
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bdd, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        bluetoothViewModel = new ViewModelProvider(requireActivity()).get(BluetoothViewModel.class);
+
+        // --- 1. CONFIGURATION DU BOUTON SAUVEGARDER ---
+        Button btnSauvegarder = view.findViewById(R.id.btn_sauvegarder);
+        btnSauvegarder.setOnClickListener(v -> {
+            String currentState = bluetoothViewModel.getConnectionState().getValue();
+            if ("CONNECTED".equals(currentState)) {
+                bluetoothViewModel.saveCurrentDataToDatabase();
+                Toast.makeText(requireContext(), "Données enregistrées !", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(requireContext(), "Erreur : Connectez-vous d'abord à la carte.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // --- 2. CONFIGURATION DE LA LISTE (AFFICHAGE) ---
+        ListView listView = view.findViewById(R.id.listView);
+        historyList = new ArrayList<>();
+
+        // On utilise un affichage simple fourni par Android
+        listAdapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_list_item_1, historyList);
+        listView.setAdapter(listAdapter);
+
+        // Formateur pour transformer le "timestamp" (chiffres) en date lisible
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy à HH:mm:ss", Locale.getDefault());
+
+        // --- 3. OBSERVATION DE LA BASE DE DONNÉES ---
+        // Dès qu'une donnée est ajoutée, Room prévient cette méthode qui met à jour la liste
+        bluetoothViewModel.getAllHistory().observe(getViewLifecycleOwner(), healthDataList -> {
+
+            // On vide l'ancienne liste affichée
+            historyList.clear();
+
+            // On boucle sur toutes les lignes de la base de données
+            for (HealthData data : healthDataList) {
+
+                // On formate la date
+                String dateStr = dateFormat.format(new Date(data.timestamp));
+
+                // On crée une jolie chaîne de caractères pour chaque ligne
+                String affichage = dateStr + "\n" +
+                        "BPM: " + data.heartRate +
+                        " | Pas: " + data.steps + "\n" +
+                        " | Temp: " + data.temperature +
+                        " | SpO2: " + data.spO2 +
+                        " | Bat: " + data.battery;
+
+                // On ajoute ce texte à notre liste
+                historyList.add(affichage);
+            }
+
+            // On prévient la ListView que les données ont changé pour qu'elle se redessine
+            listAdapter.notifyDataSetChanged();
+        });
     }
 }

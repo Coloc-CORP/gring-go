@@ -1,0 +1,258 @@
+@startuml
+class com.example.gringgo.Bdd {
+- BluetoothViewModel bluetoothViewModel
+- ArrayAdapter<String> listAdapter
+- ArrayList<String> historyList
++ <<Create>> Bdd()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+}
+
+
+class com.example.gringgo.ViewModel.Nrf5340Manager {
+- BluetoothGattCharacteristic hrsChar
+- OnConnectionStatusChangedListener connectionListener
+- OnGattDataListener dataListener
++ <<Create>> Nrf5340Manager(Context)
++ void setOnGattDataListener(OnGattDataListener)
++ void setOnConnectionStatusChangedListener(OnConnectionStatusChangedListener)
+- void setupGattStreams()
+# boolean isRequiredServiceSupported(BluetoothGatt)
+# void onServicesInvalidated()
+# BleManagerGattCallback getGattCallback()
++ void setHealthTrackingEnabled(boolean)
++ void setLowEnergyModeEnabled(boolean)
++ void setVibrationEnabled(boolean)
+}
+
+
+interface com.example.gringgo.ViewModel.Nrf5340Manager$OnGattDataListener {
+~ void onHeartRateReceived(int)
+~ void onBatteryReceived(int)
+~ void onTemperatureReceived(int)
+~ void onPulseOxReceived(int)
+~ void onStepsReceived(int)
+}
+
+interface com.example.gringgo.ViewModel.Nrf5340Manager$OnConnectionStatusChangedListener {
+~ void onStatusChanged(String)
+}
+
+class com.example.gringgo.BlutoothLiveCom {
+- {static} String TAG
+- Handler handler
+}
+
+interface com.example.gringgo.BlutoothLiveCom$MessageConstants {
++ {static} int MESSAGE_READ
++ {static} int MESSAGE_WRITE
++ {static} int MESSAGE_TOAST
+}
+
+class com.example.gringgo.BlutoothLiveCom$ConnectedThread {
+- BluetoothSocket mmSocket
+- InputStream mmInStream
+- OutputStream mmOutStream
+- byte[] mmBuffer
++ <<Create>> ConnectedThread(BluetoothSocket)
++ void read()
++ void write(byte[])
++ void cancel()
+}
+
+
+class com.example.gringgo.bdd.HealthData {
++ int id
++ long timestamp
++ String heartRate
++ String steps
++ String temperature
++ String spO2
++ String battery
+}
+
+abstract class com.example.gringgo.bdd.AppDatabase {
+- {static} AppDatabase INSTANCE
++ {abstract}HealthDao healthDao()
++ {static} AppDatabase getDatabase(Context)
+}
+
+
+class com.example.gringgo.ConnectThread {
+- BluetoothSocket mmSocket
+- BluetoothDevice mmDevice
+- Context mmContext
+- BluetoothAdapter mmBluetoothAdapter
+- {static} UUID MY_UUID
++ <<Create>> ConnectThread(BluetoothDevice,Context,BluetoothAdapter)
++ void run()
++ void cancel()
+}
+
+
+class com.example.gringgo.Parametre {
+- RadioGroup radioGroupTheme
+- SharedPreferences sharedPreferences
++ <<Create>> Parametre()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+}
+
+
+class com.example.gringgo.Menu {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- {static} int REQUEST_ENABLE_BT
+- String mParam1
+- String mParam2
+- BroadcastReceiver receiver
+- {static} String TAG
+- BluetoothViewModel bluetoothViewModel
+- {static} String[] BLUETOOTH_PERMISSIONS
+- ActivityResultLauncher<String[]> requestPermissionLauncher
+- ArrayAdapter<String> devicesAdapter
+~ BluetoothAdapter bluetoothAdapter
+- List<BluetoothDevice> devicesList
+- ScanCallback leScanCallback
+~ ActivityResultLauncher<Intent> requestEnableBluetoothLauncher
+- BluetoothDevice selectedDevice
++ <<Create>> Menu()
++ {static} Menu newInstance(String,String)
++ void onCreate(Bundle)
++ void onStart()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onResume()
++ void onStop()
++ void onViewCreated(View,Bundle)
+- void checkAndRequestPermissions()
+- void activeBluetooth()
++ void showBluetoothPopup()
+- void stopBleScan()
++ void startBluetoothSocket()
+}
+
+
+class com.example.gringgo.MainActivity {
+- AppBarConfiguration appBarConfiguration
+- ActivityMainBinding binding
+- BluetoothViewModel bluetoothViewModel
++ Nrf5340Manager getBleManager()
+# void onCreate(Bundle)
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
++ boolean onSupportNavigateUp()
+- void showPopupMenu(View)
+}
+
+
+interface com.example.gringgo.bdd.HealthDao {
+~ void insert(HealthData)
+~ LiveData<List<HealthData>> getAllHistory()
+~ void deleteAll()
+}
+
+class com.example.gringgo.Command {
+- Switch switchHealth
+- Switch switchLowEnergy
+- Button buttonVibration
+- BluetoothViewModel bluetoothViewModel
++ <<Create>> Command()
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+}
+
+
+class com.example.gringgo.Distance {
+- {static} String ARG_PARAM1
+- {static} String ARG_PARAM2
+- String mParam1
+- String mParam2
+- BluetoothViewModel bluetoothViewModel
++ <<Create>> Distance()
++ {static} Distance newInstance(String,String)
++ void onCreate(Bundle)
++ View onCreateView(LayoutInflater,ViewGroup,Bundle)
++ void onViewCreated(View,Bundle)
+}
+
+
+class com.example.gringgo.ViewModel.BluetoothUUIDs {
++ {static} UUID HEART_RATE_SERVICE_UUID
++ {static} UUID HEALTH_THERMOMETER_SERVICE_UUID
++ {static} UUID PULSE_OXIMETER_SERVICE_UUID
++ {static} UUID RUNNING_SPEED_AND_CADENCE_SERVICE_UUID
++ {static} UUID BATTERY_SERVICE_UUID
++ {static} UUID DEVICE_INFORMATION_SERVICE_UUID
++ {static} UUID ALERT_NOTIFICATION_SERVICE_UUID
++ {static} UUID HEART_RATE_MEASUREMENT_CHARACTERISTIC_UUID
++ {static} UUID HEALTH_THERMOMETER_MEASUREMENT_CHARACTERISTIC_UUID
++ {static} UUID PULSE_OXIMETER_CHARACTERISTIC_UUID
++ {static} UUID RUNNING_SPEED_AND_CADENCE_CHARACTERISTIC_UUID
++ {static} UUID BATTERY_LEVEL_CHARACTERISTIC_UUID
++ {static} UUID ALERT_LEVEL_CHARACTERISTIC_UUID
++ {static} UUID HEALTH_ACTIVATION_CHARACTERISTIC_UUID
++ {static} UUID LE_ACTIVATION_CHARACTERISTIC_UUID
++ {static} UUID DIS_SERVICE_UUID
++ {static} UUID HEALTH_ACT_CHARACTERISTIC_UUID
++ {static} UUID LOW_ENERGY_CHARACTERISTIC_UUID
+}
+
+class com.example.gringgo.ViewModel.BluetoothViewModel {
+- Nrf5340Manager manager
+- MutableLiveData<List<BluetoothDevice>> devices
+- MutableLiveData<BluetoothDevice> selectedDevice
+- MutableLiveData<String> connectionState
+- MutableLiveData<String> heartRate
+- MutableLiveData<String> batteryLevel
+- MutableLiveData<String> stepsCount
+- MutableLiveData<String> temperature
+- MutableLiveData<String> spO2
+- {static} String PREFS_NAME
++ {static} String KEY_HEALTH_STATE
++ {static} String KEY_LOW_ENERGY_STATE
+- HealthDao healthDao
+- ExecutorService databaseWriteExecutor
++ <<Create>> BluetoothViewModel(Application)
++ void onHeartRateReceived(int)
++ void onBatteryReceived(int)
++ void onTemperatureReceived(int)
++ void onPulseOxReceived(int)
++ void onStepsReceived(int)
++ void addDevice(BluetoothDevice)
++ void connect(BluetoothDevice)
++ void disconnect()
++ Nrf5340Manager getBleManager()
++ LiveData<List<BluetoothDevice>> getDevices()
++ LiveData<String> getConnectionState()
++ LiveData<String> getHeartRate()
++ LiveData<String> getBatteryLevel()
++ LiveData<String> getStepsCount()
++ LiveData<String> getTemperature()
++ LiveData<String> getSpO2()
++ boolean getSavedState(Context,String)
++ void setTrackingState(boolean,Context,String)
++ void clearHealthData()
++ void saveCurrentDataToDatabase()
++ LiveData<List<HealthData>> getAllHistory()
+}
+
+
+
+
+androidx.fragment.app.Fragment <|-- com.example.gringgo.Bdd
+no.nordicsemi.android.ble.BleManager <|-- com.example.gringgo.ViewModel.Nrf5340Manager
+com.example.gringgo.ViewModel.Nrf5340Manager +.. com.example.gringgo.ViewModel.Nrf5340Manager$OnGattDataListener
+com.example.gringgo.ViewModel.Nrf5340Manager +.. com.example.gringgo.ViewModel.Nrf5340Manager$OnConnectionStatusChangedListener
+com.example.gringgo.BlutoothLiveCom +.. com.example.gringgo.BlutoothLiveCom$MessageConstants
+com.example.gringgo.BlutoothLiveCom +.. com.example.gringgo.BlutoothLiveCom$ConnectedThread
+com.example.gringgo.Thread <|-- com.example.gringgo.BlutoothLiveCom$ConnectedThread
+androidx.room.RoomDatabase <|-- com.example.gringgo.bdd.AppDatabase
+com.example.gringgo.Thread <|-- com.example.gringgo.ConnectThread
+androidx.fragment.app.Fragment <|-- com.example.gringgo.Parametre
+androidx.fragment.app.Fragment <|-- com.example.gringgo.Menu
+androidx.appcompat.app.AppCompatActivity <|-- com.example.gringgo.MainActivity
+androidx.fragment.app.Fragment <|-- com.example.gringgo.Command
+androidx.fragment.app.Fragment <|-- com.example.gringgo.Distance
+com.example.gringgo.ViewModel.OnGattDataListener <|.. com.example.gringgo.ViewModel.BluetoothViewModel
+androidx.lifecycle.AndroidViewModel <|-- com.example.gringgo.ViewModel.BluetoothViewModel
+@enduml

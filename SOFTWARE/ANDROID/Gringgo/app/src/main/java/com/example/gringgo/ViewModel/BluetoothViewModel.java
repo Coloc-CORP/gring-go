@@ -8,8 +8,15 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+
+import com.example.gringgo.bdd.AppDatabase;
+import com.example.gringgo.bdd.HealthDao;
+import com.example.gringgo.bdd.HealthData;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class BluetoothViewModel extends AndroidViewModel implements Nrf5340Manager.OnGattDataListener {
 
@@ -26,8 +33,12 @@ public class BluetoothViewModel extends AndroidViewModel implements Nrf5340Manag
     private final MutableLiveData<String> spO2 = new MutableLiveData<>("--");
 
     private static final String PREFS_NAME = "GringoPrefs";
-    private static final String KEY_HEALTH_STATE = "health_state";
-    private static final String KEY_LOW_ENERGY_STATE = "low_energy_state";
+    public static final String KEY_HEALTH_STATE = "health_state";
+    public static final String KEY_LOW_ENERGY_STATE = "low_energy_state";
+
+    // Variables pour la base de données
+    private final HealthDao healthDao;
+    private final ExecutorService databaseWriteExecutor = Executors.newSingleThreadExecutor();
 
 
     public BluetoothViewModel(@NonNull Application application) {
@@ -35,6 +46,10 @@ public class BluetoothViewModel extends AndroidViewModel implements Nrf5340Manag
         manager = new Nrf5340Manager(application);
         manager.setOnGattDataListener(this);
         manager.setOnConnectionStatusChangedListener(connectionState::postValue);
+
+        // Initialisation de la base de données
+        AppDatabase db = AppDatabase.getDatabase(application);
+        healthDao = db.healthDao();
     }
 
     @Override
@@ -83,11 +98,11 @@ public class BluetoothViewModel extends AndroidViewModel implements Nrf5340Manag
             manager.disconnect().enqueue();
             connectionState.postValue("DISCONNECTED");
         }
+        clearHealthData();
     }
 
-    // À l'intérieur de ta classe BluetoothViewModel
     public Nrf5340Manager getBleManager() {
-        return manager; // ou le nom que tu as donné à ta variable Nrf5340Manager dans le ViewModel
+        return manager;
     }
 
     // Getters
@@ -99,27 +114,56 @@ public class BluetoothViewModel extends AndroidViewModel implements Nrf5340Manag
     public LiveData<String> getTemperature() { return temperature; }
     public LiveData<String> getSpO2() { return spO2; }
 
-
     /**
      * Récupère l'état sauvegardé pour un switch spécifique.
      * @param context Nécessaire pour accéder aux SharedPreferences
-     * @param isHealthSwitch Si true, récupère l'état de la santé, sinon du Low Energy
+     * @param key La clé (ex: KEY_HEALTH_STATE)
      */
-    public boolean getSavedState(Context context, boolean isHealthSwitch) {
+    public boolean getSavedState(Context context, String key) {
         return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
-                .getBoolean(isHealthSwitch ? KEY_HEALTH_STATE : KEY_LOW_ENERGY_STATE, false);
+                .getBoolean(key, false);
     }
 
     /**
      * Sauvegarde l'état d'un switch.
      * @param isChecked État à sauvegarder
      * @param context Nécessaire pour accéder aux SharedPreferences
-     * @param isHealthSwitch Si true, sauvegarde la santé, sinon le Low Energy
+     * @param key La clé (ex: KEY_HEALTH_STATE)
      */
-    public void setTrackingState(boolean isChecked, Context context, boolean isHealthSwitch) {
+    public void setTrackingState(boolean isChecked, Context context, String key) {
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
                 .edit()
-                .putBoolean(isHealthSwitch ? KEY_HEALTH_STATE : KEY_LOW_ENERGY_STATE, isChecked)
-                .apply(); // .apply() est asynchrone, ce qui est idéal pour ne pas bloquer l'UI
+                .putBoolean(key, isChecked)
+                .apply();
+    }
+
+    public void clearHealthData() {
+        heartRate.postValue("--");
+        temperature.postValue("--");
+        spO2.postValue("--");
+        stepsCount.postValue("--");
+        // On peut laisser stepsCount à sa dernière valeur ou le remettre à "0" selon votre préférence
+    }
+
+    public void saveCurrentDataToDatabase() {
+        HealthData snapshot = new HealthData();
+        snapshot.timestamp = System.currentTimeMillis();
+
+        // On récupère les valeurs actuelles (si null, on met "--")
+        snapshot.heartRate = heartRate.getValue() != null ? heartRate.getValue() : "--";
+        snapshot.steps = stepsCount.getValue() != null ? stepsCount.getValue() : "--";
+        snapshot.temperature = temperature.getValue() != null ? temperature.getValue() : "--";
+        snapshot.spO2 = spO2.getValue() != null ? spO2.getValue() : "--";
+        snapshot.battery = batteryLevel.getValue() != null ? batteryLevel.getValue() : "--";
+
+        // L'insertion DOIT se faire en arrière-plan pour ne pas bloquer l'application
+        databaseWriteExecutor.execute(() -> {
+            healthDao.insert(snapshot);
+            Log.d("DATABASE", "Données sauvegardées avec succès !");
+        });
+    }
+
+    public LiveData<List<HealthData>> getAllHistory() {
+        return healthDao.getAllHistory();
     }
 }

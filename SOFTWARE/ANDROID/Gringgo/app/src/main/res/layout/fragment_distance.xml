@@ -3,101 +3,89 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
-
-    <TextView
-        android:id="@+id/bloc_pas2"
-        android:layout_width="311dp"
-        android:layout_height="140dp"
-        android:background="@drawable/fond_arrondi_home"
-        android:gravity="top|center_horizontal"
-        android:paddingTop="8dp"
-        android:text="Pas"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_pas"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/card_distance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.3">
 
-    <TextView
-        android:id="@+id/bloc_pas4"
-        android:layout_width="311dp"
-        android:layout_height="140dp"
-        android:background="@drawable/fond_arrondi_home"
-        android:gravity="top|center_horizontal"
-        android:paddingTop="8dp"
-        android:text="Distance"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fond_arrondi_home"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Pas"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/chiffre_pas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/atkinson_hyperlegible_bold"
+                android:text="--"
+                android:textColor="@color/black"
+                android:textSize="44sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_distance"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_pas"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.3">
 
-    <TextView
-        android:id="@+id/bloc_pas_"
-        android:layout_width="220dp"
-        android:layout_height="74dp"
-        android:background="@drawable/rectangle"
-        android:gravity="top|center_horizontal"
-        android:paddingTop="8dp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas2"
-        app:layout_constraintEnd_toEndOf="@+id/bloc_pas2"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/bloc_pas2"
-        app:layout_constraintTop_toTopOf="@+id/bloc_pas2"
-        app:layout_constraintVertical_bias="0.672" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/fond_arrondi_home"
+            android:gravity="center"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/bloc_pas_4"
-        android:layout_width="220dp"
-        android:layout_height="74dp"
-        android:background="@drawable/rectangle"
-        android:gravity="top|center_horizontal"
-        android:paddingTop="8dp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas4"
-        app:layout_constraintEnd_toEndOf="@+id/bloc_pas4"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="@+id/bloc_pas4"
-        app:layout_constraintTop_toTopOf="@+id/bloc_pas4"
-        app:layout_constraintVertical_bias="0.724" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Distance (m)"
+                android:textColor="#666666"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/chiffre_pas2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/atkinson_hyperlegible_bold"
-        android:text="60000"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas_"
-        app:layout_constraintEnd_toEndOf="@+id/bloc_pas_"
-        app:layout_constraintStart_toStartOf="@+id/bloc_pas_"
-        app:layout_constraintTop_toTopOf="@+id/bloc_pas_" />
-
-    <TextView
-        android:id="@+id/chiffre_distance"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/atkinson_hyperlegible_bold"
-        android:text="60000"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bloc_pas_4"
-        app:layout_constraintEnd_toEndOf="@+id/bloc_pas_4"
-        app:layout_constraintStart_toStartOf="@+id/bloc_pas_4"
-        app:layout_constraintTop_toTopOf="@+id/bloc_pas_4" />
+            <TextView
+                android:id="@+id/chiffre_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/atkinson_hyperlegible_bold"
+                android:text="--"
+                android:textColor="@color/black"
+                android:textSize="44sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

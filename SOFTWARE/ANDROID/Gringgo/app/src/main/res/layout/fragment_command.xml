@@ -25,9 +25,21 @@
         android:fontFamily="@font/atkinson_hyperlegible_bold"
         android:text="Low Energy"
         android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+    <Button
+        android:id="@+id/button_vibration"
+        android:layout_width="275dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/atkinson_hyperlegible_bold"
+        android:text="Vibrer"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch1"
+        app:layout_constraintTop_toBottomOf="@+id/switch2"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -189,9 +189,18 @@ void notify_steps(uint32_t steps_val) {
 }
 
 void notify_battery(uint8_t batt_val) {
+    // Ne pas envoyer de notification si la valeur n'a pas changé
+    if (batt_val == last_notified_battery) {
+        return;
+    }
+
     int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[28], &batt_val, sizeof(batt_val));
-    if (err && err != -ENOTCONN) printk("[NOTIFY ERR] BATT (err %d)\n", err);
-    else if (!err) printk("[NOTIFY SUCCESS] BATT (%u%%) transmis\n", batt_val);
+    if (err && err != -ENOTCONN) {
+        printk("[NOTIFY ERR] BATT (err %d)\n", err);
+    } else if (!err) {
+        printk("[NOTIFY SUCCESS] BATT (%u%%) transmis\n", batt_val);
+        last_notified_battery = batt_val; // Mettre à jour la dernière valeur envoyée
+    }
 }
 
 int main(void)
@@ -265,19 +274,4 @@ int main(void)
         int current_delay = (low_energy_state == 1) ? LOW_ENERGY_INTERVAL_MS : SIMUL_INTERVAL_MS;
         k_sleep(K_MSEC(current_delay));
     }
-
-    void notify_battery(uint8_t batt_val) {
-    // Ne pas envoyer de notification si la valeur n'a pas changé
-    if (batt_val == last_notified_battery) {
-        return;
-    }
-
-    int err = bt_gatt_notify(NULL, &gringgo_svc.attrs[28], &batt_val, sizeof(batt_val));
-    if (err && err != -ENOTCONN) {
-        printk("[NOTIFY ERR] BATT (err %d)\n", err);
-    } else if (!err) {
-        printk("[NOTIFY SUCCESS] BATT (%u%%) transmis\n", batt_val);
-        last_notified_battery = batt_val; // Mettre à jour la dernière valeur envoyée
-    }
-}
 }
