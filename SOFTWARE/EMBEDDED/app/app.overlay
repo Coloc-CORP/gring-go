@@ -34,9 +34,9 @@
     };
 
     /* Temperature Sensor STTS22H */
-    stts22h: stts22h@70 {
+    stts22h: stts22h@3C {
         compatible = "i2c-device";
-        reg = <0x70>;
+        reg = <0x3C>;
         label = "STTS22H";
     };
 
@@ -48,9 +48,9 @@
     };
 
     /* Charge Controller BQ25120A */
-    bq25120a: bq25120a@6b {
+    bq25120a: bq25120a@6a {
         compatible = "i2c-device";
-        reg = <0x6b>;
+        reg = <0x6a>;
         label = "BQ25120A";
     };
 };
